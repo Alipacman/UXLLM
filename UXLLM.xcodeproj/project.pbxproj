@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		585402B82B0217F600306C10 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B72B0217F600306C10 /* NetworkService.swift */; };
-		585402BA2B02187E00306C10 /* LocalKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B92B02187E00306C10 /* LocalKeys.swift */; };
+		585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B92B02187E00306C10 /* LocalConfiguration.swift */; };
 		585402BC2B021B4400306C10 /* App Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402BB2B021B4400306C10 /* App Error.swift */; };
 		585402C12B021C1100306C10 /* OpenAPIReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402C02B021C1100306C10 /* OpenAPIReponse.swift */; };
 		585402CD2B02375400306C10 /* TitleAndTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402CC2B02375400306C10 /* TitleAndTextInputView.swift */; };
@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		585402B72B0217F600306C10 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		585402B92B02187E00306C10 /* LocalKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalKeys.swift; sourceTree = "<group>"; };
+		585402B92B02187E00306C10 /* LocalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfiguration.swift; sourceTree = "<group>"; };
 		585402BB2B021B4400306C10 /* App Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Error.swift"; sourceTree = "<group>"; };
 		585402C02B021C1100306C10 /* OpenAPIReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPIReponse.swift; sourceTree = "<group>"; };
 		585402CC2B02375400306C10 /* TitleAndTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndTextInputView.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		585402C22B02366300306C10 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
-				585402B92B02187E00306C10 /* LocalKeys.swift */,
+				585402B92B02187E00306C10 /* LocalConfiguration.swift */,
 				586590CF2AFD2E2D0037D1FE /* Assets.xcassets */,
 				586590D42AFD2E2D0037D1FE /* UXLLM.entitlements */,
 				585402D12B0238EC00306C10 /* Localizable.strings */,
@@ -240,7 +240,7 @@
 				586590CE2AFD2E2C0037D1FE /* ContentView.swift in Sources */,
 				585402C12B021C1100306C10 /* OpenAPIReponse.swift in Sources */,
 				585402BC2B021B4400306C10 /* App Error.swift in Sources */,
-				585402BA2B02187E00306C10 /* LocalKeys.swift in Sources */,
+				585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */,
 				585402D02B0237F300306C10 /* View+.swift in Sources */,
 				585402B82B0217F600306C10 /* NetworkService.swift in Sources */,
 				586590CC2AFD2E2C0037D1FE /* UXLLMApp.swift in Sources */,

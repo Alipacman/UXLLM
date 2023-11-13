@@ -53,8 +53,8 @@ class NetworkService {
     
         let header = [
             "Content-Type": "application/json",
-            "Authorization": "Bearer \(LocalKeys.openAPIKey)",
-            "OpenAI-Organization": "org-gO2dsxwUPjK1Z8AJH8GDCCtz",
+            "Authorization": "Bearer \(LocalConfiguration.openApiKey)",
+            "OpenAI-Organization": LocalConfiguration.organizationId,
         ]
         
         return header
