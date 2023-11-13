@@ -13,6 +13,7 @@ class NetworkService {
     private let openAIURLString = "https://api.openai.com/v1/chat/completions"
     
     func testRequest(prompt: String) async throws -> OpenAPIReponse {
+        print("TestRequest called")
         
         let messages: [[String : Any]] = [
             //["role": "system", "content": "You are a helpful assistant."],
