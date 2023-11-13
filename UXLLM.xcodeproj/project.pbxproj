@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		585402B82B0217F600306C10 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B72B0217F600306C10 /* NetworkService.swift */; };
+		585402BA2B02187E00306C10 /* LocalKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B92B02187E00306C10 /* LocalKeys.swift */; };
+		585402BC2B021B4400306C10 /* App Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402BB2B021B4400306C10 /* App Error.swift */; };
+		585402C12B021C1100306C10 /* OpenAPIReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402C02B021C1100306C10 /* OpenAPIReponse.swift */; };
 		586590CC2AFD2E2C0037D1FE /* UXLLMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586590CB2AFD2E2C0037D1FE /* UXLLMApp.swift */; };
 		586590CE2AFD2E2C0037D1FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586590CD2AFD2E2C0037D1FE /* ContentView.swift */; };
 		586590D02AFD2E2D0037D1FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586590CF2AFD2E2D0037D1FE /* Assets.xcassets */; };
@@ -14,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		585402B72B0217F600306C10 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		585402B92B02187E00306C10 /* LocalKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalKeys.swift; sourceTree = "<group>"; };
+		585402BB2B021B4400306C10 /* App Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Error.swift"; sourceTree = "<group>"; };
+		585402C02B021C1100306C10 /* OpenAPIReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPIReponse.swift; sourceTree = "<group>"; };
 		586590C82AFD2E2C0037D1FE /* UXLLM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UXLLM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		586590CB2AFD2E2C0037D1FE /* UXLLMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UXLLMApp.swift; sourceTree = "<group>"; };
 		586590CD2AFD2E2C0037D1FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +41,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		585402BD2B021BE600306C10 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				585402B72B0217F600306C10 /* NetworkService.swift */,
+				585402C02B021C1100306C10 /* OpenAPIReponse.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		585402BE2B021BEC00306C10 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				585402BD2B021BE600306C10 /* Networking */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		585402BF2B021BF400306C10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		586590BF2AFD2E2C0037D1FE = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +86,10 @@
 			children = (
 				586590CB2AFD2E2C0037D1FE /* UXLLMApp.swift */,
 				586590CD2AFD2E2C0037D1FE /* ContentView.swift */,
+				585402BF2B021BF400306C10 /* Model */,
+				585402BE2B021BEC00306C10 /* Tool */,
+				585402BB2B021B4400306C10 /* App Error.swift */,
+				585402B92B02187E00306C10 /* LocalKeys.swift */,
 				586590CF2AFD2E2D0037D1FE /* Assets.xcassets */,
 				586590D42AFD2E2D0037D1FE /* UXLLM.entitlements */,
 				586590D12AFD2E2D0037D1FE /* Preview Content */,
@@ -140,6 +176,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				586590CE2AFD2E2C0037D1FE /* ContentView.swift in Sources */,
+				585402C12B021C1100306C10 /* OpenAPIReponse.swift in Sources */,
+				585402BC2B021B4400306C10 /* App Error.swift in Sources */,
+				585402BA2B02187E00306C10 /* LocalKeys.swift in Sources */,
+				585402B82B0217F600306C10 /* NetworkService.swift in Sources */,
 				586590CC2AFD2E2C0037D1FE /* UXLLMApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +315,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UXLLM/Preview Content\"";
+				DEVELOPMENT_TEAM = 7RKKG423GF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -300,6 +341,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UXLLM/Preview Content\"";
+				DEVELOPMENT_TEAM = 7RKKG423GF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
