@@ -12,26 +12,33 @@ struct ContentView: View {
     @State var appContext: String = ""
     @State var userTask: String = ""
     @State var sourceCode: String = ""
+    @State var nsImage: NSImage? = nil
     
     @State var responseMessage: String = ""
     @State var isLoading: Bool = false
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 16) {
-                TitleAndTextInputView(title: "What is the app about?", text: $appContext)
-                    .frame(height: 100)
-                
-                TitleAndTextInputView(title: "What is the users task in your current component?", text: $userTask)
-                    .frame(height: 100)
-                
-                TitleAndTextInputView(title: "Source Code", text: $sourceCode)
-                    .frame(height: 400)
+            VStack(spacing: 40) {
+                HStack(spacing: 120) {
+                    VStack(spacing: 16) {
+                        TitleAndTextInputView(title: "What is the app about?", text: $appContext)
+                            .frame(height: 100)
+                        
+                        TitleAndTextInputView(title: "What is the users task in your current component?", text: $userTask)
+                            .frame(height: 100)
+                        
+                        TitleAndTextInputView(title: "Source Code", text: $sourceCode)
+                            .frame(height: 400)
+                    }
+                    
+                    ImageDropArea(nsImage: $nsImage)
+                }
                 
                 startButton
                 FeedbackView(feedback: responseMessage)
             }
-            .padding()
+            .padding(32)
         }
     }
     

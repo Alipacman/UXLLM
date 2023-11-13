@@ -11,15 +11,24 @@ struct PromptGenerator {
     struct Configuration {
         let appContext: String
         let task: String
-        let sourceCode: String
+        let sourceCode: String?
     }
     
     static func generatePrompt(with configuration: Configuration) -> String {
+        
+        var base =
         """
         I have an iOS app about: \(configuration.appContext)
         Identify 5 usability issues for a component about \(configuration.task).
-        Here is the source code:
-        \(configuration.sourceCode)
         """
+        
+        if let sourceCode = configuration.sourceCode, sourceCode.trimFrontAndBackWhitespaces() != "" {
+            base += """
+            Here is the source code:
+            \(sourceCode)
+            """
+        }
+        
+        return base
     }
 }

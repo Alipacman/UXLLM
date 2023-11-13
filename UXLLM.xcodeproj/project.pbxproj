@@ -21,6 +21,8 @@
 		586590D02AFD2E2D0037D1FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586590CF2AFD2E2D0037D1FE /* Assets.xcassets */; };
 		586590D32AFD2E2D0037D1FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586590D22AFD2E2D0037D1FE /* Preview Assets.xcassets */; };
 		58B3DA432B023F650025A0CD /* PromptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA422B023F650025A0CD /* PromptGenerator.swift */; };
+		58B3DA452B0244350025A0CD /* ImageDropArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA442B0244350025A0CD /* ImageDropArea.swift */; };
+		58B3DA472B0254030025A0CD /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA462B0254030025A0CD /* String+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		586590D22AFD2E2D0037D1FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		586590D42AFD2E2D0037D1FE /* UXLLM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UXLLM.entitlements; sourceTree = "<group>"; };
 		58B3DA422B023F650025A0CD /* PromptGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptGenerator.swift; sourceTree = "<group>"; };
+		58B3DA442B0244350025A0CD /* ImageDropArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDropArea.swift; sourceTree = "<group>"; };
+		58B3DA462B0254030025A0CD /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 				586590CD2AFD2E2C0037D1FE /* ContentView.swift */,
 				585402CC2B02375400306C10 /* TitleAndTextInputView.swift */,
 				585402D62B023C2500306C10 /* FeedbackView.swift */,
+				58B3DA442B0244350025A0CD /* ImageDropArea.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				585402CF2B0237F300306C10 /* View+.swift */,
+				58B3DA462B0254030025A0CD /* String+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,7 +250,9 @@
 				585402D02B0237F300306C10 /* View+.swift in Sources */,
 				585402B82B0217F600306C10 /* NetworkService.swift in Sources */,
 				586590CC2AFD2E2C0037D1FE /* UXLLMApp.swift in Sources */,
+				58B3DA472B0254030025A0CD /* String+.swift in Sources */,
 				585402CD2B02375400306C10 /* TitleAndTextInputView.swift in Sources */,
+				58B3DA452B0244350025A0CD /* ImageDropArea.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
