@@ -9,33 +9,42 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var text: String = ""
-    @State var response: String = "NA"
+    @State var appContext: String = ""
+    @State var responseMessage: String = ""
+    @State var isLoading: Bool = false
     
     var body: some View {
         ScrollView {
-            VStack {
-                
-                Text(response)
-                
-                TextField("Heyy", text: $text)
-                
-                Button {
-                    
-                    Task {
-                        do {
-                            let xxx = try await NetworkService.shared.testRequest(prompt: text)
-                            self.response = xxx.choices.first?.message.content ?? "Failed Parse"
-                        } catch {
-                            self.response = error.localizedDescription
-                        }
-                    }
-                    
-                } label: {
-                    Text("Start")
-                }
+            VStack(spacing: 16) {
+                TitleAndTextInputView(title: "What is the app about?", text: $appContext)
+                    .frame(height: 100)
+                startButton
+                FeedbackView(feedback: responseMessage)
             }
             .padding()
+        }
+    }
+    
+    private var startButton: some View {
+        Button {
+            makeCall()
+        } label: {
+            Text("Start")
+        }
+        .buttonStyle(PrimaryButtonStyle(isLoading: isLoading))
+    }
+    
+    private func makeCall() {
+        Task {
+            do {
+                self.isLoading = true
+                let response = try await NetworkService.shared.testRequest(prompt: appContext)
+                self.responseMessage = response.choices.first?.message.content ?? "Failed Parse"
+                self.isLoading = false
+            } catch {
+                self.responseMessage = error.localizedDescription
+                self.isLoading = false
+            }
         }
     }
 }

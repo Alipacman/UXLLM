@@ -11,6 +11,11 @@
 		585402BA2B02187E00306C10 /* LocalKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B92B02187E00306C10 /* LocalKeys.swift */; };
 		585402BC2B021B4400306C10 /* App Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402BB2B021B4400306C10 /* App Error.swift */; };
 		585402C12B021C1100306C10 /* OpenAPIReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402C02B021C1100306C10 /* OpenAPIReponse.swift */; };
+		585402CD2B02375400306C10 /* TitleAndTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402CC2B02375400306C10 /* TitleAndTextInputView.swift */; };
+		585402D02B0237F300306C10 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402CF2B0237F300306C10 /* View+.swift */; };
+		585402D22B0238EC00306C10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 585402D12B0238EC00306C10 /* Localizable.strings */; };
+		585402D52B02392E00306C10 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402D42B02392E00306C10 /* PrimaryButtonStyle.swift */; };
+		585402D72B023C2500306C10 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402D62B023C2500306C10 /* FeedbackView.swift */; };
 		586590CC2AFD2E2C0037D1FE /* UXLLMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586590CB2AFD2E2C0037D1FE /* UXLLMApp.swift */; };
 		586590CE2AFD2E2C0037D1FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586590CD2AFD2E2C0037D1FE /* ContentView.swift */; };
 		586590D02AFD2E2D0037D1FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586590CF2AFD2E2D0037D1FE /* Assets.xcassets */; };
@@ -22,6 +27,11 @@
 		585402B92B02187E00306C10 /* LocalKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalKeys.swift; sourceTree = "<group>"; };
 		585402BB2B021B4400306C10 /* App Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Error.swift"; sourceTree = "<group>"; };
 		585402C02B021C1100306C10 /* OpenAPIReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPIReponse.swift; sourceTree = "<group>"; };
+		585402CC2B02375400306C10 /* TitleAndTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndTextInputView.swift; sourceTree = "<group>"; };
+		585402CF2B0237F300306C10 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		585402D12B0238EC00306C10 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		585402D42B02392E00306C10 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		585402D62B023C2500306C10 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		586590C82AFD2E2C0037D1FE /* UXLLM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UXLLM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		586590CB2AFD2E2C0037D1FE /* UXLLMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UXLLMApp.swift; sourceTree = "<group>"; };
 		586590CD2AFD2E2C0037D1FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +81,7 @@
 				585402B92B02187E00306C10 /* LocalKeys.swift */,
 				586590CF2AFD2E2D0037D1FE /* Assets.xcassets */,
 				586590D42AFD2E2D0037D1FE /* UXLLM.entitlements */,
+				585402D12B0238EC00306C10 /* Localizable.strings */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -78,6 +89,7 @@
 		585402C32B02367300306C10 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				585402D32B02392500306C10 /* Button */,
 				585402BB2B021B4400306C10 /* App Error.swift */,
 			);
 			path = Common;
@@ -87,8 +99,26 @@
 			isa = PBXGroup;
 			children = (
 				586590CD2AFD2E2C0037D1FE /* ContentView.swift */,
+				585402CC2B02375400306C10 /* TitleAndTextInputView.swift */,
+				585402D62B023C2500306C10 /* FeedbackView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		585402CE2B0237E700306C10 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				585402CF2B0237F300306C10 /* View+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		585402D32B02392500306C10 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				585402D42B02392E00306C10 /* PrimaryButtonStyle.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		586590BF2AFD2E2C0037D1FE = {
@@ -115,6 +145,7 @@
 				585402BF2B021BF400306C10 /* Model */,
 				585402BE2B021BEC00306C10 /* Tool */,
 				585402C32B02367300306C10 /* Common */,
+				585402CE2B0237E700306C10 /* Extensions */,
 				585402C22B02366300306C10 /* Ressources */,
 				586590D12AFD2E2D0037D1FE /* Preview Content */,
 			);
@@ -188,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				586590D32AFD2E2D0037D1FE /* Preview Assets.xcassets in Resources */,
+				585402D22B0238EC00306C10 /* Localizable.strings in Resources */,
 				586590D02AFD2E2D0037D1FE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,12 +231,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585402D52B02392E00306C10 /* PrimaryButtonStyle.swift in Sources */,
+				585402D72B023C2500306C10 /* FeedbackView.swift in Sources */,
 				586590CE2AFD2E2C0037D1FE /* ContentView.swift in Sources */,
 				585402C12B021C1100306C10 /* OpenAPIReponse.swift in Sources */,
 				585402BC2B021B4400306C10 /* App Error.swift in Sources */,
 				585402BA2B02187E00306C10 /* LocalKeys.swift in Sources */,
+				585402D02B0237F300306C10 /* View+.swift in Sources */,
 				585402B82B0217F600306C10 /* NetworkService.swift in Sources */,
 				586590CC2AFD2E2C0037D1FE /* UXLLMApp.swift in Sources */,
+				585402CD2B02375400306C10 /* TitleAndTextInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
