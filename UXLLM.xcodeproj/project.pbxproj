@@ -65,6 +65,32 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		585402C22B02366300306C10 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				585402B92B02187E00306C10 /* LocalKeys.swift */,
+				586590CF2AFD2E2D0037D1FE /* Assets.xcassets */,
+				586590D42AFD2E2D0037D1FE /* UXLLM.entitlements */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		585402C32B02367300306C10 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				585402BB2B021B4400306C10 /* App Error.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		585402C42B02367B00306C10 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				586590CD2AFD2E2C0037D1FE /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		586590BF2AFD2E2C0037D1FE = {
 			isa = PBXGroup;
 			children = (
@@ -85,13 +111,11 @@
 			isa = PBXGroup;
 			children = (
 				586590CB2AFD2E2C0037D1FE /* UXLLMApp.swift */,
-				586590CD2AFD2E2C0037D1FE /* ContentView.swift */,
+				585402C42B02367B00306C10 /* Views */,
 				585402BF2B021BF400306C10 /* Model */,
 				585402BE2B021BEC00306C10 /* Tool */,
-				585402BB2B021B4400306C10 /* App Error.swift */,
-				585402B92B02187E00306C10 /* LocalKeys.swift */,
-				586590CF2AFD2E2D0037D1FE /* Assets.xcassets */,
-				586590D42AFD2E2D0037D1FE /* UXLLM.entitlements */,
+				585402C32B02367300306C10 /* Common */,
+				585402C22B02366300306C10 /* Ressources */,
 				586590D12AFD2E2D0037D1FE /* Preview Content */,
 			);
 			path = UXLLM;
@@ -310,7 +334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = UXLLM/UXLLM.entitlements;
+				CODE_SIGN_ENTITLEMENTS = UXLLM/Ressources/UXLLM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -336,7 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = UXLLM/UXLLM.entitlements;
+				CODE_SIGN_ENTITLEMENTS = UXLLM/Ressources/UXLLM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
