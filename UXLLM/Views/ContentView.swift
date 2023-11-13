@@ -10,6 +10,9 @@ import SwiftUI
 struct ContentView: View {
     
     @State var appContext: String = ""
+    @State var userTask: String = ""
+    @State var sourceCode: String = ""
+    
     @State var responseMessage: String = ""
     @State var isLoading: Bool = false
     
@@ -18,6 +21,13 @@ struct ContentView: View {
             VStack(spacing: 16) {
                 TitleAndTextInputView(title: "What is the app about?", text: $appContext)
                     .frame(height: 100)
+                
+                TitleAndTextInputView(title: "What is the users task in your current component?", text: $userTask)
+                    .frame(height: 100)
+                
+                TitleAndTextInputView(title: "Source Code", text: $sourceCode)
+                    .frame(height: 400)
+                
                 startButton
                 FeedbackView(feedback: responseMessage)
             }
@@ -38,7 +48,10 @@ struct ContentView: View {
         Task {
             do {
                 self.isLoading = true
-                let response = try await NetworkService.shared.testRequest(prompt: appContext)
+                let prompt = PromptGenerator.generatePrompt(with: .init(appContext: appContext,
+                                                                        task: userTask,
+                                                                        sourceCode: sourceCode))
+                let response = try await NetworkService.shared.testRequest(prompt: prompt)
                 self.responseMessage = response.choices.first?.message.content ?? "Failed Parse"
                 self.isLoading = false
             } catch {

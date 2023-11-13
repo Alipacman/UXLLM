@@ -13,10 +13,10 @@ class NetworkService {
     private let openAIURLString = "https://api.openai.com/v1/chat/completions"
     
     func testRequest(prompt: String) async throws -> OpenAPIReponse {
-        print("TestRequest called")
+        print("TestRequest called with prompt: ", prompt)
         
         let messages: [[String : Any]] = [
-            //["role": "system", "content": "You are a helpful assistant."],
+            ["role": "system", "content": "You are a UI/UX expert for mobile apps."],
             ["role": "user", "content": prompt]
         ]
 

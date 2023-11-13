@@ -20,6 +20,7 @@
 		586590CE2AFD2E2C0037D1FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586590CD2AFD2E2C0037D1FE /* ContentView.swift */; };
 		586590D02AFD2E2D0037D1FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586590CF2AFD2E2D0037D1FE /* Assets.xcassets */; };
 		586590D32AFD2E2D0037D1FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586590D22AFD2E2D0037D1FE /* Preview Assets.xcassets */; };
+		58B3DA432B023F650025A0CD /* PromptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA422B023F650025A0CD /* PromptGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		586590CF2AFD2E2D0037D1FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		586590D22AFD2E2D0037D1FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		586590D42AFD2E2D0037D1FE /* UXLLM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UXLLM.entitlements; sourceTree = "<group>"; };
+		58B3DA422B023F650025A0CD /* PromptGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				585402BD2B021BE600306C10 /* Networking */,
+				58B3DA422B023F650025A0CD /* PromptGenerator.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B3DA432B023F650025A0CD /* PromptGenerator.swift in Sources */,
 				585402D52B02392E00306C10 /* PrimaryButtonStyle.swift in Sources */,
 				585402D72B023C2500306C10 /* FeedbackView.swift in Sources */,
 				586590CE2AFD2E2C0037D1FE /* ContentView.swift in Sources */,
