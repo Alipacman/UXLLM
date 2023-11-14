@@ -19,12 +19,13 @@ struct PromptGenerator {
         var base =
         """
         I have an iOS app about: \(configuration.appContext)
-        Identify 5 usability issues for a component about \(configuration.task).
+        The users's task is about: \(configuration.task).
+        Your task is to identify 5 usability issues.
         """
         
         if let sourceCode = configuration.sourceCode, sourceCode.trimFrontAndBackWhitespaces() != "" {
             base += """
-            Here is the source code:
+            \nFor your analysis you can also use the source code.
             \(sourceCode)
             """
         }
@@ -33,7 +34,7 @@ struct PromptGenerator {
     }
     
     static func generateAdditionalImageDescriptionToPrompt() -> String {
-        "Here is a screenshot of the view."
+        "\nFor your analysis you can also this screenshot of the view."
     }
     
     static func generateSystemRole() -> String {

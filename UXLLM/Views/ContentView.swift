@@ -34,7 +34,7 @@ struct ContentView: View {
                                               userDefaultsKeyToSaveText: componentDescriptionKey)
                             .frame(height: 100)
                         
-                        TitleAndTextInputView(title: "Views Source Code", text: $sourceCode,
+                        TitleAndTextInputView(title: "Source Code", text: $sourceCode,
                                               userDefaultsKeyToSaveText: sourceCodeKey)
                             .frame(height: 400)
                     }
@@ -43,7 +43,8 @@ struct ContentView: View {
                 }
                 
                 startButton
-                copyPromptButton
+                
+                CopyPromptView(prompt: getPrompt())
                 
                 FeedbackView(feedback: responseMessage)
             }
@@ -60,15 +61,7 @@ struct ContentView: View {
         .buttonStyle(PrimaryButtonStyle(isLoading: isLoading))
     }
     
-    private var copyPromptButton: some View {
-        Button {
-            NSPasteboard.general.clearContents()
-            NSPasteboard.general.setString(getPrompt(), forType: .string)
-        } label: {
-            Text("Copy Prompt")
-        }
-        .buttonStyle(PrimaryButtonStyle(isLoading: isLoading))
-    }
+
     
     private func makeCall() {
         Task {

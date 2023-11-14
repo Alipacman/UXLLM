@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5809E32D2B03AB3300DB0C78 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809E32C2B03AB3300DB0C78 /* Constants.swift */; };
+		5809E3312B03C14A00DB0C78 /* CopyPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809E3302B03C14A00DB0C78 /* CopyPromptView.swift */; };
 		585402B82B0217F600306C10 /* LLMNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B72B0217F600306C10 /* LLMNetworkService.swift */; };
 		585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B92B02187E00306C10 /* LocalConfiguration.swift */; };
 		585402BC2B021B4400306C10 /* App Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402BB2B021B4400306C10 /* App Error.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		5809E32C2B03AB3300DB0C78 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5809E3302B03C14A00DB0C78 /* CopyPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyPromptView.swift; sourceTree = "<group>"; };
 		585402B72B0217F600306C10 /* LLMNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMNetworkService.swift; sourceTree = "<group>"; };
 		585402B92B02187E00306C10 /* LocalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfiguration.swift; sourceTree = "<group>"; };
 		585402BB2B021B4400306C10 /* App Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Error.swift"; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				585402D32B02392500306C10 /* Button */,
 				585402CC2B02375400306C10 /* TitleAndTextInputView.swift */,
+				5809E3302B03C14A00DB0C78 /* CopyPromptView.swift */,
 				585402BB2B021B4400306C10 /* App Error.swift */,
 			);
 			path = Common;
@@ -253,6 +256,7 @@
 				585402C12B021C1100306C10 /* OpenAPIReponse.swift in Sources */,
 				5809E32D2B03AB3300DB0C78 /* Constants.swift in Sources */,
 				585402BC2B021B4400306C10 /* App Error.swift in Sources */,
+				5809E3312B03C14A00DB0C78 /* CopyPromptView.swift in Sources */,
 				585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */,
 				585402D02B0237F300306C10 /* View+.swift in Sources */,
 				58B3DA492B0254900025A0CD /* ImageProcessor.swift in Sources */,
