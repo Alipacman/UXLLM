@@ -36,6 +36,8 @@ struct ContentView: View {
                 }
                 
                 startButton
+                copyPromptButton
+                
                 FeedbackView(feedback: responseMessage)
             }
             .padding(32)
@@ -51,14 +53,22 @@ struct ContentView: View {
         .buttonStyle(PrimaryButtonStyle(isLoading: isLoading))
     }
     
+    private var copyPromptButton: some View {
+        Button {
+            NSPasteboard.general.clearContents()
+            NSPasteboard.general.setString(getPrompt(), forType: .string)
+        } label: {
+            Text("Copy Prompt")
+        }
+        .buttonStyle(PrimaryButtonStyle(isLoading: isLoading))
+    }
+    
     private func makeCall() {
         Task {
             do {
                 self.isLoading = true
-                let configuration = PromptGenerator.Configuration(appContext: appContext, task: userTask, sourceCode: sourceCode)
-                let prompt = PromptGenerator.generatePrompt(with: configuration)
                 let base64EncodedImage = ImageProcessor.convertToBase64(nsImage: nsImage)
-                let response = try await LLMNetworkService.shared.call(prompt: prompt, base64EncodedImage: base64EncodedImage)
+                let response = try await LLMNetworkService.shared.call(prompt: getPrompt(), base64EncodedImage: base64EncodedImage)
                 self.responseMessage = response.prettyResponse
                 self.isLoading = false
             } catch {
@@ -66,6 +76,11 @@ struct ContentView: View {
                 self.isLoading = false
             }
         }
+    }
+    
+    private func getPrompt() -> String {
+        let configuration = PromptGenerator.Configuration(appContext: appContext, task: userTask, sourceCode: sourceCode)
+        return PromptGenerator.generatePrompt(with: configuration)
     }
 }
 
