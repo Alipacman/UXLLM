@@ -25,7 +25,10 @@ struct PromptGenerator {
         
         if let sourceCode = configuration.sourceCode, sourceCode.trimFrontAndBackWhitespaces() != "" {
             base += """
-            \nFor your analysis you can also use the source code.
+            
+            
+            For your analysis you can also use the source code:
+            
             \(sourceCode)
             """
         }
