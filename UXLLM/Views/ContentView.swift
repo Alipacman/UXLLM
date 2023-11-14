@@ -26,15 +26,15 @@ struct ContentView: View {
             VStack(spacing: 40) {
                 HStack(spacing: 120) {
                     VStack(spacing: 16) {
-                        TitleAndTextInputView(title: "What is the app about?", text: $appContext,
+                        TitleAndTextInputView(title: "My app is about...", text: $appContext,
                                               userDefaultsKeyToSaveText: appContextKey)
                             .frame(height: 100)
                         
-                        TitleAndTextInputView(title: "What is the users task in your current component?", text: $userTask,
+                        TitleAndTextInputView(title: "The user's task in this view is about...?", text: $userTask,
                                               userDefaultsKeyToSaveText: componentDescriptionKey)
                             .frame(height: 100)
                         
-                        TitleAndTextInputView(title: "Source Code", text: $sourceCode,
+                        TitleAndTextInputView(title: "Views Source Code", text: $sourceCode,
                                               userDefaultsKeyToSaveText: sourceCodeKey)
                             .frame(height: 400)
                     }
