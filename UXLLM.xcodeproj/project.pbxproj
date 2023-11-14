@@ -103,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				585402D32B02392500306C10 /* Button */,
+				585402CC2B02375400306C10 /* TitleAndTextInputView.swift */,
 				585402BB2B021B4400306C10 /* App Error.swift */,
 			);
 			path = Common;
@@ -112,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				586590CD2AFD2E2C0037D1FE /* ContentView.swift */,
-				585402CC2B02375400306C10 /* TitleAndTextInputView.swift */,
 				585402D62B023C2500306C10 /* FeedbackView.swift */,
 				58B3DA442B0244350025A0CD /* ImageDropArea.swift */,
 			);

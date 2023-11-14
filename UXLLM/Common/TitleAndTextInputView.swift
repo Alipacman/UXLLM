@@ -10,7 +10,14 @@ import SwiftUI
 struct TitleAndTextInputView: View {
     
     let title: String
+    let userDefaultsKey: String?
     @Binding var text: String
+    
+    init(title: String, text: Binding<String>, userDefaultsKeyToSaveText: String? = nil) {
+        self.title = title
+        self._text = text
+        self.userDefaultsKey = userDefaultsKeyToSaveText
+    }
     
     var body: some View {
         VStack {
@@ -20,6 +27,11 @@ struct TitleAndTextInputView: View {
                 .leftAlignWithHStack()
             
             TextEditor(text: $text)
+                .onChange(of: text) {
+                    if let userDefaultsKey {
+                        UserDefaults.standard.set(text, forKey: userDefaultsKey)
+                    }
+                }
                 .font(.body)
         }
     }

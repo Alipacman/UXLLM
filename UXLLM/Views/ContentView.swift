@@ -7,11 +7,15 @@
 
 import SwiftUI
 
+fileprivate let appContextKey = "AppContextKey"
+fileprivate let componentDescriptionKey = "ComponentDescriptionKey"
+fileprivate let sourceCodeKey = "SourceCodeKey"
+
 struct ContentView: View {
     
-    @State var appContext: String = ""
-    @State var userTask: String = ""
-    @State var sourceCode: String = ""
+    @State var appContext: String = UserDefaults.standard.string(forKey: appContextKey) ?? ""
+    @State var userTask: String = UserDefaults.standard.string(forKey: componentDescriptionKey) ?? ""
+    @State var sourceCode: String = UserDefaults.standard.string(forKey: sourceCodeKey) ?? ""
     @State var nsImage: NSImage? = nil
     
     @State var responseMessage: String = ""
@@ -22,13 +26,16 @@ struct ContentView: View {
             VStack(spacing: 40) {
                 HStack(spacing: 120) {
                     VStack(spacing: 16) {
-                        TitleAndTextInputView(title: "What is the app about?", text: $appContext)
+                        TitleAndTextInputView(title: "What is the app about?", text: $appContext,
+                                              userDefaultsKeyToSaveText: appContextKey)
                             .frame(height: 100)
                         
-                        TitleAndTextInputView(title: "What is the users task in your current component?", text: $userTask)
+                        TitleAndTextInputView(title: "What is the users task in your current component?", text: $userTask,
+                                              userDefaultsKeyToSaveText: componentDescriptionKey)
                             .frame(height: 100)
                         
-                        TitleAndTextInputView(title: "Source Code", text: $sourceCode)
+                        TitleAndTextInputView(title: "Source Code", text: $sourceCode,
+                                              userDefaultsKeyToSaveText: sourceCodeKey)
                             .frame(height: 400)
                     }
                     
