@@ -55,11 +55,11 @@ struct ContentView: View {
         Task {
             do {
                 self.isLoading = true
-                let prompt = PromptGenerator.generatePrompt(with: .init(appContext: appContext,
-                                                                        task: userTask,
-                                                                        sourceCode: sourceCode))
-                let response = try await NetworkService.shared.testRequest(prompt: prompt)
-                self.responseMessage = response.choices.first?.message.content ?? "Failed Parse"
+                let configuration = PromptGenerator.Configuration(appContext: appContext, task: userTask, sourceCode: sourceCode)
+                let prompt = PromptGenerator.generatePrompt(with: configuration)
+                let base64EncodedImage = ImageProcessor.convertToBase64(nsImage: nsImage)
+                let response = try await LLMNetworkService.shared.call(prompt: prompt, base64EncodedImage: base64EncodedImage)
+                self.responseMessage = response.prettyResponse
                 self.isLoading = false
             } catch {
                 self.responseMessage = error.localizedDescription

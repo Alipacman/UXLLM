@@ -17,7 +17,8 @@ struct ImageDropArea: View {
             .frame(width: 400, height: 600)
             .background(
                 RoundedRectangle(cornerRadius: 25.0)
-                    .strokeBorder(style: StrokeStyle(lineWidth: 4, dash: [10]))
+                    .strokeBorder(style: StrokeStyle(lineWidth: nsImage == nil ? 4 : 0,
+                                                     dash: [10]))
             )
             .overlay {
                 darkOverlayIfTargeted
@@ -31,9 +32,7 @@ struct ImageDropArea: View {
 
                 _ = provider.loadDataRepresentation(for: .image) { data, error in
                     if error == nil, let data {
-                        DispatchQueue.main.async {
-                            self.nsImage = NSImage(data: data)
-                        }
+                        received(data: data)
                     }
                 }
                 return true
@@ -41,12 +40,17 @@ struct ImageDropArea: View {
             .animation(.default, value: isTargeted)
     }
     
+    private func received(data: Data) {
+        self.nsImage = ImageProcessor.resizeImage(nsImage: NSImage(data: data))
+    }
+
     private var content: some View {
         Group {
             if let nsImage {
                 Image(nsImage: nsImage)
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
             } else {
                 Image(systemName: "photo.badge.plus")
                     .font(.system(size: 60))

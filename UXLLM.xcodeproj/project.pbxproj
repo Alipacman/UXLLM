@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		585402B82B0217F600306C10 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B72B0217F600306C10 /* NetworkService.swift */; };
+		5809E32D2B03AB3300DB0C78 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809E32C2B03AB3300DB0C78 /* Constants.swift */; };
+		585402B82B0217F600306C10 /* LLMNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B72B0217F600306C10 /* LLMNetworkService.swift */; };
 		585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B92B02187E00306C10 /* LocalConfiguration.swift */; };
 		585402BC2B021B4400306C10 /* App Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402BB2B021B4400306C10 /* App Error.swift */; };
 		585402C12B021C1100306C10 /* OpenAPIReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402C02B021C1100306C10 /* OpenAPIReponse.swift */; };
@@ -23,10 +24,12 @@
 		58B3DA432B023F650025A0CD /* PromptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA422B023F650025A0CD /* PromptGenerator.swift */; };
 		58B3DA452B0244350025A0CD /* ImageDropArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA442B0244350025A0CD /* ImageDropArea.swift */; };
 		58B3DA472B0254030025A0CD /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA462B0254030025A0CD /* String+.swift */; };
+		58B3DA492B0254900025A0CD /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA482B0254900025A0CD /* ImageProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		585402B72B0217F600306C10 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5809E32C2B03AB3300DB0C78 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		585402B72B0217F600306C10 /* LLMNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMNetworkService.swift; sourceTree = "<group>"; };
 		585402B92B02187E00306C10 /* LocalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfiguration.swift; sourceTree = "<group>"; };
 		585402BB2B021B4400306C10 /* App Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Error.swift"; sourceTree = "<group>"; };
 		585402C02B021C1100306C10 /* OpenAPIReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPIReponse.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		58B3DA422B023F650025A0CD /* PromptGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptGenerator.swift; sourceTree = "<group>"; };
 		58B3DA442B0244350025A0CD /* ImageDropArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDropArea.swift; sourceTree = "<group>"; };
 		58B3DA462B0254030025A0CD /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		58B3DA482B0254900025A0CD /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,7 @@
 		585402BD2B021BE600306C10 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				585402B72B0217F600306C10 /* NetworkService.swift */,
+				585402B72B0217F600306C10 /* LLMNetworkService.swift */,
 				585402C02B021C1100306C10 /* OpenAPIReponse.swift */,
 			);
 			path = Networking;
@@ -71,6 +75,7 @@
 			children = (
 				585402BD2B021BE600306C10 /* Networking */,
 				58B3DA422B023F650025A0CD /* PromptGenerator.swift */,
+				58B3DA482B0254900025A0CD /* ImageProcessor.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -86,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				585402B92B02187E00306C10 /* LocalConfiguration.swift */,
+				5809E32C2B03AB3300DB0C78 /* Constants.swift */,
 				586590CF2AFD2E2D0037D1FE /* Assets.xcassets */,
 				586590D42AFD2E2D0037D1FE /* UXLLM.entitlements */,
 				585402D12B0238EC00306C10 /* Localizable.strings */,
@@ -245,10 +251,12 @@
 				585402D72B023C2500306C10 /* FeedbackView.swift in Sources */,
 				586590CE2AFD2E2C0037D1FE /* ContentView.swift in Sources */,
 				585402C12B021C1100306C10 /* OpenAPIReponse.swift in Sources */,
+				5809E32D2B03AB3300DB0C78 /* Constants.swift in Sources */,
 				585402BC2B021B4400306C10 /* App Error.swift in Sources */,
 				585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */,
 				585402D02B0237F300306C10 /* View+.swift in Sources */,
-				585402B82B0217F600306C10 /* NetworkService.swift in Sources */,
+				58B3DA492B0254900025A0CD /* ImageProcessor.swift in Sources */,
+				585402B82B0217F600306C10 /* LLMNetworkService.swift in Sources */,
 				586590CC2AFD2E2C0037D1FE /* UXLLMApp.swift in Sources */,
 				58B3DA472B0254030025A0CD /* String+.swift in Sources */,
 				585402CD2B02375400306C10 /* TitleAndTextInputView.swift in Sources */,

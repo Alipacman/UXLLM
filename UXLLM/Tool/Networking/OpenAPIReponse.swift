@@ -44,3 +44,10 @@ struct Message: Codable {
     let role: String
     let content: String
 }
+
+// TODO: -
+extension OpenAPIReponse {
+    var prettyResponse: String {
+        choices.first?.message.content ?? "Failed Parse"
+    }
+}

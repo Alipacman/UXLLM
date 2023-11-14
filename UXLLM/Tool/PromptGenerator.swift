@@ -31,4 +31,12 @@ struct PromptGenerator {
         
         return base
     }
+    
+    static func generateAdditionalImageDescriptionToPrompt() -> String {
+        "Here is a screenshot of the view."
+    }
+    
+    static func generateSystemRole() -> String {
+        "You are a UI/UX expert for mobile apps."
+    }
 }
