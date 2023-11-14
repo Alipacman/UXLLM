@@ -18,17 +18,24 @@ class LLMNetworkService {
         
         fileprivate var identifier: String {
             switch self {
-            case .gpt4TurboVision: return "gpt-4-vision-preview" // $0.01 / $0.03
-            case .gpt35Turbo: return "gpt-3.5-turbo-1106" // $0.0010 / $0.0020
+            case .gpt4TurboVision: return "gpt-4-vision-preview" // $0.01 Input / $0.03 Output per 1k tokens
+            case .gpt35Turbo: return "gpt-3.5-turbo-1106" // $0.0010 / $0.0020 per 1k tokens
             }
         }
         
         fileprivate var supportsVision: Bool { self == .gpt4TurboVision }
+        
+        fileprivate var inputOutputTokenPricePer1kTokens: (CGFloat, CGFloat) {
+            switch self {
+            case .gpt4TurboVision: return (0.01, 0.03) // $0.01, $0.03
+            case .gpt35Turbo: return (0.0010, 0.0020) // $0.0010 / $0.0020
+            }
+        }
     }
     
     // MARK: - Interface
     func call(prompt: String, model: GPTModel = Constants.defaultModel,
-              base64EncodedImage: String? = nil) async throws -> OpenAPIReponse {
+              base64EncodedImage: String? = nil) async throws -> OpenAPIResponse {
         
         print("TestRequest called with prompt: ", prompt)
         
@@ -68,6 +75,9 @@ class LLMNetworkService {
         urlRequest.allHTTPHeaderFields = header()
         urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
         
+        print("Request header: ", urlRequest.allHTTPHeaderFields ?? "NA")
+        //print("Request body: ", parameters)
+        
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         print("Response: ", response)
         
@@ -77,8 +87,10 @@ class LLMNetworkService {
             throw AppError.httpResponse(httpResonseError)
         }
               
-        let decodedResponse = try JSONDecoder().decode(OpenAPIReponse.self, from: data)
+        let decodedResponse = try JSONDecoder().decode(OpenAPIResponse.self, from: data)
         print("Decoded Response: ", decodedResponse)
+        print(decodedResponse.calculatePrice(inputTokenPricePer1k: model.inputOutputTokenPricePer1kTokens.0,
+                                             outputTokenPricePer1k: model.inputOutputTokenPricePer1kTokens.1))
         return decodedResponse
     }
     

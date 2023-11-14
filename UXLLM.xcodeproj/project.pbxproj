@@ -12,7 +12,7 @@
 		585402B82B0217F600306C10 /* LLMNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B72B0217F600306C10 /* LLMNetworkService.swift */; };
 		585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B92B02187E00306C10 /* LocalConfiguration.swift */; };
 		585402BC2B021B4400306C10 /* App Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402BB2B021B4400306C10 /* App Error.swift */; };
-		585402C12B021C1100306C10 /* OpenAPIReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402C02B021C1100306C10 /* OpenAPIReponse.swift */; };
+		585402C12B021C1100306C10 /* OpenAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402C02B021C1100306C10 /* OpenAPIResponse.swift */; };
 		585402CD2B02375400306C10 /* TitleAndTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402CC2B02375400306C10 /* TitleAndTextInputView.swift */; };
 		585402D02B0237F300306C10 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402CF2B0237F300306C10 /* View+.swift */; };
 		585402D22B0238EC00306C10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 585402D12B0238EC00306C10 /* Localizable.strings */; };
@@ -34,7 +34,7 @@
 		585402B72B0217F600306C10 /* LLMNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMNetworkService.swift; sourceTree = "<group>"; };
 		585402B92B02187E00306C10 /* LocalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfiguration.swift; sourceTree = "<group>"; };
 		585402BB2B021B4400306C10 /* App Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Error.swift"; sourceTree = "<group>"; };
-		585402C02B021C1100306C10 /* OpenAPIReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPIReponse.swift; sourceTree = "<group>"; };
+		585402C02B021C1100306C10 /* OpenAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPIResponse.swift; sourceTree = "<group>"; };
 		585402CC2B02375400306C10 /* TitleAndTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndTextInputView.swift; sourceTree = "<group>"; };
 		585402CF2B0237F300306C10 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		585402D12B0238EC00306C10 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				585402B72B0217F600306C10 /* LLMNetworkService.swift */,
-				585402C02B021C1100306C10 /* OpenAPIReponse.swift */,
+				585402C02B021C1100306C10 /* OpenAPIResponse.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -253,7 +253,7 @@
 				585402D52B02392E00306C10 /* PrimaryButtonStyle.swift in Sources */,
 				585402D72B023C2500306C10 /* FeedbackView.swift in Sources */,
 				586590CE2AFD2E2C0037D1FE /* ContentView.swift in Sources */,
-				585402C12B021C1100306C10 /* OpenAPIReponse.swift in Sources */,
+				585402C12B021C1100306C10 /* OpenAPIResponse.swift in Sources */,
 				5809E32D2B03AB3300DB0C78 /* Constants.swift in Sources */,
 				585402BC2B021B4400306C10 /* App Error.swift in Sources */,
 				5809E3312B03C14A00DB0C78 /* CopyPromptView.swift in Sources */,

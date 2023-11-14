@@ -1,5 +1,5 @@
 //
-//  OpenAPIReponse.swift
+//  OpenAPIResponse.swift
 //  UXLLM
 //
 //  Created by Ali Ebrahimi Pourasad on 13.11.23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OpenAPIReponse: Codable {
+struct OpenAPIResponse: Codable {
     let id: String
     let object: String
     let created: Int
@@ -45,8 +45,18 @@ struct Message: Codable {
     let content: String
 }
 
+extension OpenAPIResponse {
+    // Input e.g. "0.01" -> $0.01 Input / "0.03" - > $0.03 Output per 1k tokens
+    func calculatePrice(inputTokenPricePer1k: CGFloat, outputTokenPricePer1k: CGFloat) -> String {
+        let promptTokenCost = (CGFloat(usage.promptTokens) / 1000) * inputTokenPricePer1k
+        let completionTokenCost = (CGFloat(usage.completionTokens) / 1000) * outputTokenPricePer1k
+        let totalCost = promptTokenCost + completionTokenCost
+        return "The Request has cost you $\(totalCost)"
+    }
+}
+
 // TODO: -
-extension OpenAPIReponse {
+extension OpenAPIResponse {
     var prettyResponse: String {
         choices.first?.message.content ?? "Failed Parse"
     }
