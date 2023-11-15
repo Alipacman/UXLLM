@@ -77,7 +77,7 @@ struct ContentView: View {
                 self.responseMessage = response
                 self.isLoading = false
             } catch {
-                self.responseMessage = error.localizedDescription
+                self.responseMessage = (error as? AppError)?.description ?? error.localizedDescription
                 self.isLoading = false
             }
         }

@@ -11,10 +11,10 @@ enum AppError: Error {
     case failedAPIURL
     case httpResponse(Int)
     
-    var localizedDescription: String {
+    var description: String {
         switch self {
         case .failedAPIURL: return "failedAPIURL"
-        case .httpResponse(let code): return "httpError: \(code)"
+        case .httpResponse(let code): return "API Error: \(code)"
         }
     }
 }
