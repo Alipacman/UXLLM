@@ -50,11 +50,12 @@ class LLMNetworkService {
             let imageContent: [String: Any] = [
                 "role": "user",
                 "content": [
-                    ["type": "text", "text": prompt + PromptGenerator.generateAdditionalImageDescriptionToPrompt()],
+                    ["type": "text",
+                     "text": prompt + PromptGenerator.generateAdditionalImageDescriptionToPrompt()],
                     ["type": "image_url",
                      "image_url": [
                         "url": "data:image/jpeg;base64,\(base64EncodedImage)",
-                        "detail": "low",
+                        //"detail": "low",
                      ]
                     ]
                 ]
@@ -67,12 +68,14 @@ class LLMNetworkService {
         var parameters: [String : Any] = [
             "model": model.identifier,
             "messages": messages,
-            "temperature": Constants.temperature,
+            //"temperature": Constants.temperature,
         ]
         
         if let maxTokens = Constants.maxTokens {
             parameters["max_tokens"] = maxTokens
         }
+        
+        if Constants.printNetworkData { print("Request Parameters: ", parameters) }
         
         guard let url = URL(string: openAIURLString) else { throw AppError.failedAPIURL }
         
