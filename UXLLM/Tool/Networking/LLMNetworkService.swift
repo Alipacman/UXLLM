@@ -55,7 +55,7 @@ class LLMNetworkService {
                     ["type": "image_url",
                      "image_url": [
                         "url": "data:image/jpeg;base64,\(base64EncodedImage)",
-                        //"detail": "low",
+                        "detail": Constants.imageDetail,
                      ]
                     ]
                 ]
@@ -68,7 +68,7 @@ class LLMNetworkService {
         var parameters: [String : Any] = [
             "model": model.identifier,
             "messages": messages,
-            //"temperature": Constants.temperature,
+            "temperature": Constants.temperature,
         ]
         
         if let maxTokens = Constants.maxTokens {

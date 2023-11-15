@@ -70,7 +70,7 @@ struct ContentView: View {
         Task {
             do {
                 self.isLoading = true
-                let base64EncodedImage = nsImage?.tiffRepresentation?.base64EncodedString()
+                let base64EncodedImage = nsImage?.jpegData()?.base64EncodedString()
                 let response = try await LLMNetworkService.shared.call(prompt: getPrompt(),
                                                                        model: model,
                                                                        base64EncodedImage: base64EncodedImage)

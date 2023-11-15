@@ -17,9 +17,7 @@ class TinyPNGNetworkService {
 
     // MARK: -
     func resizeAndCompress(image: NSImage, size: CGSize = Constants.sizeToResizeTo) async -> Data? {
-        guard let tiffRepresentation = image.tiffRepresentation,
-              let bitmapImage = NSBitmapImageRep(data: tiffRepresentation),
-              let jpegData = bitmapImage.representation(using: .jpeg, properties: [:]) else {
+        guard let jpegData = image.jpegData() else {
             return nil
         }
 
@@ -70,5 +68,16 @@ class TinyPNGNetworkService {
         let auth = "api:\(LocalConfiguration.tinyPNGkey)"
         let authData = auth.data(using: String.Encoding.utf8)?.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
         return "Basic " + authData!
+    }
+}
+
+import Cocoa
+
+extension NSImage {
+    func jpegData() -> Data? {
+        let cgImage = cgImage(forProposedRect: nil, context: nil, hints: nil)!
+        let bitmapRep = NSBitmapImageRep(cgImage: cgImage)
+        let jpegData = bitmapRep.representation(using: NSBitmapImageRep.FileType.jpeg, properties: [:])!
+        return jpegData
     }
 }
