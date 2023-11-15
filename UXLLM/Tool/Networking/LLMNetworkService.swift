@@ -37,7 +37,7 @@ class LLMNetworkService {
     }
     
     // MARK: - Interface
-    func call(prompt: String, model: GPTModel = Constants.defaultModel,
+    func call(prompt: String, model: GPTModel,
               base64EncodedImage: String? = nil) async throws -> OpenAPIResponse {
         
         print("TestRequest called with prompt: ", prompt, "And image with count: \(String(describing: base64EncodedImage?.count))")
@@ -64,12 +64,15 @@ class LLMNetworkService {
             messages.append(["role": "user", "content": prompt])
         }
 
-        let parameters: [String : Any] = [
+        var parameters: [String : Any] = [
             "model": model.identifier,
             "messages": messages,
             "temperature": Constants.temperature,
-            "max_tokens": Constants.maxTokens,
         ]
+        
+        if let maxTokens = Constants.maxTokens {
+            parameters["max_tokens"] = maxTokens
+        }
         
         guard let url = URL(string: openAIURLString) else { throw AppError.failedAPIURL }
         
