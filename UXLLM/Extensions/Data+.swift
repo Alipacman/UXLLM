@@ -19,4 +19,10 @@ extension Data {
         let sizeInKilobytes = sizeInBytes / 1_024
         print("Datasize: " + String(format: "%.1f KB", sizeInKilobytes))
     }
+    
+    func printJSON() {
+        if let JSONString = String(data: self, encoding: String.Encoding.utf8) {
+            print("DATAJSON: ", JSONString)
+        }
+    }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Constants {
-    static let maxTokens: Int? = nil
+    static let maxTokens: Int? = 3000
     static let temperature: CGFloat = 0.7
     static let imageDetail: String = "low" // "high"
     

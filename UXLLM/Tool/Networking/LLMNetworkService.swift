@@ -27,6 +27,7 @@ class LLMNetworkService {
         }
         
         fileprivate var supportsVision: Bool { self == .gpt4TurboVision }
+        fileprivate var needsVisionCodable: Bool { self == .gpt4TurboVision }
         
         fileprivate var inputOutputTokenPricePer1kTokens: (CGFloat, CGFloat) {
             switch self {
@@ -37,10 +38,12 @@ class LLMNetworkService {
     }
     
     // MARK: - Interface
-    func call(prompt: String, model: GPTModel,
-              base64EncodedImage: String? = nil) async throws -> OpenAPIResponse {
-        
+    func call(prompt: String, model: GPTModel, base64EncodedImage: String? = nil) async throws -> String {
         print("TestRequest called with prompt: ", prompt, "And image with count: \(String(describing: base64EncodedImage?.count))")
+        
+        if model.supportsVision {
+            guard base64EncodedImage != nil else { return "Image Missing" }
+        }
         
         var messages: [[String : Any]] = [
             ["role": "system", "content": PromptGenerator.generateSystemRole()]
@@ -89,19 +92,27 @@ class LLMNetworkService {
         //print("Request body: ", parameters)
         
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        if Constants.printNetworkData { print("Response: ", response) }
+        if Constants.printNetworkData { print("Response: ", response); data.printJSON() }
         
         guard let httpResponse = response as? HTTPURLResponse,
               httpResponse.statusCode == 200 else {
             let httpResonseError = (response as? HTTPURLResponse)?.statusCode ?? -1
             throw AppError.httpResponse(httpResonseError)
         }
-              
-        let decodedResponse = try JSONDecoder().decode(OpenAPIResponse.self, from: data)
-        print("Decoded Response: ", decodedResponse)
-        print(decodedResponse.calculatePrice(inputTokenPricePer1k: model.inputOutputTokenPricePer1kTokens.0,
-                                             outputTokenPricePer1k: model.inputOutputTokenPricePer1kTokens.1))
-        return decodedResponse
+    
+        if model.needsVisionCodable {
+            let decodedResponse = try JSONDecoder().decode(OpenAPIResponseVision.self, from: data)
+            print("Decoded Response: ", decodedResponse)
+            print(decodedResponse.calculatePrice(inputTokenPricePer1k: model.inputOutputTokenPricePer1kTokens.0,
+                                                 outputTokenPricePer1k: model.inputOutputTokenPricePer1kTokens.1))
+            return decodedResponse.prettyResponse
+        } else {
+            let decodedResponse = try JSONDecoder().decode(OpenAPIResponseNormal.self, from: data)
+            print("Decoded Response: ", decodedResponse)
+            print(decodedResponse.calculatePrice(inputTokenPricePer1k: model.inputOutputTokenPricePer1kTokens.0,
+                                                 outputTokenPricePer1k: model.inputOutputTokenPricePer1kTokens.1))
+            return decodedResponse.prettyResponse
+        }
     }
     
     // MARK: - Helper

@@ -74,7 +74,7 @@ struct ContentView: View {
                 let response = try await LLMNetworkService.shared.call(prompt: getPrompt(),
                                                                        model: model,
                                                                        base64EncodedImage: base64EncodedImage)
-                self.responseMessage = response.prettyResponse
+                self.responseMessage = response
                 self.isLoading = false
             } catch {
                 self.responseMessage = error.localizedDescription
