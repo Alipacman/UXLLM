@@ -12,6 +12,7 @@ struct PromptGenerator {
         let appContext: String
         let task: String
         let sourceCode: String?
+        let usesImage: Bool
     }
     
     static func generatePrompt(with configuration: Configuration) -> String {
@@ -23,21 +24,24 @@ struct PromptGenerator {
         Your task is to identify 5 usability issues.
         """
         
+        if configuration.usesImage {
+            base += """
+            
+            
+            For your analysis you can use the provided screenshot.
+            """
+        }
+        
         if let sourceCode = configuration.sourceCode, sourceCode.trimFrontAndBackWhitespaces() != "" {
             base += """
             
             
             For your analysis you can also use the source code:
-            
             \(sourceCode)
             """
         }
         
         return base
-    }
-    
-    static func generateAdditionalImageDescriptionToPrompt() -> String {
-        "\nFor your analysis you can also this screenshot of the view."
     }
     
     static func generateSystemRole() -> String {

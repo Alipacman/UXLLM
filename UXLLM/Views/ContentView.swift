@@ -47,7 +47,7 @@ struct ContentView: View {
                 
                 startButton
                 
-                CopyPromptView(prompt: getPrompt())
+                CopyPromptView(promptGeneration: getPrompt)
                 
                 FeedbackView(feedback: responseMessage)
             }
@@ -71,7 +71,7 @@ struct ContentView: View {
             do {
                 self.isLoading = true
                 let base64EncodedImage = nsImage?.jpegData()?.base64EncodedString()
-                let response = try await LLMNetworkService.shared.call(prompt: getPrompt(),
+                let response = try await LLMNetworkService.shared.call(prompt: getPrompt(usesImage: model.supportsVision),
                                                                        model: model,
                                                                        base64EncodedImage: base64EncodedImage)
                 self.responseMessage = response
@@ -83,8 +83,9 @@ struct ContentView: View {
         }
     }
     
-    private func getPrompt() -> String {
-        let configuration = PromptGenerator.Configuration(appContext: appContext, task: userTask, sourceCode: sourceCode)
+    private func getPrompt(usesImage: Bool) -> String {
+        let configuration = PromptGenerator.Configuration(appContext: appContext, task: userTask,
+                                                          sourceCode: sourceCode, usesImage: usesImage)
         return PromptGenerator.generatePrompt(with: configuration)
     }
 }

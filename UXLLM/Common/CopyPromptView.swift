@@ -9,14 +9,26 @@ import SwiftUI
 
 struct CopyPromptView: View {
     
-    let prompt: String
+    var promptGeneration: ((Bool) -> String)?
     @State private var showSuccessMessage = false
+    @State private var withImagePrompt = false
 
     var body: some View {
         VStack(spacing: 32) {
-            copyPromptButton
+            HStack {
+                copyPromptButton
+                withImagePromptToggle
+            }
             successText
         }
+    }
+    
+    private var withImagePromptToggle: some View {
+        Toggle(isOn: $withImagePrompt) {
+            Text("With Image")
+        }
+        .toggleStyle(.checkbox)
+
     }
     
     private var successText: some View {
@@ -30,6 +42,7 @@ struct CopyPromptView: View {
     
     private var copyPromptButton: some View {
         Button {
+            guard let prompt = promptGeneration?(withImagePrompt) else { return }
             NSPasteboard.general.clearContents()
             NSPasteboard.general.setString(prompt, forType: .string)
             showAndHideText()
@@ -48,14 +61,4 @@ struct CopyPromptView: View {
             }
         }
     }
-}
-
-struct CopyPromptView_Previews: PreviewProvider {
-    static var previews: some View {
-        CopyPromptView(prompt: "Example prompt")
-    }
-}
-
-#Preview {
-    CopyPromptView(prompt: "")
 }

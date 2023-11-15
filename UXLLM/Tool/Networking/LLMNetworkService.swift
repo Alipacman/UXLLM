@@ -26,7 +26,7 @@ class LLMNetworkService {
             }
         }
         
-        fileprivate var supportsVision: Bool { self == .gpt4TurboVision }
+        var supportsVision: Bool { self == .gpt4TurboVision }
         fileprivate var needsVisionCodable: Bool { self == .gpt4TurboVision }
         
         fileprivate var inputOutputTokenPricePer1kTokens: (CGFloat, CGFloat) {
@@ -54,7 +54,7 @@ class LLMNetworkService {
                 "role": "user",
                 "content": [
                     ["type": "text",
-                     "text": prompt + PromptGenerator.generateAdditionalImageDescriptionToPrompt()],
+                     "text": prompt],
                     ["type": "image_url",
                      "image_url": [
                         "url": "data:image/jpeg;base64,\(base64EncodedImage)",
