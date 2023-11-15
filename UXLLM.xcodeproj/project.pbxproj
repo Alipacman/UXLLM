@@ -26,6 +26,8 @@
 		58B3DA452B0244350025A0CD /* ImageDropArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA442B0244350025A0CD /* ImageDropArea.swift */; };
 		58B3DA472B0254030025A0CD /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA462B0254030025A0CD /* String+.swift */; };
 		58B3DA492B0254900025A0CD /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA482B0254900025A0CD /* ImageProcessor.swift */; };
+		58B4CE1E2B04C8CD004AB6F2 /* TinyPNGNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4CE1D2B04C8CD004AB6F2 /* TinyPNGNetworkService.swift */; };
+		58B4CE202B04D819004AB6F2 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4CE1F2B04D819004AB6F2 /* Data+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		58B3DA442B0244350025A0CD /* ImageDropArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDropArea.swift; sourceTree = "<group>"; };
 		58B3DA462B0254030025A0CD /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		58B3DA482B0254900025A0CD /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
+		58B4CE1D2B04C8CD004AB6F2 /* TinyPNGNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyPNGNetworkService.swift; sourceTree = "<group>"; };
+		58B4CE1F2B04D819004AB6F2 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			children = (
 				585402B72B0217F600306C10 /* LLMNetworkService.swift */,
 				585402C02B021C1100306C10 /* OpenAPIResponse.swift */,
+				58B4CE1D2B04C8CD004AB6F2 /* TinyPNGNetworkService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				585402CF2B0237F300306C10 /* View+.swift */,
+				58B4CE1F2B04D819004AB6F2 /* Data+.swift */,
 				58B3DA462B0254030025A0CD /* String+.swift */,
 			);
 			path = Extensions;
@@ -249,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B4CE1E2B04C8CD004AB6F2 /* TinyPNGNetworkService.swift in Sources */,
 				58B3DA432B023F650025A0CD /* PromptGenerator.swift in Sources */,
 				585402D52B02392E00306C10 /* PrimaryButtonStyle.swift in Sources */,
 				585402D72B023C2500306C10 /* FeedbackView.swift in Sources */,
@@ -257,6 +264,7 @@
 				5809E32D2B03AB3300DB0C78 /* Constants.swift in Sources */,
 				585402BC2B021B4400306C10 /* App Error.swift in Sources */,
 				5809E3312B03C14A00DB0C78 /* CopyPromptView.swift in Sources */,
+				58B4CE202B04D819004AB6F2 /* Data+.swift in Sources */,
 				585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */,
 				585402D02B0237F300306C10 /* View+.swift in Sources */,
 				58B3DA492B0254900025A0CD /* ImageProcessor.swift in Sources */,
