@@ -11,12 +11,12 @@ extension Data {
     func printSizeMB() {
         let sizeInBytes = Double(self.count)
         let sizeInMegabytes = sizeInBytes / 1_024 / 1_024
-        print(String(format: "%.1f MB", sizeInMegabytes))
+        print("Datasize: " + String(format: "%.1f MB", sizeInMegabytes))
     }
 
     func printSizeKB() {
         let sizeInBytes = Double(self.count)
         let sizeInKilobytes = sizeInBytes / 1_024
-        print(String(format: "%.1f KB", sizeInKilobytes))
+        print("Datasize: " + String(format: "%.1f KB", sizeInKilobytes))
     }
 }

@@ -51,7 +51,7 @@ extension OpenAPIResponse {
         let promptTokenCost = (CGFloat(usage.promptTokens) / 1000) * inputTokenPricePer1k
         let completionTokenCost = (CGFloat(usage.completionTokens) / 1000) * outputTokenPricePer1k
         let totalCost = promptTokenCost + completionTokenCost
-        return "The Request has cost you $\(totalCost)"
+        return "The Request has cost you $\(totalCost) with input/output/total tokens: \(usage.promptTokens)/\(usage.completionTokens)/\(usage.totalTokens) + imagePrice"
     }
 }
 

@@ -35,7 +35,7 @@ class TinyPNGNetworkService {
                 return nil
             }
             
-            print("Shrink Response:\n", shrinkResponse)
+            if Constants.printNetworkData { print("Shrink Response:\n", shrinkResponse) }
 
             guard let resizeUrl = URL(string: location) else { return nil }
             
@@ -49,7 +49,7 @@ class TinyPNGNetworkService {
             resizeRequest.httpBody = try? JSONSerialization.data(withJSONObject: resizeBody)
 
             let (resizeData, resizteResponse) = try await URLSession.shared.data(for: resizeRequest)
-            print("Resize Response:\n", resizteResponse, resizeData)
+            if Constants.printNetworkData { print("Resize Response:\n", resizteResponse, resizeData) }
             resizeData.printSizeKB()
             return resizeData
         } catch {

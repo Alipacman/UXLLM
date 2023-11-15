@@ -13,11 +13,14 @@ class LLMNetworkService {
     static let shared = LLMNetworkService()
     private let openAIURLString = "https://api.openai.com/v1/chat/completions"
     
-    enum GPTModel {
-        case gpt4TurboVision, gpt35Turbo
+    enum GPTModel: Identifiable {
+        case gpt4Turbo, gpt4TurboVision, gpt35Turbo
+        
+        var id: String { self.identifier }
         
         fileprivate var identifier: String {
             switch self {
+            case .gpt4Turbo: return "gpt-4-1106-preview"
             case .gpt4TurboVision: return "gpt-4-vision-preview" // $0.01 Input / $0.03 Output per 1k tokens
             case .gpt35Turbo: return "gpt-3.5-turbo-1106" // $0.0010 / $0.0020 per 1k tokens
             }
@@ -27,7 +30,7 @@ class LLMNetworkService {
         
         fileprivate var inputOutputTokenPricePer1kTokens: (CGFloat, CGFloat) {
             switch self {
-            case .gpt4TurboVision: return (0.01, 0.03) // $0.01, $0.03
+            case .gpt4TurboVision, .gpt4Turbo: return (0.01, 0.03) // $0.01, $0.03
             case .gpt35Turbo: return (0.0010, 0.0020) // $0.0010 / $0.0020
             }
         }
@@ -76,11 +79,11 @@ class LLMNetworkService {
         urlRequest.allHTTPHeaderFields = header()
         urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
         
-        print("Request header: ", urlRequest.allHTTPHeaderFields ?? "NA")
+        if Constants.printNetworkData { print("Request header: ", urlRequest.allHTTPHeaderFields ?? "NA") }
         //print("Request body: ", parameters)
         
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        print("Response: ", response)
+        if Constants.printNetworkData { print("Response: ", response) }
         
         guard let httpResponse = response as? HTTPURLResponse,
               httpResponse.statusCode == 200 else {

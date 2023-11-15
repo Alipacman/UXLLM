@@ -17,6 +17,7 @@ struct ContentView: View {
     @State var userTask: String = UserDefaults.standard.string(forKey: componentDescriptionKey) ?? ""
     @State var sourceCode: String = UserDefaults.standard.string(forKey: sourceCodeKey) ?? ""
     @State var nsImage: NSImage? = nil
+    @State var model: LLMNetworkService.GPTModel = .gpt35Turbo
     
     @State var responseMessage: String = ""
     @State var isLoading: Bool = false
@@ -41,6 +42,8 @@ struct ContentView: View {
                     
                     ImageDropArea(nsImage: $nsImage)
                 }
+                
+                ModelChoosingView(selectedModel: $model)
                 
                 startButton
                 
@@ -67,8 +70,10 @@ struct ContentView: View {
         Task {
             do {
                 self.isLoading = true
-                let base64EncodedImage = ImageProcessor.convertToBase64(nsImage: nsImage)
-                let response = try await LLMNetworkService.shared.call(prompt: getPrompt(), base64EncodedImage: base64EncodedImage)
+                let base64EncodedImage = nsImage?.tiffRepresentation?.base64EncodedString()
+                let response = try await LLMNetworkService.shared.call(prompt: getPrompt(),
+                                                                       model: model,
+                                                                       base64EncodedImage: base64EncodedImage)
                 self.responseMessage = response.prettyResponse
                 self.isLoading = false
             } catch {

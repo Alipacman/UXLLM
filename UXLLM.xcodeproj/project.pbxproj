@@ -28,6 +28,7 @@
 		58B3DA492B0254900025A0CD /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA482B0254900025A0CD /* ImageProcessor.swift */; };
 		58B4CE1E2B04C8CD004AB6F2 /* TinyPNGNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4CE1D2B04C8CD004AB6F2 /* TinyPNGNetworkService.swift */; };
 		58B4CE202B04D819004AB6F2 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4CE1F2B04D819004AB6F2 /* Data+.swift */; };
+		58B4CE222B04E272004AB6F2 /* ModelChoosingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4CE212B04E272004AB6F2 /* ModelChoosingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		58B3DA482B0254900025A0CD /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		58B4CE1D2B04C8CD004AB6F2 /* TinyPNGNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyPNGNetworkService.swift; sourceTree = "<group>"; };
 		58B4CE1F2B04D819004AB6F2 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
+		58B4CE212B04E272004AB6F2 /* ModelChoosingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelChoosingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			children = (
 				586590CD2AFD2E2C0037D1FE /* ContentView.swift */,
 				585402D62B023C2500306C10 /* FeedbackView.swift */,
+				58B4CE212B04E272004AB6F2 /* ModelChoosingView.swift */,
 				58B3DA442B0244350025A0CD /* ImageDropArea.swift */,
 			);
 			path = Views;
@@ -270,6 +273,7 @@
 				58B3DA492B0254900025A0CD /* ImageProcessor.swift in Sources */,
 				585402B82B0217F600306C10 /* LLMNetworkService.swift in Sources */,
 				586590CC2AFD2E2C0037D1FE /* UXLLMApp.swift in Sources */,
+				58B4CE222B04E272004AB6F2 /* ModelChoosingView.swift in Sources */,
 				58B3DA472B0254030025A0CD /* String+.swift in Sources */,
 				585402CD2B02375400306C10 /* TitleAndTextInputView.swift in Sources */,
 				58B3DA452B0244350025A0CD /* ImageDropArea.swift in Sources */,
