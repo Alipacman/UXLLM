@@ -43,8 +43,9 @@ struct CopyPromptView: View {
     private var copyPromptButton: some View {
         Button {
             guard let prompt = promptGeneration?(withImagePrompt) else { return }
+            let addedSystemStuff = PromptGenerator.generateSystemRole() + ":\n\n" + prompt
             NSPasteboard.general.clearContents()
-            NSPasteboard.general.setString(prompt, forType: .string)
+            NSPasteboard.general.setString(addedSystemStuff, forType: .string)
             showAndHideText()
         } label: {
             Text("Copy Prompt")
