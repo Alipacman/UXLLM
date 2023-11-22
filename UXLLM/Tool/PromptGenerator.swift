@@ -27,7 +27,7 @@ struct PromptGenerator {
             base += """
             
             
-            For your analysis you can use the provided screenshot.
+            A screenshot of the app view is provided.
             """
         }
         
@@ -35,7 +35,7 @@ struct PromptGenerator {
             base += """
             
             
-            For your analysis you can use the source code:
+            This is the swiftUI source code of the app view:
             \(sourceCode)
             """
         }
@@ -43,25 +43,33 @@ struct PromptGenerator {
         return base
     }
     
-    enum UsabilityMetric: String {
-        case iso9241 = "ISO 9241"
-        case iso25010 = "ISO 25010"
-        case iso91261 = "ISO 9126"
-        case ieeeGlossary = "IEEE Glossary"
-        case Nielsen = "Nielsen"
-        case bevan = "Bevan"
-
-    }
-    
+    //let basicPrompt = "You are a UI/UX expert for mobile apps. Your task is to identify 5 usability issues with the information you get for an app view."
     static func generateSystemRole() -> String {
-        let usabilityMetricToUse: String = UsabilityMetric.bevan.rawValue
+        let usabilityAttributes = [
+            "efficiency",       // 70%
+            "satisfaction",     // 66%
+            "effectiveness",    // 58%
+            "learnability",     // 46%
+            "memorability",     // 23%
+            "cognitive load",   // 19%
+            "errors",           // 17%
+           // "operability",      // 8%
+           // "accessibility",    // 4%
+           // "flexibility",      // 0%
+           // "acceptability",    // 0%
+           // "simplicity",
+           // "ease of use",
+        ]
+
+.joined(separator: ",")
         
-        return "You are a UI/UX expert for mobile apps. Your task is to identify 5 \(usabilityMetricToUse) usability issues with the information you get for an app view. For your answer only list the identfied issues with the associated \(usabilityMetricToUse) violation."
-    }
-    
-    static func generateSystemRoleWithAttributeList() -> String {
-        let usabilityAttributes = ["efficiency", "satisfaction", "effectiveness", "learnability", "memorability", "cognitive load, errors", "simplicity", "ease of use, navigation", "operability", "usefulness", "attractiveness", "comprehensibility", "aesthetics", "accessibility", "accuracy", "adaptability", "consistency", "interaction", "learning performance", "training", "understandability", "user error protection"]
+        return """
         
-        return "You are a UI/UX expert for mobile apps. Your task is to identify 5 usability issues with the information you get for an app view. For your answer only list the identfied issues with the associated violation from this list of usability attributes: \(usabilityAttributes)."
+        You are a UI/UX expert for mobile apps. Your task is to identify 5 usability issues with the information you get for an app view.
+        Usability is defined by ISO 9241-11: "Extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use."
+        Only identify issuses which violate one of the following attributes:
+        [\(usabilityAttributes)]
+        For your answer list the identified issues with the associated violated attribute
+        """
     }
 }
