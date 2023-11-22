@@ -43,7 +43,6 @@ struct PromptGenerator {
         return base
     }
     
-    //let basicPrompt = "You are a UI/UX expert for mobile apps. Your task is to identify 5 usability issues with the information you get for an app view."
     static func generateSystemRole() -> String {
         let usabilityAttributes = [
             "efficiency",       // 70%
@@ -73,3 +72,12 @@ struct PromptGenerator {
         """
     }
 }
+
+
+/*
+ return """
+ 
+ You are a UI/UX expert for mobile apps. Your task is to identify 5 usability issues with the information you get for an app view.
+ For your answer list the identified issues
+ """
+ */
