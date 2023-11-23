@@ -74,26 +74,22 @@ struct PromptGenerator {
 
 
 /*
- Base
+ ------------------- Basic
  return """
  
  You are a UI/UX expert for mobile apps. Your task is to identify 5 usability issues with the information you get for an app view.
  For your answer list the identified issues
  """
- */
 
-/*
- Short with Usability Def
+ ------------------- Short with Usability Def
  return """
  
  You are a UI/UX expert for mobile apps. Your task is to identify 5 usability issues with the information you get for an app view.
  Usability is defined by ISO 9241-11: "Extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use."
  For your answer list the identified issues
  """
- */
 
-/*
- Short with Usability Def + Usability problem definition
+------------------- Short with Usability Def + Usability problem definition
  return """
  
  You are a UI/UX expert for mobile apps. Your task is to identify 5 usability problems with the information you get for an app view.
