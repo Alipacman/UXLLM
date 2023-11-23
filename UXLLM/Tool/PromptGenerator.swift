@@ -44,6 +44,7 @@ struct PromptGenerator {
     }
     
     static func generateSystemRole() -> String {
+        
         let usabilityAttributes = [
             "efficiency",       // 70%
             "satisfaction",     // 66%
@@ -58,9 +59,7 @@ struct PromptGenerator {
            // "acceptability",    // 0%
            // "simplicity",
            // "ease of use",
-        ]
-
-.joined(separator: ",")
+        ].joined(separator: ",")
         
         return """
         
@@ -75,9 +74,31 @@ struct PromptGenerator {
 
 
 /*
+ Base
  return """
  
  You are a UI/UX expert for mobile apps. Your task is to identify 5 usability issues with the information you get for an app view.
  For your answer list the identified issues
+ """
+ */
+
+/*
+ Short with Usability Def
+ return """
+ 
+ You are a UI/UX expert for mobile apps. Your task is to identify 5 usability issues with the information you get for an app view.
+ Usability is defined by ISO 9241-11: "Extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use."
+ For your answer list the identified issues
+ """
+ */
+
+/*
+ Short with Usability Def + Usability problem definition
+ return """
+ 
+ You are a UI/UX expert for mobile apps. Your task is to identify 5 usability problems with the information you get for an app view.
+ Usability is defined by ISO 9241-11: "Extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use."
+ A usability problem is defined as "an aspect of the system and/or a demand on the user which makes it unpleasant, inefficient, onerous or impossible for the user to achieve their goals in typical usage situations."
+ For your answer only list the identified issues
  """
  */
