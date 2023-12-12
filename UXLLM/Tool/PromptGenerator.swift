@@ -65,9 +65,7 @@ struct PromptGenerator {
     static func generateSystemRole() -> String {
         return """
         
-        You are a UI/UX expert for mobile apps. Your task is to identify \(numberOfIssues) usability problems with the information you get for an app view.
-        Usability is defined by ISO 9241-11: "Extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use."
-        A usability problem is defined as "an aspect of the system and/or a demand on the user which makes it unpleasant, inefficient, onerous or impossible for the user to achieve their goals in typical usage situations."
+        You are a UI/UX expert for mobile apps. Your task is to identify \(numberOfIssues) usability issues with the information you get for an app view.
         For your answer only list the identified issues
         """
     }
