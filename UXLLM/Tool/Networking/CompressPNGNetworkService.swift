@@ -1,5 +1,5 @@
 //
-//  TinyPNGNetworkService.swift
+//  CompressPNGNetworkService.swift
 //  UXLLM
 //
 //  Created by Ali Ebrahimi Pourasad on 15.11.23.
@@ -8,10 +8,10 @@
 import Foundation
 import AppKit
 
-class TinyPNGNetworkService {
+class CompressPNGNetworkService {
     
     // MARK: -
-    static let shared = TinyPNGNetworkService()
+    static let shared = CompressPNGNetworkService()
     
     private let shrinkUrl = URL(string: "https://api.tinify.com/shrink")!
 
