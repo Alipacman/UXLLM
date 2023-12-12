@@ -71,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				585402B72B0217F600306C10 /* LLMNetworkService.swift */,
-				585402C02B021C1100306C10 /* OpenAPIResponse.swift */,
 				58B4CE1D2B04C8CD004AB6F2 /* TinyPNGNetworkService.swift */,
 			);
 			path = Networking;
@@ -84,13 +83,6 @@
 				58B3DA422B023F650025A0CD /* PromptGenerator.swift */,
 			);
 			path = Tool;
-			sourceTree = "<group>";
-		};
-		585402BF2B021BF400306C10 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		585402C22B02366300306C10 /* Ressources */ = {
@@ -111,7 +103,6 @@
 				585402D32B02392500306C10 /* Button */,
 				585402CC2B02375400306C10 /* TitleAndTextInputView.swift */,
 				5809E3302B03C14A00DB0C78 /* CopyPromptView.swift */,
-				585402BB2B021B4400306C10 /* App Error.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -166,7 +157,7 @@
 			children = (
 				586590CB2AFD2E2C0037D1FE /* UXLLMApp.swift */,
 				585402C42B02367B00306C10 /* Views */,
-				585402BF2B021BF400306C10 /* Model */,
+				5879F1362B2897BE00961544 /* Model */,
 				585402BE2B021BEC00306C10 /* Tool */,
 				585402C32B02367300306C10 /* Common */,
 				585402CE2B0237E700306C10 /* Extensions */,
@@ -182,6 +173,15 @@
 				586590D22AFD2E2D0037D1FE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5879F1362B2897BE00961544 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				585402BB2B021B4400306C10 /* App Error.swift */,
+				585402C02B021C1100306C10 /* OpenAPIResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
