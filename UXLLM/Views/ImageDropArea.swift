@@ -43,7 +43,7 @@ struct ImageDropArea: View {
     private func received(data: Data) {
         Task {
             guard let nsImage = NSImage(data: data) else { return }
-            guard let compressedImageData = await TinyPNGNetworkService.shared.resizeAndCompress(image: nsImage)
+            guard let compressedImageData = await CompressPNGNetworkService.shared.resizeAndCompress(image: nsImage)
             else {
                 print("Failed compressedImageData")
                 return
