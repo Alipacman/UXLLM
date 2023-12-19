@@ -14,22 +14,27 @@ struct ContentView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 40) {
-                HStack(spacing: 120) {
+                HStack(spacing: 80) {
                     VStack(spacing: 40) {
                         Text("Intro Text".localized())
                             .uxLLMTitleTextStyle()
                             .multilineTextAlignment(.leading)
                             .leftAlignWithHStack()
                         
+                        Spacer()
+                        
                         TitleBackgroundedContainerView(title: "Image Drop Title".localized()) {
                             ImageDropView(viewModel: .init(imageCompressor: viewModel.imageCompressor),
                                           nsImage: $viewModel.inputConfiguration.nsImage)
                         }
                     }
+                    .frame(height: 788)
                     textFields
                 }
                 
-                OpenAILLMModelChoosingView(selectedModel: $viewModel.inputConfiguration.llmModel)
+                if !Constants.hideLLMSelection {
+                    OpenAILLMModelChoosingView(selectedModel: $viewModel.inputConfiguration.llmModel)
+                }
                 
                 startButton
                 

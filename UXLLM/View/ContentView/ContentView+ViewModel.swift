@@ -34,7 +34,7 @@ extension ContentView {
                  userTask: String = UserDefaults.standard.string(forKey: TextualPersistableInput.userTask.userDefaultsKey) ?? "",
                  sourceCode: String = UserDefaults.standard.string(forKey: TextualPersistableInput.sourceCode.userDefaultsKey) ?? "",
                  nsImage: NSImage? = nil,
-                 llmModel: OpenAILLM = .gpt3Turbo) {
+                 llmModel: OpenAILLM = Constants.defaultOpenAILLM) {
                 self.appOverview = appOverview
                 self.userTask = userTask
                 self.sourceCode = sourceCode

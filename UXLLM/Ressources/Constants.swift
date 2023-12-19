@@ -14,6 +14,9 @@ struct Constants {
     
     static let numberOfPredictedUsabilityIssues = 10
     
+    static let defaultOpenAILLM = OpenAILLM.gpt3Turbo
+    static let hideLLMSelection = true
+    
     static let sizeToResizeTo = CGSize(width: 240, height: 510)
     
     static let printNetworkData = true

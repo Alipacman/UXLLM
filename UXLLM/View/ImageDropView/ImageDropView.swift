@@ -14,7 +14,7 @@ struct ImageDropView: View {
     
     var body: some View {
         content
-            .frame(width: 270, height: 583) // iPhone 13 Size
+            .frame(width: 240, height: 240*2.16) // iPhone 13 Size
             .background(
                 RoundedRectangle(cornerRadius: 25.0)
                     .strokeBorder(Color.white, style: StrokeStyle(lineWidth: nsImage == nil ? 4 : 0, dash: [10]))

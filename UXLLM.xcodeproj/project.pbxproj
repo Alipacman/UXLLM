@@ -126,6 +126,7 @@
 			children = (
 				585402D32B02392500306C10 /* Button */,
 				585402CC2B02375400306C10 /* TitleAndTextInputView.swift */,
+				58BE5F552B31F11D004E7B67 /* TitleBackgroundedContainerView.swift */,
 				58BE5F532B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift */,
 				58BE113E2B30B28C008475D7 /* TextEditorWithPlaceholder.swift */,
 				58BE11422B311028008475D7 /* SinebowAnimationView.swift */,
@@ -235,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				58B3DA442B0244350025A0CD /* ImageDropView.swift */,
-				58BE5F552B31F11D004E7B67 /* TitleBackgroundedContainerView.swift */,
 				58BE11342B30A7A7008475D7 /* ImageDropView+ViewModel.swift */,
 			);
 			path = ImageDropView;
