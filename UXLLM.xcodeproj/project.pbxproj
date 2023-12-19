@@ -36,6 +36,7 @@
 		58BE113F2B30B28C008475D7 /* TextEditorWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE113E2B30B28C008475D7 /* TextEditorWithPlaceholder.swift */; };
 		58BE11412B311000008475D7 /* Sinebow.metal in Sources */ = {isa = PBXBuildFile; fileRef = 58BE11402B311000008475D7 /* Sinebow.metal */; };
 		58BE11432B311028008475D7 /* SinebowAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE11422B311028008475D7 /* SinebowAnimationView.swift */; };
+		58BE5F522B31E394004E7B67 /* Text+Textstyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE5F512B31E394004E7B67 /* Text+Textstyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		58BE113E2B30B28C008475D7 /* TextEditorWithPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorWithPlaceholder.swift; sourceTree = "<group>"; };
 		58BE11402B311000008475D7 /* Sinebow.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Sinebow.metal; sourceTree = "<group>"; };
 		58BE11422B311028008475D7 /* SinebowAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinebowAnimationView.swift; sourceTree = "<group>"; };
+		58BE5F512B31E394004E7B67 /* Text+Textstyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Textstyles.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				58BE11402B311000008475D7 /* Sinebow.metal */,
 				585402B92B02187E00306C10 /* LocalConfiguration.swift */,
+				58BE5F512B31E394004E7B67 /* Text+Textstyles.swift */,
 				5809E32C2B03AB3300DB0C78 /* Constants.swift */,
 				586590CF2AFD2E2D0037D1FE /* Assets.xcassets */,
 				586590D42AFD2E2D0037D1FE /* UXLLM.entitlements */,
@@ -316,6 +319,7 @@
 				58BE11372B30AB02008475D7 /* MockedImageCompressor.swift in Sources */,
 				585402BC2B021B4400306C10 /* App Error.swift in Sources */,
 				58BE11412B311000008475D7 /* Sinebow.metal in Sources */,
+				58BE5F522B31E394004E7B67 /* Text+Textstyles.swift in Sources */,
 				58B4CE202B04D819004AB6F2 /* Data+.swift in Sources */,
 				585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */,
 				585402D02B0237F300306C10 /* View+.swift in Sources */,

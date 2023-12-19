@@ -18,15 +18,15 @@ struct TitleAndTextInputView: View {
     var body: some View {
         VStack {
             Text(title)
-                .font(.title)
+                .uxLLMTitleTextStyle()
                 .multilineTextAlignment(.leading)
                 .leftAlignWithHStack()
             
             TextEditorWithPlaceholder(placeholder: placeholder, text: $text)
+                .uxLLMBodyTextStyle()
                 .onChange(of: text) {
                     onSave(text)
                 }
-                .font(.body)
         }
     }
 }
