@@ -27,6 +27,15 @@ struct ContentView: View {
                 UsabilityIssuePresentationView(usabilityIssuesText: viewModel.llmOutput ?? "")
             }
             .padding(32)
+            .background(
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(
+                        LinearGradient(colors: [Color("BackgroundGradient1"),
+                                                Color("BackgroundGradient2")],
+                                       startPoint: .top,
+                                       endPoint: .bottom)
+                    )
+            )
         }
     }
     

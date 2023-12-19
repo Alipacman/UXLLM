@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+struct VisualEffect: NSViewRepresentable {
+    func makeNSView(context: Self.Context) -> NSView { return NSVisualEffectView() }
+    func updateNSView(_ nsView: NSView, context: Context) { }
+}
+
 @main
 struct UXLLMApp: App {
     var body: some Scene {
@@ -14,6 +19,7 @@ struct UXLLMApp: App {
             ContentView(viewModel: .init(llmCaller: OpenAILLMCaller(),
                                          promptGenerator: BasicPromptGenerator(),
                                          imageCompressor: TinfyImageCompressorNetworkService()))
+            .background(VisualEffect().ignoresSafeArea())
         }
     }
 }
