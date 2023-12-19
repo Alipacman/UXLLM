@@ -37,6 +37,7 @@
 		58BE11412B311000008475D7 /* Sinebow.metal in Sources */ = {isa = PBXBuildFile; fileRef = 58BE11402B311000008475D7 /* Sinebow.metal */; };
 		58BE11432B311028008475D7 /* SinebowAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE11422B311028008475D7 /* SinebowAnimationView.swift */; };
 		58BE5F522B31E394004E7B67 /* Text+Textstyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE5F512B31E394004E7B67 /* Text+Textstyles.swift */; };
+		58BE5F542B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE5F532B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		58BE11402B311000008475D7 /* Sinebow.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Sinebow.metal; sourceTree = "<group>"; };
 		58BE11422B311028008475D7 /* SinebowAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinebowAnimationView.swift; sourceTree = "<group>"; };
 		58BE5F512B31E394004E7B67 /* Text+Textstyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Textstyles.swift"; sourceTree = "<group>"; };
+		58BE5F532B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledBackgroundRoundedRectangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			children = (
 				585402D32B02392500306C10 /* Button */,
 				585402CC2B02375400306C10 /* TitleAndTextInputView.swift */,
+				58BE5F532B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift */,
 				58BE113E2B30B28C008475D7 /* TextEditorWithPlaceholder.swift */,
 				58BE11422B311028008475D7 /* SinebowAnimationView.swift */,
 			);
@@ -308,6 +311,7 @@
 			files = (
 				58B4CE1E2B04C8CD004AB6F2 /* TinfyImageCompressorNetworkService.swift in Sources */,
 				58B3DA432B023F650025A0CD /* PromptGenerator.swift in Sources */,
+				58BE5F542B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift in Sources */,
 				58BE112C2B304C1E008475D7 /* ContentView+ViewModel.swift in Sources */,
 				585402D52B02392E00306C10 /* PrimaryButtonStyle.swift in Sources */,
 				585402D72B023C2500306C10 /* UsabilityIssuePresentationView.swift in Sources */,

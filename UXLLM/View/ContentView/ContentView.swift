@@ -12,7 +12,7 @@ struct ContentView: View {
     @StateObject var viewModel: ViewModel
 
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack(spacing: 40) {
                 HStack(spacing: 120) {
                     textFields
@@ -40,20 +40,20 @@ struct ContentView: View {
     }
     
     private var textFields: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 40) {
             TitleAndTextInputView(title: "App Overview Input Title".localized(),
                                   placeholder: "App Overview Input Placeholder".localized(),
                                   text: $viewModel.inputConfiguration.appOverview) { newValue in
                 viewModel.persist(input: .appOverview, value: newValue)
             }
-                                  .frame(height: 100)
+                                  .frame(height: 130)
             
             TitleAndTextInputView(title: "User Task Input Title".localized(),
                                   placeholder: "User Task Input Placeholder".localized(),
                                   text: $viewModel.inputConfiguration.userTask) { newValue in
                 viewModel.persist(input: .userTask, value: newValue)
             }
-                                  .frame(height: 100)
+                                  .frame(height: 130)
             
             TitleAndTextInputView(title: "Source Code Input Title".localized(), 
                                   placeholder: "Source Code Input Placeholder".localized(),
@@ -62,6 +62,8 @@ struct ContentView: View {
             }
                                   .frame(height: 400)
         }
+        .padding(24)
+        .styledBackground(mode: .light)
     }
     
     private var startButton: some View {

@@ -24,6 +24,8 @@ struct TitleAndTextInputView: View {
             
             TextEditorWithPlaceholder(placeholder: placeholder, text: $text)
                 .uxLLMBodyTextStyle()
+                .padding(16)
+                .styledBackground(mode: .dark)
                 .onChange(of: text) {
                     onSave(text)
                 }

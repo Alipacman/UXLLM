@@ -10,14 +10,14 @@ import SwiftUI
 extension View {
     func uxLLMTitleTextStyle() -> some View {
         self
-            .foregroundColor(.white)
-            .font(.system(size: 32, weight: .semibold))
+            .foregroundColor(Color("TintColor"))
+            .font(.system(size: 28, weight: .semibold))
     }
 
     func uxLLMBodyTextStyle() -> some View {
         self
-            .foregroundColor(.white)
-            .font(.system(size: 22, weight: .regular))
+            .foregroundColor(Color("TintColor"))
+            .font(.system(size: 18, weight: .regular))
     }
 }
 

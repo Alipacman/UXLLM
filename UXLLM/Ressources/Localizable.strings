@@ -3,7 +3,7 @@
 "App Overview Input Placeholder" = "A meditation app focused on enhancing stress relief and wellness.";
 
 "User Task Input Title" = "User Task";
-"User Task Input Placeholder" = "When analyzing the progress tracking view, the user's task could be 'reviewing their meditation history and achieved milestones.";
+"User Task Input Placeholder" = "Reviewing their meditation history and achieved milestones.";
 
 "Source Code Input Title" = "Source Code";
 "Source Code Input Placeholder" = "struct ContentView: View { ...";
