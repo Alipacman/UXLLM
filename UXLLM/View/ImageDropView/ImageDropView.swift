@@ -11,14 +11,13 @@ struct ImageDropView: View {
     
     @StateObject var viewModel: ViewModel
     @Binding var nsImage: NSImage?
-
+    
     var body: some View {
         content
-            .frame(width: 400, height: 600)
+            .frame(width: 270, height: 583) // iPhone 13 Size
             .background(
                 RoundedRectangle(cornerRadius: 25.0)
-                    .strokeBorder(style: StrokeStyle(lineWidth: nsImage == nil ? 4 : 0,
-                                                     dash: [10]))
+                    .strokeBorder(Color.white, style: StrokeStyle(lineWidth: nsImage == nil ? 4 : 0, dash: [10]))
             )
             .overlay {
                 darkOverlayIfTargeted
@@ -48,7 +47,7 @@ struct ImageDropView: View {
             } else {
                 Image(systemName: "photo.badge.plus")
                     .font(.system(size: 60))
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("TintColor"))
             }
         }
     }

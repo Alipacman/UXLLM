@@ -16,7 +16,7 @@ struct TitleAndTextInputView: View {
     let onSave: (String) -> Void
     
     var body: some View {
-        VStack {
+        VStack(spacing: 16) {
             Text(title)
                 .uxLLMTitleTextStyle()
                 .multilineTextAlignment(.leading)

@@ -15,9 +15,18 @@ struct ContentView: View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 40) {
                 HStack(spacing: 120) {
+                    VStack(spacing: 40) {
+                        Text("Intro Text".localized())
+                            .uxLLMTitleTextStyle()
+                            .multilineTextAlignment(.leading)
+                            .leftAlignWithHStack()
+                        
+                        TitleBackgroundedContainerView(title: "Image Drop Title".localized()) {
+                            ImageDropView(viewModel: .init(imageCompressor: viewModel.imageCompressor),
+                                          nsImage: $viewModel.inputConfiguration.nsImage)
+                        }
+                    }
                     textFields
-                    ImageDropView(viewModel: .init(imageCompressor: viewModel.imageCompressor),
-                                  nsImage: $viewModel.inputConfiguration.nsImage)
                 }
                 
                 OpenAILLMModelChoosingView(selectedModel: $viewModel.inputConfiguration.llmModel)

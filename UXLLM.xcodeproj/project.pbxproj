@@ -38,6 +38,7 @@
 		58BE11432B311028008475D7 /* SinebowAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE11422B311028008475D7 /* SinebowAnimationView.swift */; };
 		58BE5F522B31E394004E7B67 /* Text+Textstyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE5F512B31E394004E7B67 /* Text+Textstyles.swift */; };
 		58BE5F542B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE5F532B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift */; };
+		58BE5F562B31F11D004E7B67 /* TitleBackgroundedContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE5F552B31F11D004E7B67 /* TitleBackgroundedContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		58BE11422B311028008475D7 /* SinebowAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinebowAnimationView.swift; sourceTree = "<group>"; };
 		58BE5F512B31E394004E7B67 /* Text+Textstyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Textstyles.swift"; sourceTree = "<group>"; };
 		58BE5F532B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledBackgroundRoundedRectangle.swift; sourceTree = "<group>"; };
+		58BE5F552B31F11D004E7B67 /* TitleBackgroundedContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBackgroundedContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				58B3DA442B0244350025A0CD /* ImageDropView.swift */,
+				58BE5F552B31F11D004E7B67 /* TitleBackgroundedContainerView.swift */,
 				58BE11342B30A7A7008475D7 /* ImageDropView+ViewModel.swift */,
 			);
 			path = ImageDropView;
@@ -323,6 +326,7 @@
 				58BE11372B30AB02008475D7 /* MockedImageCompressor.swift in Sources */,
 				585402BC2B021B4400306C10 /* App Error.swift in Sources */,
 				58BE11412B311000008475D7 /* Sinebow.metal in Sources */,
+				58BE5F562B31F11D004E7B67 /* TitleBackgroundedContainerView.swift in Sources */,
 				58BE5F522B31E394004E7B67 /* Text+Textstyles.swift in Sources */,
 				58B4CE202B04D819004AB6F2 /* Data+.swift in Sources */,
 				585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */,
