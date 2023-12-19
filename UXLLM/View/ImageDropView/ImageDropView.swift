@@ -1,5 +1,5 @@
 //
-//  ImageDropArea.swift
+//  ImageDropView.swift
 //  UXLLM
 //
 //  Created by Ali Ebrahimi Pourasad on 13.11.23.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ImageDropArea: View {
+struct ImageDropView: View {
     
-    @State private var isTargeted: Bool = false
+    @StateObject var viewModel: ViewModel
     @Binding var nsImage: NSImage?
 
     var body: some View {
@@ -27,29 +27,15 @@ struct ImageDropArea: View {
                 deleteButtonIfNeeded
             }
             .clipShape(RoundedRectangle(cornerRadius: 25.0))
-            .onDrop(of: [.image], isTargeted: $isTargeted, perform: { providers in
-                guard let provider = providers.first else { return false }
-
-                _ = provider.loadDataRepresentation(for: .image) { data, error in
-                    if error == nil, let data {
-                        received(data: data)
-                    }
-                }
-                return true
+            .onDrop(of: [.image], 
+                    isTargeted: $viewModel.isTargeted,
+                    perform: { providers in
+                viewModel.onDrop(providers: providers)
             })
-            .animation(.default, value: isTargeted)
-    }
-    
-    private func received(data: Data) {
-        Task {
-            guard let nsImage = NSImage(data: data) else { return }
-            guard let compressedImageData = await CompressPNGNetworkService.shared.resizeAndCompress(image: nsImage)
-            else {
-                print("Failed compressedImageData")
-                return
+            .animation(.default, value: viewModel.isTargeted)
+            .onChange(of: viewModel.compressedImage) {
+                self.nsImage = viewModel.compressedImage
             }
-            self.nsImage = NSImage(data: compressedImageData)
-        }
     }
 
     private var content: some View {
@@ -69,14 +55,14 @@ struct ImageDropArea: View {
     
     private var darkOverlayIfTargeted: some View {
         Group {
-            if isTargeted {
+            if viewModel.isTargeted {
                 ZStack {
                     Color.black.opacity(0.6)
                     
                     VStack(spacing: 8) {
                         Image(systemName: "plus.circle.fill")
                             .font(.system(size: 60))
-                        Text("Drop your view preview here...")
+                        Text("Image Drop View Targeted Text".localized())
                     }
                     .font(.largeTitle)
                     .fontWeight(.heavy)
@@ -91,7 +77,7 @@ struct ImageDropArea: View {
         Group {
             if nsImage != nil {
                 Button {
-                    self.nsImage = nil
+                    viewModel.clearImage()
                 } label: {
                     Image(systemName: "x.circle.fill")
                         .font(.system(size: 30))

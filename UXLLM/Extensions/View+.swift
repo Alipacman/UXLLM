@@ -8,7 +8,6 @@
 import SwiftUI
 
 extension View {
-
     func leftAlignWithHStack() -> some View {
         HStack {
             self

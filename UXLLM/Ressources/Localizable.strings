@@ -1,8 +1,16 @@
-/* 
-  Localizable.strings
-  UXLLM
+// MARK: - General
+"App Overview Input Title" = "App Overview";
+"App Overview Input Placeholder" = "A meditation app focused on enhancing stress relief and wellness.";
 
-  Created by Ali Ebrahimi Pourasad on 13.11.23.
-  
-*/
+"User Task Input Title" = "User Task";
+"User Task Input Placeholder" = "When analyzing the progress tracking view, the user's task could be 'reviewing their meditation history and achieved milestones.";
 
+"Source Code Input Title" = "Source Code";
+"Source Code Input Placeholder" = "struct ContentView: View { ...";
+
+"Image Drop View Targeted Text" = "Drop your view preview here...";
+
+// MARK: - Errors
+"App Error API URL" = "Failed to construct API URL.";
+"App Error HTTP" = "API Error with HTTP status code: %@)";
+"App Error Failed Image Compression" = "Failed Image Compression";

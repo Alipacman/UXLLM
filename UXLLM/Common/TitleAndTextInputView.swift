@@ -10,14 +10,10 @@ import SwiftUI
 struct TitleAndTextInputView: View {
     
     let title: String
-    let userDefaultsKey: String?
+    let placeholder: String
     @Binding var text: String
     
-    init(title: String, text: Binding<String>, userDefaultsKeyToSaveText: String? = nil) {
-        self.title = title
-        self._text = text
-        self.userDefaultsKey = userDefaultsKeyToSaveText
-    }
+    let onSave: (String) -> Void
     
     var body: some View {
         VStack {
@@ -26,11 +22,9 @@ struct TitleAndTextInputView: View {
                 .multilineTextAlignment(.leading)
                 .leftAlignWithHStack()
             
-            TextEditor(text: $text)
+            TextEditorWithPlaceholder(placeholder: placeholder, text: $text)
                 .onChange(of: text) {
-                    if let userDefaultsKey {
-                        UserDefaults.standard.set(text, forKey: userDefaultsKey)
-                    }
+                    onSave(text)
                 }
                 .font(.body)
         }
@@ -38,5 +32,8 @@ struct TitleAndTextInputView: View {
 }
 
 #Preview {
-    TitleAndTextInputView(title: "What is the app about?", text: .constant("A fitness tracker app"))
+    TitleAndTextInputView(title: "What is the app about?", 
+                          placeholder: "A fitness tracking app...",
+                          text: .constant("A fitness tracker app"),
+                          onSave: { _ in })
 }

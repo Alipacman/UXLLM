@@ -13,7 +13,7 @@ extension Data {
         let sizeInMegabytes = sizeInBytes / 1_024 / 1_024
         print("Datasize: " + String(format: "%.1f MB", sizeInMegabytes))
     }
-
+    
     func printSizeKB() {
         let sizeInBytes = Double(self.count)
         let sizeInKilobytes = sizeInBytes / 1_024
@@ -22,7 +22,7 @@ extension Data {
     
     func printJSON() {
         if let JSONString = String(data: self, encoding: String.Encoding.utf8) {
-            print("DATAJSON: ", JSONString)
+            print("JSON:\n", JSONString)
         }
     }
 }

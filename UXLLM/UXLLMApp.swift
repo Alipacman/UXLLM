@@ -11,7 +11,9 @@ import SwiftUI
 struct UXLLMApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: .init(llmCaller: OpenAILLMCaller(),
+                                         promptGenerator: BasicPromptGenerator(),
+                                         imageCompressor: TinfyImageCompressorNetworkService()))
         }
     }
 }
