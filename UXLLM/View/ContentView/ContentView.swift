@@ -10,47 +10,49 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var viewModel: ViewModel
-
+    
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack(spacing: 40) {
-                HStack(spacing: 80) {
-                    VStack(spacing: 40) {
-                        Text("Intro Text".localized())
-                            .uxLLMTitleTextStyle()
-                            .multilineTextAlignment(.leading)
-                            .leftAlignWithHStack()
-                        
-                        Spacer()
-                        
-                        TitleBackgroundedContainerView(title: "Image Drop Title".localized()) {
-                            ImageDropView(viewModel: .init(imageCompressor: viewModel.imageCompressor),
-                                          nsImage: $viewModel.inputConfiguration.nsImage)
-                        }
+        VStack(spacing: 40) {
+            HStack(spacing: 80) {
+                Spacer()
+                VStack {
+                    Text("Intro Text".localized())
+                        .multilineTextAlignment(.leading)
+                        .uxLLMTitleTextStyle()
+                        .leftAlignWithHStack()
+                    
+                    Spacer(minLength: 0)
+                    
+                    TitleBackgroundedContainerView(title: "Image Drop Title".localized()) {
+                        ImageDropView(viewModel: .init(imageCompressor: viewModel.imageCompressor),
+                                      nsImage: $viewModel.inputConfiguration.nsImage)
                     }
-                    .frame(height: 788)
-                    textFields
                 }
+                .frame(width: 500, height: 750)
                 
-                if !Constants.hideLLMSelection {
-                    OpenAILLMModelChoosingView(selectedModel: $viewModel.inputConfiguration.llmModel)
-                }
-                
-                startButton
-                
-                UsabilityIssuePresentationView(usabilityIssuesText: viewModel.llmOutput ?? "")
+                textFields
+                    .frame(width: 500)
+                Spacer()
             }
-            .padding(32)
-            .background(
-                RoundedRectangle(cornerRadius: 16)
-                    .fill(
-                        LinearGradient(colors: [Color("BackgroundGradient1"),
-                                                Color("BackgroundGradient2")],
-                                       startPoint: .top,
-                                       endPoint: .bottom)
-                    )
-            )
+            
+            if !Constants.hideLLMSelection {
+                OpenAILLMModelChoosingView(selectedModel: $viewModel.inputConfiguration.llmModel)
+            }
+            
+            startButton
+            
+            UsabilityIssuePresentationView(usabilityIssuesText: viewModel.llmOutput ?? "")
         }
+        .padding(32)
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(
+                    LinearGradient(colors: [Color("BackgroundGradient1"),
+                                            Color("BackgroundGradient2")],
+                                   startPoint: .top,
+                                   endPoint: .bottom)
+                )
+        )
     }
     
     private var textFields: some View {
@@ -74,7 +76,7 @@ struct ContentView: View {
                                   text: $viewModel.inputConfiguration.sourceCode) { newValue in
                 viewModel.persist(input: .sourceCode, value: newValue)
             }
-                                  .frame(height: 400)
+                                  .frame(height: 362)
         }
         .padding(24)
         .styledBackground(mode: .light)
