@@ -8,6 +8,8 @@
 import Foundation
 
 struct Constants {
+    static let useMockedService: Bool = true
+    
     static let maxTokens: Int? = 3000
     static let temperature: CGFloat = 0.7
     static let imageDetail: String = "low" // "high"
