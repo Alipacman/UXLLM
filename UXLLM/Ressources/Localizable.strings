@@ -8,7 +8,18 @@
 "User Task Input Placeholder" = "Reviewing their meditation history and achieved milestones.";
 
 "Source Code Input Title" = "Source Code";
-"Source Code Input Placeholder" = "struct ContentView: View { ...";
+"Source Code Input Placeholder" = "import SwiftUI
+
+struct ExampleView: View {
+    var body: some View {
+        Text(\"Hello, World!\")
+    }
+}
+
+#Preview {
+    SwiftUIView()
+}
+";
 
 "Image Drop Title" = "View Image";
 "Image Drop View Targeted Text" = "Drop your image here";

@@ -52,6 +52,7 @@
 		58D709EB2B3464C6004CCF4C /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709EA2B3464C6004CCF4C /* ErrorView.swift */; };
 		58D709ED2B34664C004CCF4C /* StartLLMButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709EC2B34664C004CCF4C /* StartLLMButtonView.swift */; };
 		58D709EF2B3477C3004CCF4C /* OutputContainerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709EE2B3477C3004CCF4C /* OutputContainerBackgroundView.swift */; };
+		58D709F12B349617004CCF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709F02B349617004CCF4C /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		58D709EA2B3464C6004CCF4C /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		58D709EC2B34664C004CCF4C /* StartLLMButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLLMButtonView.swift; sourceTree = "<group>"; };
 		58D709EE2B3477C3004CCF4C /* OutputContainerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputContainerBackgroundView.swift; sourceTree = "<group>"; };
+		58D709F02B349617004CCF4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				586590CB2AFD2E2C0037D1FE /* UXLLMApp.swift */,
+				58D709F02B349617004CCF4C /* AppDelegate.swift */,
 				585402C42B02367B00306C10 /* Views */,
 				5879F1362B2897BE00961544 /* Models */,
 				585402BE2B021BEC00306C10 /* Services */,
@@ -446,6 +449,7 @@
 				58D709C62B343255004CCF4C /* TransparentWindow.swift in Sources */,
 				58D709DB2B344F34004CCF4C /* ImageCompressorProtocol.swift in Sources */,
 				585402D02B0237F300306C10 /* View+StackAlignment.swift in Sources */,
+				58D709F12B349617004CCF4C /* AppDelegate.swift in Sources */,
 				58BE11352B30A7A7008475D7 /* ImageDropView+ViewModel.swift in Sources */,
 				58BE112E2B309E72008475D7 /* OpenAILLM.swift in Sources */,
 				585402B82B0217F600306C10 /* OpenAILLMCaller.swift in Sources */,

@@ -9,12 +9,18 @@ import SwiftUI
 
 @main
 struct UXLLMApp: App {
+    
+    // MARK: - Properties
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    // MARK: - Body
     var body: some Scene {
         WindowGroup {
             ContentView(viewModel: Self.generateConfiguredViewModel())
                 .background(TransparentWindow())
         }
     }
+    
     // MARK: - Helper
     private static func generateConfiguredViewModel() -> ContentView.ViewModel {
         Constants.useMockedService ? contentViewViewModelWithMockedService() : contentViewViewModel()

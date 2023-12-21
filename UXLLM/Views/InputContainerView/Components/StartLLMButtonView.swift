@@ -21,6 +21,7 @@ struct StartLLMButtonView: View {
             Text("Start Button Title".localized())
         }
         .buttonStyle(BasicRoundButtonStyle(isLoading: isLoading))
+        .disabled(isLoading)
     }
 }
 
