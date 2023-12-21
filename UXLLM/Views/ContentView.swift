@@ -16,24 +16,18 @@ struct ContentView: View {
     var body: some View {
         VStack {
             InputContainerView(viewModel: viewModel.inputContainerViewModel)
-            startButton
-                .offset(y: -BasicRoundButtonStyle.dimension/2)
-            if viewModel.isLoading && viewModel.llmOutput != nil {
-                UsabilityIssuePresentationView(isLoading: viewModel.isLoading,
-                                               usabilityIssuesText: viewModel.llmOutput)
+            
+            StartLLMButtonView(isLoading: viewModel.isLoading) {
+                viewModel.startGeneratingUsabilityIssues()
             }
+            .offset(y: -BasicRoundButtonStyle.dimension/2)
+            
+            OutputContainerView(error: viewModel.errorText,
+                                usabilityIssuesText: viewModel.llmOutput,
+                                isLoading: viewModel.isLoading)
             
             Spacer()
         }
-    }
-    
-    private var startButton: some View {
-        Button {
-            viewModel.startGeneratingUsabilityIssues()
-        } label: {
-            Text("Start Button Title".localized())
-        }
-        .buttonStyle(BasicRoundButtonStyle(isLoading: viewModel.isLoading))
     }
 }
 

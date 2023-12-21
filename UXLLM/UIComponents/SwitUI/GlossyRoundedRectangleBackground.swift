@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StyledBackgroundRoundedRectangle: View {
+struct GlossyRoundedRectangleBackgroundView: View {
     
     enum Mode {
         case light, dark
@@ -30,8 +30,8 @@ struct StyledBackgroundRoundedRectangle: View {
 }
 
 extension View {
-    func styledBackground(mode: StyledBackgroundRoundedRectangle.Mode) -> some View {
-        self.background(StyledBackgroundRoundedRectangle(mode: mode))
+    func glossyRoundedRectangleBackground(mode: GlossyRoundedRectangleBackgroundView.Mode) -> some View {
+        self.background(GlossyRoundedRectangleBackgroundView(mode: mode))
     }
 }
 
@@ -40,7 +40,7 @@ struct ContentView_Previews: PreviewProvider {
         VStack {
             Text("Hello, World!")
                 .padding(100)
-                .styledBackground(mode: .light)
+                .glossyRoundedRectangleBackground(mode: .light)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LinearGradient(colors: [.blue, .orange], startPoint: .top, endPoint: .bottom))

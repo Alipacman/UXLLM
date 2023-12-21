@@ -25,7 +25,7 @@ struct InputContainerView: View {
                                       nsImage: $viewModel.inputConfiguration.nsImage)
                     }
                     .padding(24)
-                    .styledBackground(mode: .light)
+                    .glossyRoundedRectangleBackground(mode: .light)
                 }
                 .frame(width: 500, height: 750)
                 
@@ -33,7 +33,7 @@ struct InputContainerView: View {
                                               userTask: $viewModel.inputConfiguration.userTask,
                                               sourceCode: $viewModel.inputConfiguration.sourceCode)
                 .padding(24)
-                .styledBackground(mode: .light)
+                .glossyRoundedRectangleBackground(mode: .light)
                 .frame(width: 500)
                 
                 Spacer()
