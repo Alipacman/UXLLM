@@ -1,5 +1,5 @@
 //
-//  PromptGenerator.swift
+//  PromptGeneratorProtocol.swift
 //  UXLLM
 //
 //  Created by Ali Ebrahimi Pourasad on 21.12.23.
