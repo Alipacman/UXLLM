@@ -7,18 +7,6 @@
 
 import Foundation
 
-struct PromptConfiguration {
-    let appOverview: String
-    let userTask: String
-    let sourceCode: String?
-    let hasImage: Bool
-}
-
-protocol PromptGenerator {
-    func generateUserContent(with configuration: PromptConfiguration) -> String
-    func generateSystemContent() -> String
-}
-
 struct BasicPromptGenerator: PromptGenerator {
     func generateUserContent(with configuration: PromptConfiguration) -> String {
         

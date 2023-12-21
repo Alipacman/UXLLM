@@ -8,10 +8,6 @@
 import Foundation
 import Cocoa
 
-protocol ImageCompressor {
-    func resizeAndShrink(imageData: Data, size: CGSize) async throws -> Data
-}
-
 class TinfyImageCompressorNetworkService: ImageCompressor {
     
     // MARK: - Properties

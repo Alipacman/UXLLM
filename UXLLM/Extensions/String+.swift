@@ -17,14 +17,3 @@ extension String {
         return joinedWord
     }
 }
-
-// MARK: - Localized
-extension String {
-    public func localized() -> String {
-        return NSLocalizedString(self, comment: "")
-    }
-
-    public func localized(with arguments: [String]) -> String {
-        return String(format: self.localized(), locale: nil, arguments: arguments)
-    }
-}
