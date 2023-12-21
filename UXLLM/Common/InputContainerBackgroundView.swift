@@ -1,5 +1,5 @@
 //
-//  InputBackgroundView.swift
+//  InputContainerBackgroundView.swift
 //  UXLLM
 //
 //  Created by Ali Ebrahimi Pourasad on 21.12.23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InputBackgroundView: View {
+struct InputContainerBackgroundView: View {
     var body: some View {
         Rectangle()
             .fill(
@@ -28,5 +28,5 @@ struct InputBackgroundView: View {
 }
 
 #Preview {
-    InputBackgroundView()
+    InputContainerBackgroundView()
 }

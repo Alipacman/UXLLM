@@ -104,5 +104,5 @@ struct ImageDropView: View {
     //viewModel.isTargeted = false
     return ImageDropView(viewModel: viewModel,
                          nsImage: .constant(.init()))
-        .background(InputBackgroundView())
+        .background(InputContainerBackgroundView())
 }

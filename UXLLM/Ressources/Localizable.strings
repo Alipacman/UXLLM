@@ -13,6 +13,8 @@
 "Image Drop Title" = "View Image";
 "Image Drop View Targeted Text" = "Drop your image here.";
 
+"Start Button Title" = "Start";
+
 // MARK: - Errors
 "App Error API URL" = "Failed to construct API URL.";
 "App Error HTTP" = "API Error with HTTP status code: %@)";

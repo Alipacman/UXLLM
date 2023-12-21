@@ -48,5 +48,5 @@ struct BasicRoundButtonStyle: ButtonStyle {
     }
     .buttonStyle(BasicRoundButtonStyle(isLoading: false))
     .frame(width: 200, height: 200)
-    .background( InputBackgroundView() )
+    .background( InputContainerBackgroundView() )
 }
