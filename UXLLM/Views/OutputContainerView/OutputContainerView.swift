@@ -22,10 +22,10 @@ struct OutputContainerView: View {
     var body: some View {
         VStack {
             if isLoading {
-                SinebowAnimationView(shaderSineWidth: 150,
-                                     shaderSineHeight: 40,
-                                     timeMultier: 1.2)
-                .frame(height: 200)
+                SinebowAnimationView(shaderSineWidth: 300,
+                                     shaderSineHeight: 100,
+                                     timeMultier: 2.0)
+                .frame(height: 250)
                 .padding(.top, 40)
             } else if let usabilityIssuesText {
                 UsabilityIssuePresentationView(usabilityIssuesText: usabilityIssuesText)

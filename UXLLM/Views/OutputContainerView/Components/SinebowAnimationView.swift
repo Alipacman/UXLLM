@@ -34,6 +34,7 @@ struct SinebowAnimationView: View {
 }
 
 #Preview {
-    SinebowAnimationView(shaderSineWidth: 200, shaderSineHeight: 100,
-                         timeMultier: 1.5)
+    SinebowAnimationView(shaderSineWidth: 500,
+                         shaderSineHeight: 400,
+                         timeMultier: 2.0)
 }
