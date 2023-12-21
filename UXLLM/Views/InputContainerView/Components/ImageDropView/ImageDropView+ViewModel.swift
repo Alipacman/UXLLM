@@ -40,10 +40,11 @@ extension ImageDropView {
         
         // MARK: - Helper
         private func received(imageData: Data) {
+            clearImage()
             setLoading(active: true)
             Task {
                 do {
-                    let compressedImageData = try await imageCompressor.resizeAndShrink(imageData: imageData, size: Constants.sizeToResizeTo)
+                    let compressedImageData = try await imageCompressor.resizeAndShrink(imageData: imageData, size: Constants.imageCompressionSize)
                     DispatchQueue.main.async {
                         self.compressedImage = NSImage(data: compressedImageData)
                         self.setLoading(active: false)

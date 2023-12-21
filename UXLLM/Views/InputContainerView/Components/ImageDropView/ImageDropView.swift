@@ -12,12 +12,17 @@ struct ImageDropView: View {
     @StateObject var viewModel: ViewModel
     @Binding var nsImage: NSImage?
     
+    private let width: CGFloat = 200
+    
     var body: some View {
         content
-            .frame(width: 240, height: 240*2.16) // iPhone 13 Size
+            .frame(width: width,
+                   height: width * Constants.imageRatio) // iPhone 13 Size
             .background(
                 RoundedRectangle(cornerRadius: 25.0)
-                    .strokeBorder(Color.white, style: StrokeStyle(lineWidth: nsImage == nil ? 4 : 0, dash: [10]))
+                    .strokeBorder(Color.white,
+                                  style: StrokeStyle(lineWidth: nsImage == nil ? 4 : 0,
+                                                     dash: [10]))
             )
             .overlay {
                 darkOverlayIfTargeted
@@ -47,7 +52,7 @@ struct ImageDropView: View {
         } else {
             if viewModel.isLoading {
                 ProgressView()
-                    .colorInvert() // MacOS Workaround
+                    .colorInvert() // MacOS white color workaround
                     .brightness(1)
                 
             } else {
@@ -84,7 +89,7 @@ struct ImageDropView: View {
                 viewModel.clearImage()
             } label: {
                 Image(systemName: "x.circle.fill")
-                    .font(.system(size: 30))
+                    .font(.system(size: 24))
             }
             .buttonStyle(PlainButtonStyle())
             .background(
@@ -92,7 +97,7 @@ struct ImageDropView: View {
                     .fill(.white)
                     .blur(radius: 3.0)
             )
-            .padding()
+            .padding(8)
             .topAlignWithVStack()
             .rightAlignWithHStack()
         }

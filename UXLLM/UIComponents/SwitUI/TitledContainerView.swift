@@ -17,7 +17,7 @@ struct TitledContainerView<Content: View>: View {
     }
     
     var body: some View {
-        VStack(spacing: 24) {
+        VStack(spacing: 20) {
             Text(title)
                 .uxLLMTitleTextStyle()
                 .multilineTextAlignment(.leading)

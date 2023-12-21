@@ -11,43 +11,39 @@ struct InputContainerView: View {
     
     @ObservedObject var viewModel: ViewModel
     
+    private let sectionWidth: CGFloat = 450
+    private let sectionHeigth: CGFloat = 650
+    
     var body: some View {
-        VStack(spacing: 40) {
-            HStack(spacing: 80) {
-                Spacer()
-                VStack {
-                    
-                    TitledContainerView(title: "Intro Text".localized()) { }
-                    Spacer(minLength: 0)
-                    
-                    TitledContainerView(title: "Image Drop Title".localized()) {
-                        ImageDropView(viewModel: .init(imageCompressor: viewModel.imageCompressor),
-                                      nsImage: $viewModel.inputConfiguration.nsImage)
-                    }
-                    .padding(24)
-                    .glossyRoundedRectangleBackground(mode: .light)
-                }
-                .frame(width: 500, height: 750)
+        HStack(alignment: .top, spacing: 80) {
+            Spacer()
+            
+            VStack {
+                TitledContainerView(title: "Intro Text".localized()) { }
+                Spacer(minLength: 0)
                 
-                PersistingInputTextFieldsView(appOverview: $viewModel.inputConfiguration.appOverview,
-                                              userTask: $viewModel.inputConfiguration.userTask,
-                                              sourceCode: $viewModel.inputConfiguration.sourceCode)
+                TitledContainerView(title: "Image Drop Title".localized()) {
+                    ImageDropView(viewModel: .init(imageCompressor: viewModel.imageCompressor),
+                                  nsImage: $viewModel.inputConfiguration.nsImage)
+                }
                 .padding(24)
                 .glossyRoundedRectangleBackground(mode: .light)
-                .frame(width: 500)
-                
-                Spacer()
             }
+            .frame(width: sectionWidth, height: sectionHeigth)
             
-            if !Constants.hideLLMSelection {
-                OpenAILLMModelChoosingView(selectedModel: $viewModel.inputConfiguration.llmModel)
-            }
+            PersistingInputTextFieldsView(appOverview: $viewModel.inputConfiguration.appOverview,
+                                          userTask: $viewModel.inputConfiguration.userTask,
+                                          sourceCode: $viewModel.inputConfiguration.sourceCode)
+            .padding(24)
+            .glossyRoundedRectangleBackground(mode: .light)
+            .frame(width: sectionWidth, height: sectionHeigth)
+            
+            Spacer()
         }
         .padding(40)
         .background(
             InputContainerBackgroundView()
         )
-        .frame(height: 130 + 130 + 360 + 40 + 40 + 24 + 24 + 40 + 40)
     }
 }
 

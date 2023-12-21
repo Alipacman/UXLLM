@@ -20,9 +20,11 @@ struct OutputContainerView: View {
     var body: some View {
         ZStack {
             if isLoading {
-                SinebowAnimationView(width: 200, heigth: 20, timeMultier: 1.5)
-                    .frame(height: 200)
-                    .padding(.top, 60)
+                SinebowAnimationView(shaderSineWidth: 200,
+                                     shaderSineHeight: 20,
+                                     timeMultier: 1.5)
+                .frame(height: 200)
+                .padding(.top, 60)
             } else if let usabilityIssuesText {
                 UsabilityIssuePresentationView(usabilityIssuesText: usabilityIssuesText)
             } else if let error {
@@ -31,22 +33,9 @@ struct OutputContainerView: View {
         }
         .padding([.top, .bottom], 40)
         .frame(width: 600)
-        .background(background)
+        .background(OutputContainerBackgroundView())
         .scaleEffect(x: 1, y: shouldShow ? 1 : 0, anchor: .top)
         .animation(.easeInOut(duration: 0.5), value: shouldShow)
-    }
-    
-    private var background: some View {
-        Rectangle()
-            .fill(
-                Color.black
-            )
-            .clipShape(
-                .rect(
-                    bottomLeadingRadius: 16,
-                    bottomTrailingRadius: 16
-                )
-            )
     }
 }
 

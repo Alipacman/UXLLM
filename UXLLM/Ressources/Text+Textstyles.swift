@@ -11,16 +11,16 @@ extension View {
     func uxLLMTitleTextStyle() -> some View {
         self
             .foregroundColor(Color("TintColor"))
-            .font(.system(size: 28, weight: .semibold))
-    }
-    
-    func uxLLMButtonTitleTextStyle() -> some View {
-        self
-            .foregroundColor(Color("TintColor"))
-            .font(.system(size: 22, weight: .regular))
+            .font(.system(size: 22, weight: .semibold))
     }
 
     func uxLLMBodyTextStyle() -> some View {
+        self
+            .foregroundColor(Color("TintColor"))
+            .font(.system(size: 14, weight: .regular))
+    }
+    
+    func uxLLMButtonTitleTextStyle() -> some View {
         self
             .foregroundColor(Color("TintColor"))
             .font(.system(size: 18, weight: .regular))

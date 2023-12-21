@@ -19,7 +19,8 @@ struct Constants {
     static let defaultOpenAILLM = OpenAILLM.gpt3Turbo
     static let hideLLMSelection = true
     
-    static let sizeToResizeTo = CGSize(width: 240, height: 510)
+    static let imageCompressionSize = CGSize(width: 240, height: 510)
+    static let imageRatio = 2.16 // iPhone 13 Display
     
     static let printNetworkData = true
 }

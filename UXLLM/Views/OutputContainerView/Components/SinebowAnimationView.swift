@@ -10,8 +10,8 @@ import SwiftUI
 struct SinebowAnimationView: View {
     @State private var startTime = Date.now
     
-    let width: CGFloat
-    let heigth: CGFloat
+    let shaderSineWidth: CGFloat
+    let shaderSineHeight: CGFloat
     let timeMultier: CGFloat
     
     var body: some View {
@@ -23,8 +23,9 @@ struct SinebowAnimationView: View {
                     content
                         .colorEffect(
                             ShaderLibrary.sinebow(
-                                .float2(.init(width: width, height: heigth)),
-                                .float(elapsedTime*timeMultier)
+                                .float2(.init(width: shaderSineWidth,
+                                              height: shaderSineHeight)),
+                                .float(elapsedTime * timeMultier)
                             )
                         )
                 }
@@ -33,5 +34,6 @@ struct SinebowAnimationView: View {
 }
 
 #Preview {
-    SinebowAnimationView(width: 200, heigth: 100, timeMultier: 3.0)
+    SinebowAnimationView(shaderSineWidth: 200, shaderSineHeight: 100,
+                         timeMultier: 1.5)
 }

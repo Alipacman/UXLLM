@@ -12,14 +12,6 @@ enum OpenAILLM: Identifiable, CaseIterable {
     
     var id: String { self.identifier }
     
-    var presentationName: String {
-        switch self {
-        case .gpt3Turbo: return "GPT-3.5 Turbo"
-        case .gpt4Turbo: return "GPT-4 Turbo"
-        case .gpt4TurboVision: return "GPT-4 Turbo Vision"
-        }
-    }
-    
     fileprivate var identifier: String {
         switch self {
         case .gpt3Turbo: return "gpt-3.5-turbo-1106" // $0.0010 / $0.0020 per 1k tokens
