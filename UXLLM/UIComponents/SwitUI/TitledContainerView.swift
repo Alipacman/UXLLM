@@ -8,22 +8,45 @@
 import SwiftUI
 
 struct TitledContainerView<Content: View>: View {
+    
+    // MARK: - Properties
     let title: String
+    let accessoryQuestionMark: Bool
     let content: Content
 
-    init(title: String, @ViewBuilder content: () -> Content) {
+    // MARK: - Init
+    init(title: String,
+         accessoryQuestionMark: Bool = false,
+         @ViewBuilder content: () -> Content) {
         self.title = title
+        self.accessoryQuestionMark = accessoryQuestionMark
         self.content = content()
     }
     
+    // MARK: - Body
     var body: some View {
         VStack(spacing: 20) {
-            Text(title)
-                .uxLLMTitleTextStyle()
-                .multilineTextAlignment(.leading)
-                .leftAlignWithHStack()
+            
+            HStack(alignment: .center) {
+                Text(title)
+                    .uxLLMTitleTextStyle()
+                    .multilineTextAlignment(.leading)
+                    .leftAlignWithHStack()
+                
+                if accessoryQuestionMark {
+                    Image(systemName: "questionmark.circle")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(Color("TintColor"))
+                }
+            }
             
             content
         }
     }
+}
+
+#Preview {
+    TitledContainerView(title: "Test", accessoryQuestionMark: true) {
+        Text("Hello World!")
+    }.background(InputContainerBackgroundView())
 }

@@ -310,9 +310,9 @@
 		58D709E42B3451E0004CCF4C /* SwitUI */ = {
 			isa = PBXGroup;
 			children = (
-				58D709E52B346182004CCF4C /* Text */,
 				58BE5F552B31F11D004E7B67 /* TitledContainerView.swift */,
 				58BE5F532B31E89B004E7B67 /* GlossyRoundedRectangleBackground.swift */,
+				58D709E52B346182004CCF4C /* Text */,
 				585402D32B02392500306C10 /* Buttons */,
 			);
 			path = SwitUI;

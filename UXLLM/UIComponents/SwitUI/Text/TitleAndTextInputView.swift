@@ -17,7 +17,7 @@ struct TitleAndTextInputView: View {
     
     var body: some View {
         VStack(spacing: 24) {
-            TitledContainerView(title: title) {
+            TitledContainerView(title: title, accessoryQuestionMark: true) {
                 TextEditorWithPlaceholder(placeholder: placeholder, text: $text)
                     .uxLLMBodyTextStyle()
                     .padding(16)
