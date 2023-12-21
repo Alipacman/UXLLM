@@ -22,9 +22,9 @@ struct OutputContainerView: View {
     var body: some View {
         VStack {
             if isLoading {
-                SinebowAnimationView(shaderSineWidth: 200,
-                                     shaderSineHeight: 25,
-                                     timeMultier: 1.5)
+                SinebowAnimationView(shaderSineWidth: 150,
+                                     shaderSineHeight: 40,
+                                     timeMultier: 1.2)
                 .frame(height: 200)
                 .padding(.top, 40)
             } else if let usabilityIssuesText {
@@ -49,7 +49,7 @@ struct OutputContainerView: View {
 
 // MARK: - Preview
 #Preview {
-    OutputContainerView(isLoading: false,
+    OutputContainerView(isLoading: true,
                         usabilityIssuesText: MockedLLMCaller.mockedUsabilityIssues,
                         error: nil)
     .frame(width: 800, height: 500)
