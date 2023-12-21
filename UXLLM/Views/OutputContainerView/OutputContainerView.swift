@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OutputContainerView: View {
     
+    // MARK: - Properties
     let isLoading: Bool
     let usabilityIssuesText: String?
     let error: String?
@@ -17,12 +18,13 @@ struct OutputContainerView: View {
         isLoading || usabilityIssuesText != nil || error != nil
     }
     
+    // MARK: - Body
     var body: some View {
-        Group {
+        VStack {
             if isLoading {
                 SinebowAnimationView(shaderSineWidth: 200,
-                                     shaderSineHeight: 20,
-                                     timeMultier: 1.0)
+                                     shaderSineHeight: 25,
+                                     timeMultier: 1.5)
                 .frame(height: 200)
                 .padding(.top, 60)
             } else if let usabilityIssuesText {
@@ -30,15 +32,20 @@ struct OutputContainerView: View {
             } else if let error {
                 ErrorView(error: error)
             }
+            
+            Spacer()
         }
-        .padding([.top, .bottom], 40)
-        .frame(width: 600)
+        .padding(.top, 40)
+        .padding(.bottom, 10)
+        .frame(width: 700)
+        .frame(minHeight: 10) // Neccessary for non buggy scale effect animation
         .background(OutputContainerBackgroundView())
         .scaleEffect(x: 1, y: shouldShow ? 1 : 0, anchor: .top)
-        .animation(.easeInOut(duration: 0.5), value: shouldShow)
+        .animation(.easeInOut(duration: 0.6) , value: shouldShow)
     }
 }
 
+// MARK: - Preview
 #Preview {
     OutputContainerView(isLoading: false,
                         usabilityIssuesText: MockedLLMCaller.mockedUsabilityIssues,

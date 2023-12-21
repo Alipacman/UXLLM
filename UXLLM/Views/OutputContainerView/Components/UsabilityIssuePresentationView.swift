@@ -12,10 +12,12 @@ struct UsabilityIssuePresentationView: View {
     let usabilityIssuesText: String
     
     var body: some View {
-        Text(usabilityIssuesText)
-            .foregroundStyle(Color("TintColor"))
-            .uxLLMBodyTextStyle()
-            .lineSpacing(10.0)
+        ScrollView(showsIndicators: false) {
+            Text(usabilityIssuesText)
+                .foregroundStyle(Color("TintColor"))
+                .uxLLMBodyTextStyle()
+                .lineSpacing(8.0)
+        }
     }
 }
 

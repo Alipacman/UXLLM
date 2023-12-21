@@ -38,5 +38,4 @@ struct ContentView: View {
     ContentView(viewModel: .init(llmCaller: MockedLLMCaller(),
                                  promptGenerator: BasicPromptGenerator(),
                                  imageCompressor: MockedImageCompressor()))
-    .frame(width: 800, height: 600)
 }

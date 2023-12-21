@@ -58,7 +58,7 @@ extension ContentView {
             DispatchQueue.main.async {
                 self.llmOutput = llmOutput
                 self.errorText = errorText
-                withAnimation(Animation.easeInOut(duration: 3.0)) {
+                withAnimation(Animation.easeInOut(duration: 1.0)) {
                     self.isLoading = loadingActive
                 }
             }

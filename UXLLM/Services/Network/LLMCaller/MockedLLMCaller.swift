@@ -27,7 +27,7 @@ Mocked Usability Issues:
 """
     
     func call(with configuration: LLMCallerConfiguration) async throws -> String {
-        try await Task.sleep(until: .now + .seconds(3), clock: .continuous)
+        try await Task.sleep(until: .now + .seconds(4), clock: .continuous)
         return Self.mockedUsabilityIssues
     }
 }
