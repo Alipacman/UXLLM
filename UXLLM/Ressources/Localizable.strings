@@ -1,5 +1,5 @@
 // MARK: - General
-"Intro Text" = "Welcome to UX-LLM!\nLet’s predict usability issues of an app view!";
+"Intro Text" = "Welcome to UX-LLM!\nLet’s predict usability issues of an app view.";
 
 "App Overview Input Title" = "App Overview";
 "App Overview Input Placeholder" = "A meditation app focused on enhancing stress relief and wellness.";
@@ -11,7 +11,7 @@
 "Source Code Input Placeholder" = "struct ContentView: View { ...";
 
 "Image Drop Title" = "View Image";
-"Image Drop View Targeted Text" = "Drop your image here.";
+"Image Drop View Targeted Text" = "Drop your image here";
 
 "Start Button Title" = "Start";
 

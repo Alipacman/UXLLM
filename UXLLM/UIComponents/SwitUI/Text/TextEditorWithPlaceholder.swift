@@ -19,7 +19,7 @@ struct TextEditorWithPlaceholder: View {
             .overlay (
                 Text(placeholder)
                     .multilineTextAlignment(.leading)
-                    .opacity(text.isEmpty ? 0.4 : 0.0)
+                    .opacity(text.isEmpty ? 0.5 : 0.0)
                     .leftAlignWithHStack()
                     .topAlignWithVStack()
                     .padding(.leading, 8)

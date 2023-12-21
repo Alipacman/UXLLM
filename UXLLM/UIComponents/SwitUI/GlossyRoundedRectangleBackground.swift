@@ -14,8 +14,8 @@ struct GlossyRoundedRectangleBackgroundView: View {
             
         var associatedColor: Color {
             switch self {
-            case .light: return .white.opacity(0.4)
-            case .dark: return .black.opacity(0.2)
+            case .light: return .white.opacity(0.3)
+            case .dark: return .black.opacity(0.16)
             }
         }
     }
@@ -25,7 +25,7 @@ struct GlossyRoundedRectangleBackgroundView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 16)
             .fill(mode.associatedColor)
-            .shadow(color: .black.opacity(0.3), radius: 5.0, y: 2.0)
+            .shadow(color: .black.opacity(0.3), radius: 2.0, y: 2.0)
     }
 }
 

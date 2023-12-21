@@ -12,7 +12,7 @@ struct ImageDropView: View {
     @StateObject var viewModel: ViewModel
     @Binding var nsImage: NSImage?
     
-    private let width: CGFloat = 200
+    private let width: CGFloat = 180
     
     var body: some View {
         content
@@ -57,7 +57,7 @@ struct ImageDropView: View {
                 
             } else {
                 Image(systemName: "photo.badge.plus")
-                    .font(.system(size: 60))
+                    .font(.system(size: 40))
                     .foregroundColor(Color("TintColor"))
                     .opacity(viewModel.isTargeted ? 0.0 : 1.0)
             }

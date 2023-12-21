@@ -23,7 +23,7 @@ extension View {
     func uxLLMButtonTitleTextStyle() -> some View {
         self
             .foregroundColor(Color("TintColor"))
-            .font(.system(size: 18, weight: .regular))
+            .font(.system(size: 18, weight: .semibold))
     }
 }
 

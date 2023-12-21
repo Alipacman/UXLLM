@@ -18,11 +18,11 @@ struct OutputContainerView: View {
     }
     
     var body: some View {
-        ZStack {
+        Group {
             if isLoading {
                 SinebowAnimationView(shaderSineWidth: 200,
                                      shaderSineHeight: 20,
-                                     timeMultier: 1.5)
+                                     timeMultier: 1.0)
                 .frame(height: 200)
                 .padding(.top, 60)
             } else if let usabilityIssuesText {

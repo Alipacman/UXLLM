@@ -12,7 +12,7 @@ struct InputContainerView: View {
     @ObservedObject var viewModel: ViewModel
     
     private let sectionWidth: CGFloat = 450
-    private let sectionHeigth: CGFloat = 650
+    private let sectionHeigth: CGFloat = 600
     
     var body: some View {
         HStack(alignment: .top, spacing: 80) {
