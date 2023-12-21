@@ -26,20 +26,22 @@ struct OutputContainerView: View {
                                      shaderSineHeight: 25,
                                      timeMultier: 1.5)
                 .frame(height: 200)
-                .padding(.top, 60)
+                .padding(.top, 40)
             } else if let usabilityIssuesText {
                 UsabilityIssuePresentationView(usabilityIssuesText: usabilityIssuesText)
+                    .padding(.horizontal, 20)
             } else if let error {
                 ErrorView(error: error)
+                    .padding(.horizontal, 20)
             }
             
             Spacer()
         }
-        .padding(.top, 40)
+        .padding(.top, 60)
         .padding(.bottom, 10)
         .frame(width: 700)
         .frame(minHeight: 10) // Neccessary for non buggy scale effect animation
-        .background(OutputContainerBackgroundView())
+        .background(OutputContainerBackgroundView(adjustContrastForText: !isLoading))
         .scaleEffect(x: 1, y: shouldShow ? 1 : 0, anchor: .top)
         .animation(.easeInOut(duration: 0.6) , value: shouldShow)
     }

@@ -16,7 +16,6 @@ struct UsabilityIssuePresentationView: View {
             Text(usabilityIssuesText)
                 .foregroundStyle(Color("TintColor"))
                 .uxLLMBodyTextStyle()
-                .lineSpacing(8.0)
         }
     }
 }

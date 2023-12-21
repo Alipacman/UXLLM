@@ -32,8 +32,7 @@ struct BasicRoundButtonStyle: ButtonStyle {
             .clipShape(
                 Circle()
             )
-            .opacity(isLoading ? 0.8 : 1.0)
-            .blur(radius: isLoading ? 3.0 : 0.0)
+            .blur(radius: isLoading ? 4.0 : 0.0)
             .shadow(color: .black.opacity(0.1), radius: 4.0, y: 2.0)
             .scaleEffect(configuration.isPressed ? 0.95 : 1)
             .animation(.easeOut(duration: 0.2), value: configuration.isPressed)

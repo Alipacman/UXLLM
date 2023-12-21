@@ -35,7 +35,9 @@ extension ImageDropView {
         
         
         func clearImage() {
-            self.compressedImage = nil
+            DispatchQueue.main.async {
+                self.compressedImage = nil
+            }
         }
         
         // MARK: - Helper

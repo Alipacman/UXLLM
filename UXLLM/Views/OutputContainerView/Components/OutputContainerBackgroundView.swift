@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct OutputContainerBackgroundView: View {
+    
+    // MARK: - Properties
+    let adjustContrastForText: Bool
+    
+    // MARK: - Body
     var body: some View {
         Rectangle()
             .fill(
-                Color.black
+                adjustContrastForText ? Color("OutputBackgroundColor") : .black
             )
             .clipShape(
                 .rect(
@@ -22,6 +27,7 @@ struct OutputContainerBackgroundView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
-    OutputContainerBackgroundView()
+    OutputContainerBackgroundView(adjustContrastForText: false)
 }

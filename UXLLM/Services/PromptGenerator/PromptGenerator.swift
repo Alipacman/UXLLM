@@ -37,7 +37,7 @@ struct BasicPromptGenerator: PromptGenerator {
     func generateSystemContent() -> String {
         return """
         You are a UI/UX expert for mobile apps. Your task is to identify \(Constants.numberOfPredictedUsabilityIssues) usability issues with the information you get for an app view.
-        For your answer only list the identified issues
+        Enumerate the problems identified; add an empty paragraph after each enumeration; no preceding or following text."
         """
     }
 }
