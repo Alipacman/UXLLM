@@ -46,9 +46,9 @@
 		58D709D02B344A2F004CCF4C /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709CF2B344A2F004CCF4C /* InputContainerView.swift */; };
 		58D709D22B344D1A004CCF4C /* InputContainerView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709D12B344D1A004CCF4C /* InputContainerView+ViewModel.swift */; };
 		58D709D52B344E22004CCF4C /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709D42B344E22004CCF4C /* String+Localized.swift */; };
-		58D709D92B344F1D004CCF4C /* LLMCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709D82B344F1D004CCF4C /* LLMCaller.swift */; };
-		58D709DB2B344F34004CCF4C /* ImageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709DA2B344F34004CCF4C /* ImageCompressor.swift */; };
-		58D709DE2B344FA0004CCF4C /* PromptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709DD2B344FA0004CCF4C /* PromptGenerator.swift */; };
+		58D709D92B344F1D004CCF4C /* LLMCallerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709D82B344F1D004CCF4C /* LLMCallerProtocol.swift */; };
+		58D709DB2B344F34004CCF4C /* ImageCompressorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709DA2B344F34004CCF4C /* ImageCompressorProtocol.swift */; };
+		58D709DE2B344FA0004CCF4C /* PromptGeneratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709DD2B344FA0004CCF4C /* PromptGeneratorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,9 +93,9 @@
 		58D709CF2B344A2F004CCF4C /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		58D709D12B344D1A004CCF4C /* InputContainerView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputContainerView+ViewModel.swift"; sourceTree = "<group>"; };
 		58D709D42B344E22004CCF4C /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
-		58D709D82B344F1D004CCF4C /* LLMCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMCaller.swift; sourceTree = "<group>"; };
-		58D709DA2B344F34004CCF4C /* ImageCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCompressor.swift; sourceTree = "<group>"; };
-		58D709DD2B344FA0004CCF4C /* PromptGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptGenerator.swift; sourceTree = "<group>"; };
+		58D709D82B344F1D004CCF4C /* LLMCallerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMCallerProtocol.swift; sourceTree = "<group>"; };
+		58D709DA2B344F34004CCF4C /* ImageCompressorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCompressorProtocol.swift; sourceTree = "<group>"; };
+		58D709DD2B344FA0004CCF4C /* PromptGeneratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromptGeneratorProtocol.swift; path = "../Interface Protocols/PromptGeneratorProtocol.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +112,8 @@
 		585402BE2B021BEC00306C10 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				58D709D72B344F13004CCF4C /* Interface Protocols */,
-				58D709DC2B344F3D004CCF4C /* Implementations */,
-				58BE112F2B30A0ED008475D7 /* Mock */,
+				58D709DF2B345067004CCF4C /* Network */,
+				58D709DC2B344F3D004CCF4C /* PromptGenerator */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -228,15 +227,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		58BE112F2B30A0ED008475D7 /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-				58BE11302B30A0F8008475D7 /* MockedLLMCaller.swift */,
-				58BE11362B30AB02008475D7 /* MockedImageCompressor.swift */,
-			);
-			path = Mock;
-			sourceTree = "<group>";
-		};
 		58BE113B2B30ABFA008475D7 /* ImageDropView */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,24 +265,42 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		58D709D72B344F13004CCF4C /* Interface Protocols */ = {
+		58D709DC2B344F3D004CCF4C /* PromptGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				58D709D82B344F1D004CCF4C /* LLMCaller.swift */,
-				58D709DA2B344F34004CCF4C /* ImageCompressor.swift */,
-				58D709DD2B344FA0004CCF4C /* PromptGenerator.swift */,
-			);
-			path = "Interface Protocols";
-			sourceTree = "<group>";
-		};
-		58D709DC2B344F3D004CCF4C /* Implementations */ = {
-			isa = PBXGroup;
-			children = (
-				585402B72B0217F600306C10 /* OpenAILLMCaller.swift */,
-				58B4CE1D2B04C8CD004AB6F2 /* TinfyImageCompressorNetworkService.swift */,
+				58D709DD2B344FA0004CCF4C /* PromptGeneratorProtocol.swift */,
 				58B3DA422B023F650025A0CD /* PromptGenerator.swift */,
 			);
-			path = Implementations;
+			path = PromptGenerator;
+			sourceTree = "<group>";
+		};
+		58D709DF2B345067004CCF4C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				58D709E02B34506E004CCF4C /* LLMCaller */,
+				58D709E12B345084004CCF4C /* ImageCompressor */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		58D709E02B34506E004CCF4C /* LLMCaller */ = {
+			isa = PBXGroup;
+			children = (
+				58D709D82B344F1D004CCF4C /* LLMCallerProtocol.swift */,
+				58BE11302B30A0F8008475D7 /* MockedLLMCaller.swift */,
+				585402B72B0217F600306C10 /* OpenAILLMCaller.swift */,
+			);
+			path = LLMCaller;
+			sourceTree = "<group>";
+		};
+		58D709E12B345084004CCF4C /* ImageCompressor */ = {
+			isa = PBXGroup;
+			children = (
+				58D709DA2B344F34004CCF4C /* ImageCompressorProtocol.swift */,
+				58BE11362B30AB02008475D7 /* MockedImageCompressor.swift */,
+				58B4CE1D2B04C8CD004AB6F2 /* TinfyImageCompressorNetworkService.swift */,
+			);
+			path = ImageCompressor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,7 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58B4CE1E2B04C8CD004AB6F2 /* TinfyImageCompressorNetworkService.swift in Sources */,
-				58D709DE2B344FA0004CCF4C /* PromptGenerator.swift in Sources */,
+				58D709DE2B344FA0004CCF4C /* PromptGeneratorProtocol.swift in Sources */,
 				58B3DA432B023F650025A0CD /* PromptGenerator.swift in Sources */,
 				58D709C82B3435F4004CCF4C /* InputContainerBackgroundView.swift in Sources */,
 				58BE5F542B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift in Sources */,
@@ -378,7 +386,7 @@
 				585402D72B023C2500306C10 /* UsabilityIssuePresentationView.swift in Sources */,
 				586590CE2AFD2E2C0037D1FE /* ContentView.swift in Sources */,
 				585402C12B021C1100306C10 /* OpenAPIResponse.swift in Sources */,
-				58D709D92B344F1D004CCF4C /* LLMCaller.swift in Sources */,
+				58D709D92B344F1D004CCF4C /* LLMCallerProtocol.swift in Sources */,
 				58D709CD2B3444D9004CCF4C /* InputTextFieldsView+ViewModel.swift in Sources */,
 				58BE11312B30A0F8008475D7 /* MockedLLMCaller.swift in Sources */,
 				58BE11432B311028008475D7 /* SinebowAnimationView.swift in Sources */,
@@ -393,7 +401,7 @@
 				58B4CE202B04D819004AB6F2 /* Data+Printing.swift in Sources */,
 				585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */,
 				58D709C62B343255004CCF4C /* TransparentWindow.swift in Sources */,
-				58D709DB2B344F34004CCF4C /* ImageCompressor.swift in Sources */,
+				58D709DB2B344F34004CCF4C /* ImageCompressorProtocol.swift in Sources */,
 				585402D02B0237F300306C10 /* View+StackAlignment.swift in Sources */,
 				58BE11352B30A7A7008475D7 /* ImageDropView+ViewModel.swift in Sources */,
 				58BE112E2B309E72008475D7 /* OpenAILLM.swift in Sources */,
