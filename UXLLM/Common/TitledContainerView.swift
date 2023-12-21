@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TitleBackgroundedContainerView<Content: View>: View {
+struct TitledContainerView<Content: View>: View {
     let title: String
     let content: Content
 
@@ -17,7 +17,7 @@ struct TitleBackgroundedContainerView<Content: View>: View {
     }
     
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 24) {
             Text(title)
                 .uxLLMTitleTextStyle()
                 .multilineTextAlignment(.leading)
@@ -25,7 +25,5 @@ struct TitleBackgroundedContainerView<Content: View>: View {
             
             content
         }
-        .padding(24)
-        .styledBackground(mode: .light)
     }
 }

@@ -15,7 +15,7 @@
 		585402CD2B02375400306C10 /* TitleAndTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402CC2B02375400306C10 /* TitleAndTextInputView.swift */; };
 		585402D02B0237F300306C10 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402CF2B0237F300306C10 /* View+.swift */; };
 		585402D22B0238EC00306C10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 585402D12B0238EC00306C10 /* Localizable.strings */; };
-		585402D52B02392E00306C10 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402D42B02392E00306C10 /* PrimaryButtonStyle.swift */; };
+		585402D52B02392E00306C10 /* BasicRoundButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402D42B02392E00306C10 /* BasicRoundButtonStyle.swift */; };
 		585402D72B023C2500306C10 /* UsabilityIssuePresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402D62B023C2500306C10 /* UsabilityIssuePresentationView.swift */; };
 		586590CC2AFD2E2C0037D1FE /* UXLLMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586590CB2AFD2E2C0037D1FE /* UXLLMApp.swift */; };
 		586590CE2AFD2E2C0037D1FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586590CD2AFD2E2C0037D1FE /* ContentView.swift */; };
@@ -38,7 +38,9 @@
 		58BE11432B311028008475D7 /* SinebowAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE11422B311028008475D7 /* SinebowAnimationView.swift */; };
 		58BE5F522B31E394004E7B67 /* Text+Textstyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE5F512B31E394004E7B67 /* Text+Textstyles.swift */; };
 		58BE5F542B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE5F532B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift */; };
-		58BE5F562B31F11D004E7B67 /* TitleBackgroundedContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE5F552B31F11D004E7B67 /* TitleBackgroundedContainerView.swift */; };
+		58BE5F562B31F11D004E7B67 /* TitledContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE5F552B31F11D004E7B67 /* TitledContainerView.swift */; };
+		58D709C62B343255004CCF4C /* TransparentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709C52B343255004CCF4C /* TransparentWindow.swift */; };
+		58D709C82B3435F4004CCF4C /* InputBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709C72B3435F4004CCF4C /* InputBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +52,7 @@
 		585402CC2B02375400306C10 /* TitleAndTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndTextInputView.swift; sourceTree = "<group>"; };
 		585402CF2B0237F300306C10 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		585402D12B0238EC00306C10 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		585402D42B02392E00306C10 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		585402D42B02392E00306C10 /* BasicRoundButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicRoundButtonStyle.swift; sourceTree = "<group>"; };
 		585402D62B023C2500306C10 /* UsabilityIssuePresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsabilityIssuePresentationView.swift; sourceTree = "<group>"; };
 		586590C82AFD2E2C0037D1FE /* UXLLM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UXLLM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		586590CB2AFD2E2C0037D1FE /* UXLLMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UXLLMApp.swift; sourceTree = "<group>"; };
@@ -75,7 +77,9 @@
 		58BE11422B311028008475D7 /* SinebowAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinebowAnimationView.swift; sourceTree = "<group>"; };
 		58BE5F512B31E394004E7B67 /* Text+Textstyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Textstyles.swift"; sourceTree = "<group>"; };
 		58BE5F532B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledBackgroundRoundedRectangle.swift; sourceTree = "<group>"; };
-		58BE5F552B31F11D004E7B67 /* TitleBackgroundedContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBackgroundedContainerView.swift; sourceTree = "<group>"; };
+		58BE5F552B31F11D004E7B67 /* TitledContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledContainerView.swift; sourceTree = "<group>"; };
+		58D709C52B343255004CCF4C /* TransparentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentWindow.swift; sourceTree = "<group>"; };
+		58D709C72B3435F4004CCF4C /* InputBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,10 +130,12 @@
 			children = (
 				585402D32B02392500306C10 /* Button */,
 				585402CC2B02375400306C10 /* TitleAndTextInputView.swift */,
-				58BE5F552B31F11D004E7B67 /* TitleBackgroundedContainerView.swift */,
+				58BE5F552B31F11D004E7B67 /* TitledContainerView.swift */,
 				58BE5F532B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift */,
+				58D709C52B343255004CCF4C /* TransparentWindow.swift */,
 				58BE113E2B30B28C008475D7 /* TextEditorWithPlaceholder.swift */,
 				58BE11422B311028008475D7 /* SinebowAnimationView.swift */,
+				58D709C72B3435F4004CCF4C /* InputBackgroundView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -159,7 +165,7 @@
 		585402D32B02392500306C10 /* Button */ = {
 			isa = PBXGroup;
 			children = (
-				585402D42B02392E00306C10 /* PrimaryButtonStyle.swift */,
+				585402D42B02392E00306C10 /* BasicRoundButtonStyle.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -314,9 +320,10 @@
 			files = (
 				58B4CE1E2B04C8CD004AB6F2 /* TinfyImageCompressorNetworkService.swift in Sources */,
 				58B3DA432B023F650025A0CD /* PromptGenerator.swift in Sources */,
+				58D709C82B3435F4004CCF4C /* InputBackgroundView.swift in Sources */,
 				58BE5F542B31E89B004E7B67 /* StyledBackgroundRoundedRectangle.swift in Sources */,
 				58BE112C2B304C1E008475D7 /* ContentView+ViewModel.swift in Sources */,
-				585402D52B02392E00306C10 /* PrimaryButtonStyle.swift in Sources */,
+				585402D52B02392E00306C10 /* BasicRoundButtonStyle.swift in Sources */,
 				585402D72B023C2500306C10 /* UsabilityIssuePresentationView.swift in Sources */,
 				586590CE2AFD2E2C0037D1FE /* ContentView.swift in Sources */,
 				585402C12B021C1100306C10 /* OpenAPIResponse.swift in Sources */,
@@ -326,10 +333,11 @@
 				58BE11372B30AB02008475D7 /* MockedImageCompressor.swift in Sources */,
 				585402BC2B021B4400306C10 /* App Error.swift in Sources */,
 				58BE11412B311000008475D7 /* Sinebow.metal in Sources */,
-				58BE5F562B31F11D004E7B67 /* TitleBackgroundedContainerView.swift in Sources */,
+				58BE5F562B31F11D004E7B67 /* TitledContainerView.swift in Sources */,
 				58BE5F522B31E394004E7B67 /* Text+Textstyles.swift in Sources */,
 				58B4CE202B04D819004AB6F2 /* Data+.swift in Sources */,
 				585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */,
+				58D709C62B343255004CCF4C /* TransparentWindow.swift in Sources */,
 				585402D02B0237F300306C10 /* View+.swift in Sources */,
 				58BE11352B30A7A7008475D7 /* ImageDropView+ViewModel.swift in Sources */,
 				58BE112E2B309E72008475D7 /* OpenAILLM.swift in Sources */,

@@ -16,19 +16,16 @@ struct TitleAndTextInputView: View {
     let onSave: (String) -> Void
     
     var body: some View {
-        VStack(spacing: 16) {
-            Text(title)
-                .uxLLMTitleTextStyle()
-                .multilineTextAlignment(.leading)
-                .leftAlignWithHStack()
-            
-            TextEditorWithPlaceholder(placeholder: placeholder, text: $text)
-                .uxLLMBodyTextStyle()
-                .padding(16)
-                .styledBackground(mode: .dark)
-                .onChange(of: text) {
-                    onSave(text)
-                }
+        VStack(spacing: 24) {
+            TitledContainerView(title: title) {
+                TextEditorWithPlaceholder(placeholder: placeholder, text: $text)
+                    .uxLLMBodyTextStyle()
+                    .padding(16)
+                    .styledBackground(mode: .dark)
+                    .onChange(of: text) {
+                        onSave(text)
+                    }
+            }
         }
     }
 }

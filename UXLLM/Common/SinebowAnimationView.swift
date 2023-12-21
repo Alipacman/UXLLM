@@ -15,9 +15,20 @@ struct SinebowAnimationView: View {
     let timeMultier: CGFloat
     
     var body: some View {
-        ProgressView()
-            .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
-            .frame(width: 100, height: 100)
+        TimelineView(.animation) { timeline in
+            let elapsedTime = startTime.distance(to: timeline.date)
+
+            Rectangle()
+                .visualEffect { content, proxy in
+                    content
+                        .colorEffect(
+                            ShaderLibrary.sinebow(
+                                .float2(.init(width: width, height: heigth)),
+                                .float(elapsedTime*timeMultier)
+                            )
+                        )
+                }
+        }
     }
 }
 

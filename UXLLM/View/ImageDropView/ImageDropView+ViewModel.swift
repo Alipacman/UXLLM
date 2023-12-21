@@ -11,6 +11,7 @@ extension ImageDropView {
     class ViewModel : ObservableObject {
         
         // MARK: - Properties
+        @Published var isLoading: Bool = false
         @Published var isTargeted: Bool = false
         @Published var compressedImage: NSImage?
         
@@ -39,15 +40,24 @@ extension ImageDropView {
         
         // MARK: - Helper
         private func received(imageData: Data) {
+            setLoading(active: true)
             Task {
                 do {
                     let compressedImageData = try await imageCompressor.resizeAndShrink(imageData: imageData, size: Constants.sizeToResizeTo)
                     DispatchQueue.main.async {
                         self.compressedImage = NSImage(data: compressedImageData)
+                        self.setLoading(active: false)
                     }
                 } catch {
                     print("Failed image compression with error: \(error.localizedDescription)")
+                    self.setLoading(active: false)
                 }
+            }
+        }
+        
+        private func setLoading(active: Bool) {
+            DispatchQueue.main.async {
+                self.isLoading = active
             }
         }
     }

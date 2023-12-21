@@ -26,7 +26,7 @@ struct ImageDropView: View {
                 deleteButtonIfNeeded
             }
             .clipShape(RoundedRectangle(cornerRadius: 25.0))
-            .onDrop(of: [.image], 
+            .onDrop(of: [.image],
                     isTargeted: $viewModel.isTargeted,
                     perform: { providers in
                 viewModel.onDrop(providers: providers)
@@ -36,56 +36,73 @@ struct ImageDropView: View {
                 self.nsImage = viewModel.compressedImage
             }
     }
-
+    
+    @ViewBuilder
     private var content: some View {
-        Group {
-            if let nsImage {
-                Image(nsImage: nsImage)
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
+        if let nsImage {
+            Image(nsImage: nsImage)
+                .resizable()
+                .scaledToFit()
+                .clipShape(RoundedRectangle(cornerRadius: 25.0))
+        } else {
+            if viewModel.isLoading {
+                ProgressView()
+                    .colorInvert() // MacOS Workaround
+                    .brightness(1)
+                
             } else {
                 Image(systemName: "photo.badge.plus")
                     .font(.system(size: 60))
                     .foregroundColor(Color("TintColor"))
+                    .opacity(viewModel.isTargeted ? 0.0 : 1.0)
             }
         }
     }
     
+    @ViewBuilder
     private var darkOverlayIfTargeted: some View {
-        Group {
-            if viewModel.isTargeted {
-                ZStack {
-                    Color.black.opacity(0.6)
-                    
-                    VStack(spacing: 8) {
-                        Image(systemName: "plus.circle.fill")
-                            .font(.system(size: 60))
-                        Text("Image Drop View Targeted Text".localized())
-                    }
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
+        if viewModel.isTargeted {
+            ZStack {
+                Color.black.opacity(0.6)
+                
+                VStack(spacing: 8) {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.system(size: 40))
+                    Text("Image Drop View Targeted Text".localized())
+                        .uxLLMTitleTextStyle()
                 }
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
             }
         }
     }
     
+    @ViewBuilder
     private var deleteButtonIfNeeded: some View {
-        Group {
-            if nsImage != nil {
-                Button {
-                    viewModel.clearImage()
-                } label: {
-                    Image(systemName: "x.circle.fill")
-                        .font(.system(size: 30))
-                }
-                .frame(width: 30, height: 30)
-                .padding()
-                .topAlignWithVStack()
-                .rightAlignWithHStack()
+        if nsImage != nil {
+            Button {
+                viewModel.clearImage()
+            } label: {
+                Image(systemName: "x.circle.fill")
+                    .font(.system(size: 30))
             }
+            .buttonStyle(PlainButtonStyle())
+            .background(
+                Circle()
+                    .fill(.white)
+                    .blur(radius: 3.0)
+            )
+            .padding()
+            .topAlignWithVStack()
+            .rightAlignWithHStack()
         }
     }
+}
+
+#Preview {
+    let viewModel = ImageDropView.ViewModel(imageCompressor: MockedImageCompressor())
+    //viewModel.isTargeted = false
+    return ImageDropView(viewModel: viewModel,
+                         nsImage: .constant(.init()))
+        .background(InputBackgroundView())
 }

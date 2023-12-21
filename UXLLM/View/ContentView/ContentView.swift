@@ -12,21 +12,34 @@ struct ContentView: View {
     @StateObject var viewModel: ViewModel
     
     var body: some View {
+        VStack {
+            content
+            startButton
+                .offset(y: -BasicRoundButtonStyle.dimension/2)
+            if viewModel.isLoading && viewModel.llmOutput != nil {
+                UsabilityIssuePresentationView(isLoading: viewModel.isLoading,
+                                               usabilityIssuesText: viewModel.llmOutput)
+            }
+            
+            Spacer()
+        }
+    }
+    
+    private var content: some View {
         VStack(spacing: 40) {
             HStack(spacing: 80) {
                 Spacer()
                 VStack {
-                    Text("Intro Text".localized())
-                        .multilineTextAlignment(.leading)
-                        .uxLLMTitleTextStyle()
-                        .leftAlignWithHStack()
                     
+                    TitledContainerView(title: "Intro Text".localized()) { }
                     Spacer(minLength: 0)
                     
-                    TitleBackgroundedContainerView(title: "Image Drop Title".localized()) {
+                    TitledContainerView(title: "Image Drop Title".localized()) {
                         ImageDropView(viewModel: .init(imageCompressor: viewModel.imageCompressor),
                                       nsImage: $viewModel.inputConfiguration.nsImage)
                     }
+                    .padding(24)
+                    .styledBackground(mode: .light)
                 }
                 .frame(width: 500, height: 750)
                 
@@ -38,21 +51,12 @@ struct ContentView: View {
             if !Constants.hideLLMSelection {
                 OpenAILLMModelChoosingView(selectedModel: $viewModel.inputConfiguration.llmModel)
             }
-            
-            startButton
-            
-            UsabilityIssuePresentationView(usabilityIssuesText: viewModel.llmOutput ?? "")
         }
-        .padding(32)
+        .padding(40)
         .background(
-            RoundedRectangle(cornerRadius: 16)
-                .fill(
-                    LinearGradient(colors: [Color("BackgroundGradient1"),
-                                            Color("BackgroundGradient2")],
-                                   startPoint: .top,
-                                   endPoint: .bottom)
-                )
+            InputBackgroundView()
         )
+        .frame(height: 130 + 130 + 360 + 40 + 40 + 24 + 24 + 40 + 40)
     }
     
     private var textFields: some View {
@@ -76,7 +80,7 @@ struct ContentView: View {
                                   text: $viewModel.inputConfiguration.sourceCode) { newValue in
                 viewModel.persist(input: .sourceCode, value: newValue)
             }
-                                  .frame(height: 362)
+                                  .frame(height: 360)
         }
         .padding(24)
         .styledBackground(mode: .light)
@@ -88,7 +92,7 @@ struct ContentView: View {
         } label: {
             Text("Start")
         }
-        .buttonStyle(PrimaryButtonStyle(isLoading: viewModel.isLoading))
+        .buttonStyle(BasicRoundButtonStyle(isLoading: viewModel.isLoading))
     }
 }
 

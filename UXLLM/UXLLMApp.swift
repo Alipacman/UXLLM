@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct VisualEffect: NSViewRepresentable {
-    func makeNSView(context: Self.Context) -> NSView { return NSVisualEffectView() }
-    func updateNSView(_ nsView: NSView, context: Context) { }
-}
-
 @main
 struct UXLLMApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: .init(llmCaller: OpenAILLMCaller(),
-                                         promptGenerator: BasicPromptGenerator(),
-                                         imageCompressor: TinfyImageCompressorNetworkService()))
-            .background(VisualEffect().ignoresSafeArea())
+            ContentView(viewModel: Self.generateContentViewViewModel())
+                .background(TransparentWindow())
         }
+    }
+    // MARK: - Helper
+    private static func generateContentViewViewModel() -> ContentView.ViewModel {
+        .init(llmCaller: MockedLLMCaller(),
+              promptGenerator: BasicPromptGenerator(),
+              imageCompressor: MockedImageCompressor()
+        )
     }
 }

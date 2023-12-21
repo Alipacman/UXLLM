@@ -10,11 +10,8 @@ import Foundation
 import Foundation
 
 struct MockedLLMCaller: LLMCaller {
-    func call(with configuration: LLMCallerConfiguration) async throws -> String {
-        
-        try await Task.sleep(until: .now + .seconds(3), clock: .continuous)
-        
-        return 
+    
+    static let mockedUsabilityIssues = 
 """
 Mocked Usability Issues:
 1. Font too small, making text hard to read.
@@ -28,6 +25,9 @@ Mocked Usability Issues:
 9. Inadequate feedback on user actions (e.g., no confirmation after submitting a form).
 10. Poor touch target sizes on mobile, making buttons hard to tap.
 """
-        
+    
+    func call(with configuration: LLMCallerConfiguration) async throws -> String {
+        try await Task.sleep(until: .now + .seconds(3), clock: .continuous)
+        return Self.mockedUsabilityIssues
     }
 }

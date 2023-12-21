@@ -11,7 +11,7 @@
 "Source Code Input Placeholder" = "struct ContentView: View { ...";
 
 "Image Drop Title" = "View Image";
-"Image Drop View Targeted Text" = "Drop your view preview here...";
+"Image Drop View Targeted Text" = "Drop your image here.";
 
 // MARK: - Errors
 "App Error API URL" = "Failed to construct API URL.";
