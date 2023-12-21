@@ -11,36 +11,12 @@ extension ContentView {
     class ViewModel: ObservableObject {
         
         // MARK: - Properties
-        internal enum TextualPersistableInput {
-            case appOverview, userTask, sourceCode
-            
-            var userDefaultsKey: String {
-                switch self {
-                case .appOverview: return "appOverviewKey"
-                case .userTask: return "userTaskKey"
-                case .sourceCode: return "sourceCodeKey"
-                }
-            }
-        }
-        
         internal struct InputConfiguration {
-            var appOverview: String
-            var userTask: String
-            var sourceCode: String
+            var appOverview: String = ""
+            var userTask: String = ""
+            var sourceCode: String = ""
             var nsImage: NSImage? = nil
-            var llmModel: OpenAILLM
-            
-            init(appOverview: String = UserDefaults.standard.string(forKey: TextualPersistableInput.appOverview.userDefaultsKey) ?? "",
-                 userTask: String = UserDefaults.standard.string(forKey: TextualPersistableInput.userTask.userDefaultsKey) ?? "",
-                 sourceCode: String = UserDefaults.standard.string(forKey: TextualPersistableInput.sourceCode.userDefaultsKey) ?? "",
-                 nsImage: NSImage? = nil,
-                 llmModel: OpenAILLM = Constants.defaultOpenAILLM) {
-                self.appOverview = appOverview
-                self.userTask = userTask
-                self.sourceCode = sourceCode
-                self.nsImage = nsImage
-                self.llmModel = llmModel
-            }
+            var llmModel: OpenAILLM = Constants.defaultOpenAILLM
             
             func generatePromptConfiguration() -> PromptConfiguration {
                 .init(appOverview: appOverview, userTask: userTask, sourceCode: sourceCode, hasImage: nsImage == nil)
@@ -82,12 +58,6 @@ extension ContentView {
                                             errorText: (error as? AppError)?.description ?? error.localizedDescription)
 
                 }
-            }
-        }
-        
-        func persist(input: TextualPersistableInput, value: String) {
-            DispatchQueue.main.async {
-                UserDefaults.standard.setValue(value, forKey: input.userDefaultsKey)
             }
         }
         

@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
+    // MARK: - Properties
     @StateObject var viewModel: ViewModel
     
+    // MARK: - Body
     var body: some View {
         VStack {
             content
@@ -43,8 +45,13 @@ struct ContentView: View {
                 }
                 .frame(width: 500, height: 750)
                 
-                textFields
-                    .frame(width: 500)
+                PersistingInputTextFieldsView(appOverview: $viewModel.inputConfiguration.appOverview,
+                                              userTask: $viewModel.inputConfiguration.userTask,
+                                              sourceCode: $viewModel.inputConfiguration.sourceCode)
+                .padding(24)
+                .styledBackground(mode: .light)
+                .frame(width: 500)
+                
                 Spacer()
             }
             
@@ -59,33 +66,6 @@ struct ContentView: View {
         .frame(height: 130 + 130 + 360 + 40 + 40 + 24 + 24 + 40 + 40)
     }
     
-    private var textFields: some View {
-        VStack(spacing: 40) {
-            TitleAndTextInputView(title: "App Overview Input Title".localized(),
-                                  placeholder: "App Overview Input Placeholder".localized(),
-                                  text: $viewModel.inputConfiguration.appOverview) { newValue in
-                viewModel.persist(input: .appOverview, value: newValue)
-            }
-                                  .frame(height: 130)
-            
-            TitleAndTextInputView(title: "User Task Input Title".localized(),
-                                  placeholder: "User Task Input Placeholder".localized(),
-                                  text: $viewModel.inputConfiguration.userTask) { newValue in
-                viewModel.persist(input: .userTask, value: newValue)
-            }
-                                  .frame(height: 130)
-            
-            TitleAndTextInputView(title: "Source Code Input Title".localized(), 
-                                  placeholder: "Source Code Input Placeholder".localized(),
-                                  text: $viewModel.inputConfiguration.sourceCode) { newValue in
-                viewModel.persist(input: .sourceCode, value: newValue)
-            }
-                                  .frame(height: 360)
-        }
-        .padding(24)
-        .styledBackground(mode: .light)
-    }
-    
     private var startButton: some View {
         Button {
             viewModel.startGeneratingUsabilityIssues()
@@ -96,6 +76,7 @@ struct ContentView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     ContentView(viewModel: .init(llmCaller: MockedLLMCaller(),
                                  promptGenerator: BasicPromptGenerator(),
