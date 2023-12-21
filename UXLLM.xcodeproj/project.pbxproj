@@ -337,8 +337,8 @@
 		58D709E92B3462AA004CCF4C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				585402D62B023C2500306C10 /* UsabilityIssuePresentationView.swift */,
 				58BE11422B311028008475D7 /* SinebowAnimationView.swift */,
+				585402D62B023C2500306C10 /* UsabilityIssuePresentationView.swift */,
 				58D709EA2B3464C6004CCF4C /* ErrorView.swift */,
 			);
 			path = Components;

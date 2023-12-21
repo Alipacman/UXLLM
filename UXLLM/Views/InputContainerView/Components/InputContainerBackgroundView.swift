@@ -18,10 +18,8 @@ struct InputContainerBackgroundView: View {
             )
             .clipShape(
                 .rect(
-                    topLeadingRadius: 0,
                     bottomLeadingRadius: 16,
-                    bottomTrailingRadius: 16,
-                    topTrailingRadius: 0
+                    bottomTrailingRadius: 16
                 )
             )
     }
