@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct InputContainerBackgroundView: View {
+    
+    // MARK: - Body
     var body: some View {
         Rectangle()
             .fill(
@@ -25,6 +27,7 @@ struct InputContainerBackgroundView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     InputContainerBackgroundView()
 }

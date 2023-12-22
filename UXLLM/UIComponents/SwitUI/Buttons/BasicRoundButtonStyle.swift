@@ -9,13 +9,16 @@ import SwiftUI
 
 struct BasicRoundButtonStyle: ButtonStyle {
     
+    // MARK: - Properties
     static let dimension: CGFloat = 84
     private let isLoading: Bool
     
+    // MARK: - Init
     init(isLoading: Bool) {
         self.isLoading = isLoading
     }
     
+    // MARK: - Body
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .foregroundColor(Color("TintColor"))
@@ -39,6 +42,7 @@ struct BasicRoundButtonStyle: ButtonStyle {
     }
 }
 
+// MARK: - Preview
 #Preview {
     Button {
         

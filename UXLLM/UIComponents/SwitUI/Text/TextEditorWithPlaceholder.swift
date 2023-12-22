@@ -9,9 +9,11 @@ import SwiftUI
 
 struct TextEditorWithPlaceholder: View {
     
+    // MARK: - Properties
     let placeholder: String
     @Binding var text: String
     
+    // MARK: - Body
     var body: some View {
         TextEditor(text: $text)
             .scrollContentBackground(.hidden)
@@ -27,7 +29,7 @@ struct TextEditorWithPlaceholder: View {
     }
 }
 
-
+// MARK: - Preview
 #Preview {
     TextEditorWithPlaceholder(placeholder: "Placeholder", text: .constant("Test"))
 }

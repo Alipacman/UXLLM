@@ -8,10 +8,13 @@
 import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    // MARK: - Delegate
     func applicationDidFinishLaunching(_ notification: Notification) {
         styleTitleBar()
     }
 
+    // MARK: - Helpers
     private func styleTitleBar() {
         guard let window = NSApplication.shared.windows.first else { return }
 

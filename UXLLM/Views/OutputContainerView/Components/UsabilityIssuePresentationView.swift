@@ -9,8 +9,10 @@ import SwiftUI
 
 struct UsabilityIssuePresentationView: View {
     
+    // MARK: - Properties
     let usabilityIssuesText: String
     
+    // MARK: - Body
     var body: some View {
         ScrollView(showsIndicators: false) {
             Text(usabilityIssuesText)
@@ -20,6 +22,7 @@ struct UsabilityIssuePresentationView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     UsabilityIssuePresentationView(usabilityIssuesText: MockedLLMCaller.mockedUsabilityIssues)
 }

@@ -9,15 +9,17 @@ import SwiftUI
 
 struct ImageDropView: View {
     
+    // MARK: - Properties
     @StateObject var viewModel: ViewModel
     @Binding var nsImage: NSImage?
     
     private let width: CGFloat = 180
     
+    // MARK: - Body
     var body: some View {
         content
             .frame(width: width,
-                   height: width * Constants.imageRatio) // iPhone 13 Size
+                   height: width * Constants.imageRatio)
             .background(
                 RoundedRectangle(cornerRadius: 25.0)
                     .strokeBorder(Color.white,
@@ -104,10 +106,9 @@ struct ImageDropView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     let viewModel = ImageDropView.ViewModel(imageCompressor: MockedImageCompressor())
-    //viewModel.isTargeted = false
-    return ImageDropView(viewModel: viewModel,
-                         nsImage: .constant(.init()))
+    return ImageDropView(viewModel: viewModel, nsImage: .constant(.init()))
         .background(InputContainerBackgroundView())
 }

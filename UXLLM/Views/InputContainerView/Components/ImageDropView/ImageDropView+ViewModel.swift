@@ -15,7 +15,7 @@ extension ImageDropView {
         @Published var isTargeted: Bool = false
         @Published var compressedImage: NSImage?
         
-        let imageCompressor: ImageCompressor
+        internal let imageCompressor: ImageCompressor
         
         // MARK: - Init
         init(imageCompressor: ImageCompressor) {
@@ -35,32 +35,28 @@ extension ImageDropView {
         
         
         func clearImage() {
-            DispatchQueue.main.async {
-                self.compressedImage = nil
-            }
+            compressedImage = nil
         }
         
         // MARK: - Helper
         private func received(imageData: Data) {
-            clearImage()
-            setLoading(active: true)
+            setState(loadingActive: true)
             Task {
                 do {
-                    let compressedImageData = try await imageCompressor.resizeAndShrink(imageData: imageData, size: Constants.imageCompressionSize)
-                    DispatchQueue.main.async {
-                        self.compressedImage = NSImage(data: compressedImageData)
-                        self.setLoading(active: false)
-                    }
+                    let compressedImageData = try await imageCompressor.resizeAndShrink(imageData: imageData,
+                                                                                        size: Constants.imageCompressionSize)
+                    setState(loadingActive: false, image: NSImage(data: compressedImageData))
                 } catch {
                     print("Failed image compression with error: \(error.localizedDescription)")
-                    self.setLoading(active: false)
+                    setState(loadingActive: false)
                 }
             }
         }
         
-        private func setLoading(active: Bool) {
+        private func setState(loadingActive: Bool, image: NSImage? = nil) {
             DispatchQueue.main.async {
-                self.isLoading = active
+                self.isLoading = loadingActive
+                self.compressedImage = image
             }
         }
     }

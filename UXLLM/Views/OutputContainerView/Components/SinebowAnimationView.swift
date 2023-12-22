@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct SinebowAnimationView: View {
+    
+    // MARK: - Properties
     @State private var startTime = Date.now
     
     let shaderSineWidth: CGFloat
     let shaderSineHeight: CGFloat
     let timeMultier: CGFloat
     
+    // MARK: - Body
     var body: some View {
         TimelineView(.animation) { timeline in
             let elapsedTime = startTime.distance(to: timeline.date)
@@ -33,6 +36,7 @@ struct SinebowAnimationView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     SinebowAnimationView(shaderSineWidth: 500,
                          shaderSineHeight: 400,

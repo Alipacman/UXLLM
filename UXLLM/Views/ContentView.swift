@@ -27,8 +27,6 @@ struct ContentView: View {
                                 usabilityIssuesText: viewModel.llmOutput,
                                 error: viewModel.errorText)
             .offset(y: -BasicRoundButtonStyle.dimension)
-            
-            Spacer()
         }
     }
 }

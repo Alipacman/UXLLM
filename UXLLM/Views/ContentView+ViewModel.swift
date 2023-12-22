@@ -58,10 +58,18 @@ extension ContentView {
             DispatchQueue.main.async {
                 self.llmOutput = llmOutput
                 self.errorText = errorText
+                
                 withAnimation(Animation.easeInOut(duration: 0.6)) {
                     self.isLoading = loadingActive
                 }
             }
         }
+    }
+}
+
+// MARK: - Extensions
+private extension InputContainerView.ViewModel.InputConfiguration {
+    func generatePromptConfiguration() -> PromptConfiguration {
+        .init(appOverview: appOverview, userTask: userTask, sourceCode: sourceCode, hasImage: nsImage == nil)
     }
 }

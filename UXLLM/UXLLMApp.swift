@@ -16,14 +16,14 @@ struct UXLLMApp: App {
     // MARK: - Body
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: Self.generateConfiguredViewModel())
+            ContentView(viewModel: Self.generateConfiguredContentViewModel())
                 .background(TransparentWindow())
         }
     }
     
     // MARK: - Helper
-    private static func generateConfiguredViewModel() -> ContentView.ViewModel {
-        Constants.useMockedService ? contentViewViewModelWithMockedService() : contentViewViewModel()
+    private static func generateConfiguredContentViewModel() -> ContentView.ViewModel {
+        Constants.useMockedServices ? contentViewViewModelWithMockedServices() : contentViewViewModel()
     }
     
     private static func contentViewViewModel() -> ContentView.ViewModel {
@@ -33,7 +33,7 @@ struct UXLLMApp: App {
         )
     }
     
-    private static func contentViewViewModelWithMockedService() -> ContentView.ViewModel {
+    private static func contentViewViewModelWithMockedServices() -> ContentView.ViewModel {
         .init(llmCaller: MockedLLMCaller(),
               promptGenerator: BasicPromptGenerator(),
               imageCompressor: MockedImageCompressor()

@@ -9,12 +9,14 @@ import SwiftUI
 
 struct TitleAndTextInputView: View {
     
+    // MARK: - Properties
     let title: String
     let placeholder: String
     @Binding var text: String
     
     let onSave: (String) -> Void
     
+    // MARK: - Body
     var body: some View {
         VStack(spacing: 24) {
             TitledContainerView(title: title, accessoryQuestionMark: true) {
@@ -30,6 +32,7 @@ struct TitleAndTextInputView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     TitleAndTextInputView(title: "What is the app about?", 
                           placeholder: "A fitness tracking app...",

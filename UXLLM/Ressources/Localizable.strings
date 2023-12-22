@@ -27,6 +27,6 @@ struct ExampleView: View {
 "Start Button Title" = "Start";
 
 // MARK: - Errors
-"App Error API URL" = "Failed to construct API URL.";
 "App Error HTTP" = "API Error with HTTP status code: %@)";
-"App Error Failed Image Compression" = "Failed Image Compression";
+"App Error Failed Converting ImageData" = "Failed Converting ImageData";
+"App Error Failed Image Resize URL" = "Failed extracting resize URL";

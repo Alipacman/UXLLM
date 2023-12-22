@@ -10,7 +10,7 @@ import Foundation
 class OpenAILLMCaller: LLMCaller {
     
     // MARK: - Properties
-    private let openAIURLString = "https://api.openai.com/v1/chat/completions"
+    private let openAIURL = URL(string: "https://api.openai.com/v1/chat/completions")!
     
     // MARK: - Interface
     func call(with configuration: LLMCallerConfiguration) async throws -> String {
@@ -46,8 +46,8 @@ class OpenAILLMCaller: LLMCaller {
         
         guard let httpResponse = response as? HTTPURLResponse,
               httpResponse.statusCode == 200 else {
-            let httpResponseError = (response as? HTTPURLResponse)?.statusCode ?? -1
-            throw AppError.httpResponse(httpResponseError)
+            let httpResponseErrorCode = (response as? HTTPURLResponse)?.statusCode ?? -1
+            throw AppError.httpResponse(httpResponseErrorCode)
         }
         
         let decoder = JSONDecoder()
@@ -79,8 +79,7 @@ class OpenAILLMCaller: LLMCaller {
     }
     
     private func urlRequest(parameters: [String : Any]) throws -> URLRequest {
-        guard let url = URL(string: openAIURLString) else { throw AppError.failedAPIURL }
-        var urlRequest = URLRequest(url: url)
+        var urlRequest = URLRequest(url: openAIURL)
         urlRequest.timeoutInterval = 100
         urlRequest.httpMethod = "POST"
         urlRequest.allHTTPHeaderFields = header()

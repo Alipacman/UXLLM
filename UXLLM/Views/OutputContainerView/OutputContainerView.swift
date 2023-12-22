@@ -22,11 +22,11 @@ struct OutputContainerView: View {
     var body: some View {
         VStack {
             if isLoading {
-                SinebowAnimationView(shaderSineWidth: 300,
+                SinebowAnimationView(shaderSineWidth: 280,
                                      shaderSineHeight: 100,
-                                     timeMultier: 2.0)
-                .frame(height: 250)
-                .padding(.top, 40)
+                                     timeMultier: 1.5)
+                .frame(height: 220)
+                .padding(.top, 20)
             } else if let usabilityIssuesText {
                 UsabilityIssuePresentationView(usabilityIssuesText: usabilityIssuesText)
                     .padding(.horizontal, 20)
@@ -42,7 +42,7 @@ struct OutputContainerView: View {
         .frame(width: 700)
         .frame(minHeight: 10) // Neccessary for non buggy scale effect animation
         .background(OutputContainerBackgroundView(adjustContrastForText: !isLoading))
-        .scaleEffect(x: 1, y: shouldShow ? 1 : 0, anchor: .top)
+        .scaleEffect(y: shouldShow ? 1 : 0, anchor: .top)
         .animation(.easeInOut(duration: 0.6) , value: shouldShow)
     }
 }

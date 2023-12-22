@@ -8,16 +8,16 @@
 import Foundation
 
 enum AppError: Error, LocalizedError {
-    case failedAPIURL
     case httpResponse(Int)
-    
-    case failedImageCompression
+
+    case failedConvertingImageData
+    case failedExtractingResizeURL
     
     var description: String? {
         switch self {
-        case .failedAPIURL: return "App Error API URL".localized()
         case .httpResponse(let code): return "App Error HTTP".localized(with: [String(code)])
-        case .failedImageCompression: return "App Error Failed Image Compression".localized()
+        case .failedConvertingImageData: return "App Error Failed Converting ImageData".localized()
+        case .failedExtractingResizeURL: return "App Error Failed Image Resize URL".localized()
         }
     }
 }

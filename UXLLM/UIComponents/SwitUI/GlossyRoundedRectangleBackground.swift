@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GlossyRoundedRectangleBackgroundView: View {
     
+    // MARK: - Properties
     enum Mode {
         case light, dark
             
@@ -22,6 +23,7 @@ struct GlossyRoundedRectangleBackgroundView: View {
 
     let mode: Mode
     
+    // MARK: - Body
     var body: some View {
         RoundedRectangle(cornerRadius: 16)
             .fill(mode.associatedColor)
@@ -29,12 +31,14 @@ struct GlossyRoundedRectangleBackgroundView: View {
     }
 }
 
+// MARK: - Modifier
 extension View {
     func glossyRoundedRectangleBackground(mode: GlossyRoundedRectangleBackgroundView.Mode) -> some View {
         self.background(GlossyRoundedRectangleBackgroundView(mode: mode))
     }
 }
 
+// MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {

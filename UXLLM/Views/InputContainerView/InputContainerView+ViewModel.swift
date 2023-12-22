@@ -17,10 +17,6 @@ extension InputContainerView {
             var sourceCode: String = ""
             var nsImage: NSImage? = nil
             var llmModel: OpenAILLM = Constants.defaultOpenAILLM
-            
-            func generatePromptConfiguration() -> PromptConfiguration {
-                .init(appOverview: appOverview, userTask: userTask, sourceCode: sourceCode, hasImage: nsImage == nil)
-            }
         }
     
         @Published var inputConfiguration: InputConfiguration = .init()

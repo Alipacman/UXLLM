@@ -272,8 +272,8 @@
 		58D709DC2B344F3D004CCF4C /* PromptGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				58B3DA422B023F650025A0CD /* PromptGenerator.swift */,
 				58D709E22B3451BA004CCF4C /* PromptGeneratorProtocol.swift */,
+				58B3DA422B023F650025A0CD /* PromptGenerator.swift */,
 			);
 			path = PromptGenerator;
 			sourceTree = "<group>";

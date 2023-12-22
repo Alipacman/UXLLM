@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ErrorView: View {
     
+    // MARK: - Properties
     let error: String
     
+    // MARK: - Body
     var body: some View {
         Text(error)
             .foregroundStyle(Color("TintColor"))
@@ -18,6 +20,7 @@ struct ErrorView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     ErrorView(error: "Failed Fetching")
 }

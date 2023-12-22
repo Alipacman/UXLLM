@@ -11,15 +11,15 @@ import Cocoa
 class TinfyImageCompressorNetworkService: ImageCompressor {
     
     // MARK: - Properties
-    private let shrinkUrl = URL(string: "https://api.tinify.com/shrink")!
+    private let tinfyShrinkURL = URL(string: "https://api.tinify.com/shrink")!
 
     // MARK: - Interface
     func resizeAndShrink(imageData: Data, size: CGSize) async throws -> Data {
         guard let jpegData = NSImage(data: imageData)?.jpegData() else {
-            throw AppError.failedImageCompression
+            throw AppError.failedConvertingImageData
         }
         
-        var shrinkRequest = URLRequest(url: shrinkUrl)
+        var shrinkRequest = URLRequest(url: tinfyShrinkURL)
         shrinkRequest.httpMethod = "POST"
         shrinkRequest.allHTTPHeaderFields = header()
         shrinkRequest.httpBody = jpegData
@@ -27,12 +27,13 @@ class TinfyImageCompressorNetworkService: ImageCompressor {
         let (_, shrinkResponse) = try await URLSession.shared.data(for: shrinkRequest)
         guard let httpResponse = shrinkResponse as? HTTPURLResponse, httpResponse.statusCode == 201,
               let location = httpResponse.value(forHTTPHeaderField: "Location") else {
-            throw AppError.failedImageCompression
+            let httpResponseErrorCode = (shrinkResponse as? HTTPURLResponse)?.statusCode ?? -1
+            throw AppError.httpResponse(httpResponseErrorCode)
         }
         
         if Constants.printNetworkData { print("Shrink Response:\n", shrinkResponse) }
         
-        guard let resizeUrl = URL(string: location) else { throw AppError.failedImageCompression }
+        guard let resizeUrl = URL(string: location) else { throw AppError.failedExtractingResizeURL }
         
         var resizeRequest = URLRequest(url: resizeUrl)
         resizeRequest.httpMethod = "POST"

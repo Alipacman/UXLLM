@@ -8,8 +8,8 @@
 import Foundation
 
 struct BasicPromptGenerator: PromptGenerator {
+    
     func generateUserContent(with configuration: PromptConfiguration) -> String {
-        
         var base =
         """
         I have an iOS app about: \(configuration.appOverview)
