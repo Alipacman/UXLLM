@@ -75,8 +75,7 @@ class OpenAILLMCaller: LLMCaller {
     
     private func header() -> [String: String]? {
         ["Content-Type": "application/json",
-         "Authorization": "Bearer \(LocalConfiguration.openApiKey)",
-         "OpenAI-Organization": LocalConfiguration.organizationId]
+         "Authorization": "Bearer \(LocalConfiguration.openApiKey)"]
     }
     
     private func urlRequest(parameters: [String : Any]) throws -> URLRequest {
