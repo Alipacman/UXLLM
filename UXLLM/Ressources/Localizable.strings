@@ -16,10 +16,7 @@ struct ExampleView: View {
     }
 }
 
-#Preview {
-    SwiftUIView()
-}
-";
+#Preview {";
 
 "Image Drop Title" = "View Image";
 "Image Drop View Targeted Text" = "Drop your image here";

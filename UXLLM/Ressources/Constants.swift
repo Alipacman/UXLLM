@@ -20,5 +20,5 @@ struct Constants {
     static let imageRatio = 2.16 // iPhone 13 Display
     static let imageCompressionSize = CGSize(width: 240, height: 518)
     
-    static let printNetworkData = true
+    static let printNetworkData = false
 }

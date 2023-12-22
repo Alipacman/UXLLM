@@ -46,8 +46,10 @@ class TinfyImageCompressorNetworkService: ImageCompressor {
         resizeRequest.httpBody = try? JSONSerialization.data(withJSONObject: resizeBody)
         
         let (resizeData, resizeResponse) = try await URLSession.shared.data(for: resizeRequest)
-        if Constants.printNetworkData { print("Resize Response:\n", resizeResponse) }
-        resizeData.printSizeKB()
+        if Constants.printNetworkData {
+            print("Resize Response:\n", resizeResponse)
+            resizeData.printSizeKB()
+        }
         return resizeData
     }
     
