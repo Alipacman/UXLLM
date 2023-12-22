@@ -9,5 +9,5 @@ import Foundation
 
 struct LocalConfiguration {
     static let tinyPNGkey = "" // Get your key from here: https://tinypng.com/developers
-    static let openApiKey = "" // Get your key from here: https://platform.openai.com/playground
+    static let openApiKey = "" // Get your key from here: https://platform.openai.com/
 }
