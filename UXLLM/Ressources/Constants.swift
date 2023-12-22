@@ -8,7 +8,7 @@
 import Foundation
 
 struct Constants {
-    static let useMockedServices: Bool = true
+    static let useMockedServices: Bool = false
     
     static let defaultOpenAILLM = OpenAILLM.gpt4TurboVision
     static let numberOfPredictedUsabilityIssues = 10
