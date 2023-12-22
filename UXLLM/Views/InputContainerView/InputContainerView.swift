@@ -1,6 +1,7 @@
 //
 //  InputContainerView.swift
-//  UXLLM
+//  UXLLM under the MIT License (MIT)
+//  Copyright (c) 2023 MaibornWolff GmbH All rights reserved.
 //
 //  Created by Ali Ebrahimi Pourasad on 21.12.23.
 //
