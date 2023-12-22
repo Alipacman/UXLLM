@@ -81,5 +81,5 @@ Carthage/Build
 
 
 .DS_Store
-LocalKeys.swift
+LocalConfiguration.swift
 
