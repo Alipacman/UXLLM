@@ -1,6 +1,6 @@
 # UX-LLM
 
-![Demo Animation](Demo.gif)
+![Demo Animation](ReadMeResources/Demo.gif)
 
 UX-LLM is a prototype application that predicts usability issues for a specific view of an iOS app. For instance, in the case of a simple registration view, UX-LLM might predict the lack for visual hints about the password's complexity requirements. 
 
@@ -15,7 +15,7 @@ Finally, the output is a list of ten predicted usability issues with their ratio
 Just open the Xcode project, put in a ```openAIKey``` & ```tinyPNGkey``` into the ```LocalConfiguration``` file and start the Mac app.
 
 ## Implementation
-UX-LLM is a macOS application written in SwiftUI. The current LLM implemented is the state-of-the-art GPT-4 Turbo with vision of OpenAI [^1]. For compressing images, TinyPNG's API is used [^2]. The shader animation while loading is from the project Inferno by twostraws [^3].
+UX-LLM is a macOS application written in SwiftUI. The current LLM implemented is the state-of-the-art GPT-4 Turbo with vision of OpenAI[^1]. For compressing images, TinyPNG's API[^2] is used. The shader animation while loading is from the project Inferno by twostraws[^3].
 
 #### Prompt Engineering
 The system role content:
@@ -57,7 +57,7 @@ if let sourceCode = configuration.sourceCode {
 
 Below is a UML Class diagram of UX-LLM. It is simplified, especially when considering the implenentation of the SwiftUI MVVM architecture. The focus here is on the service layers of UX-LLM, which operate through interfaces and concrete implementations of them.
 
-![UML Class Diagram](ClassDiagram.png)
+![UML Class Diagram](ReadMeResources/ClassDiagram.png)
 
 ## License
  
