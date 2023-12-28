@@ -30,26 +30,11 @@ Enumerate the problems identified; add an empty paragraph after each enumeration
 
 User content:
 ```
-var base = 
-"""
-I have an iOS app about: \(configuration.appOverview)
-The users's task in this app view is about: \(configuration.userTask).
-"""
-
-if configuration.hasImage {
-    base +=
-    """
-    A screenshot of the app view is provided.
-    """
-}
-        
-if let sourceCode = configuration.sourceCode {
-    base += 
-    """
-    This is the swiftUI source code of the app view:
-    \(sourceCode)
-    """
-}
+I have an iOS app about: [insert app overview text]
+The users's task in this app view is about: [insert user task text].
+The provided image is the visual representation of the app view.
+The following is the SwiftUI source code for this view:
+[insert source code]
 ```
 
 [^1]: https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo
