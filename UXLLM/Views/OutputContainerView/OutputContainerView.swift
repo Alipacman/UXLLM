@@ -27,18 +27,19 @@ struct OutputContainerView: View {
                                      shaderSineHeight: 100,
                                      timeMultier: 1.5)
                 .frame(height: 220)
-                .padding(.top, 20)
+                .padding(.top, 80)
             } else if let usabilityIssuesText {
                 UsabilityIssuePresentationView(usabilityIssuesText: usabilityIssuesText)
                     .padding(.horizontal, 20)
+                    .padding(.top, 30)
             } else if let error {
                 ErrorView(error: error)
                     .padding(.horizontal, 20)
+                    .padding(.top, 60)
             }
             
             Spacer()
         }
-        .padding(.top, 60)
         .padding(.bottom, 10)
         .frame(width: 700)
         .frame(minHeight: 10) // Neccessary for non buggy scale effect animation

@@ -15,10 +15,17 @@ struct UsabilityIssuePresentationView: View {
     
     // MARK: - Body
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            Text(usabilityIssuesText)
-                .foregroundStyle(Color("TintColor"))
-                .uxLLMBodyTextStyle()
+        VStack {
+            
+            Text("Usability Issues Presentation Title".localized())
+                .uxLLMTitleTextStyle()
+                .leftAlignWithHStack()
+            
+            ScrollView(showsIndicators: false) {
+                Text(usabilityIssuesText)
+                    .foregroundStyle(Color("TintColor"))
+                    .uxLLMBodyTextStyle()
+            }
         }
     }
 }
@@ -26,4 +33,8 @@ struct UsabilityIssuePresentationView: View {
 // MARK: - Preview
 #Preview {
     UsabilityIssuePresentationView(usabilityIssuesText: MockedLLMCaller.mockedUsabilityIssues)
+        .padding()
+        .background(
+            OutputContainerBackgroundView(adjustContrastForText: true)
+        )
 }

@@ -23,6 +23,8 @@ struct ExampleView: View {
 
 "Start Button Title" = "Start";
 
+"Usability Issues Presentation Title" = "Usability Issues:";
+
 // MARK: - Errors
 "App Error HTTP" = "API Error with HTTP status code: %@)";
 "App Error Failed Converting ImageData" = "Failed Converting ImageData";
