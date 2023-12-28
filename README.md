@@ -55,7 +55,7 @@ if let sourceCode = configuration.sourceCode {
 [^1]: https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo
 [^2]: https://tinypng.com
 [^3]: https://github.com/twostraws/Inferno
-[^4]: https://platform.openai.com/docs/guides/prompt-engineering/strategy-write-clear-instructions
+[^4]: https://platform.openai.com/docs/guides/prompt-engineering
 [^5]: https://en.wikipedia.org/wiki/Bridge_pattern
 
 #### Architecture 
