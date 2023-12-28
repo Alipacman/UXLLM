@@ -12,7 +12,8 @@ This three inputs are packaged into a prompt and send to an LLM.
 Finally, the output is a list of ten predicted usability issues with their rationale for the analyzed view.
 
 ## Usage
-Just open the Xcode project, put in a ```openAIKey``` & ```tinyPNGkey``` into the ```LocalConfiguration``` file and run the app.
+Open the Xcode project, put in a ```openAIKey``` & ```tinyPNGkey``` into the ```LocalConfiguration``` file and run the app.
+Basic settings can be adjusted in the ```Constants``` file.
 
 ## Implementation
 UX-LLM is a macOS application developed using SwiftUI. The incorporated LLM is the state-of-the-art GPT-4 Turbo with vision capabilities from OpenAI[^1]. For image compression, it uses TinyPNG's API[^2]. The shader animation during loading is sourced from the 'Inferno' project by twostraws[^3].
