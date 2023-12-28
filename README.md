@@ -6,7 +6,7 @@ UX-LLM is a prototype application that predicts usability issues for a view of a
 
 UX-LLM takes three inputs: app context, source code, and an image of the view.    
 The context description consists of two texts: a brief overview of the app, and the user's task, which describes the interaction within the analyzed view. For instance, when looking at a meditation app, the overview could be 'A meditation app focused on enhancing stress relief and wellness.' When analyzing the progress tracking view, the user's task could be 'reviewing their meditation history and achieved milestones.'
-In addition, the source code provided needs to be SwiftUI code from the view components, its subviews and the view's logic. 
+In addition, the source code provided needs to be SwiftUI code from the view's components and logic.
 The inputted image can be a screenshot from the running app, Xcode's live preview, or from the design file.
 This three inputs are packaged into a prompt and send to an LLM.
 Finally, the output is a list of ten predicted usability issues with their rationale for the analyzed view.
