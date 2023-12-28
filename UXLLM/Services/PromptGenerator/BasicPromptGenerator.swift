@@ -11,28 +11,28 @@ import Foundation
 struct BasicPromptGenerator: PromptGenerator {
     
     func generateUserContent(with configuration: PromptConfiguration) -> String {
-        var base =
+        var content =
         """
         I have an iOS app about: \(configuration.appOverview)
         The users's task in this app view is about: \(configuration.userTask).
         """
         
         if configuration.hasImage {
-            base += """
+            content += """
             
             A screenshot of the app view is provided.
             """
         }
         
         if let sourceCode = configuration.sourceCode, sourceCode.trimFrontAndBackWhitespaces() != "" {
-            base += """
+            content += """
             
             This is the swiftUI source code of the app view:
             \(sourceCode)
             """
         }
         
-        return base
+        return content
     }
     
     func generateSystemContent() -> String {
