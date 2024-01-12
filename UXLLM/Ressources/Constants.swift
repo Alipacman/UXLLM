@@ -12,7 +12,6 @@ struct Constants {
     static let useMockedServices: Bool = false
     
     static let defaultOpenAILLM = OpenAILLM.gpt4TurboVision
-    static let numberOfPredictedUsabilityIssues = 10
     static let maxTokens: Int? = 3000
     static let temperature: CGFloat = 0.7
     static let imageDetail: String = "low" // "high"

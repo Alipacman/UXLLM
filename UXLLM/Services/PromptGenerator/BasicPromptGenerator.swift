@@ -10,6 +10,7 @@ import Foundation
 
 struct BasicPromptGenerator: PromptGenerator {
     
+    // MARK: - User Content
     func generateUserContent(with configuration: PromptConfiguration) -> String {
         var content =
         """
@@ -24,10 +25,11 @@ struct BasicPromptGenerator: PromptGenerator {
             """
         }
         
-        if let sourceCode = configuration.sourceCode, sourceCode.trimFrontAndBackWhitespaces() != "" {
+        if let sourceCode = configuration.sourceCode, 
+            !sourceCode.trimFrontAndBackWhitespaces().isEmpty {
             content += """
             
-            This is the swiftUI source code of the app view:
+            Below is the incomplete SwiftUI code of the app view. The code includes the view's code for the user interface, the view model for logic handling, and potentially additional components such as model or preview code.
             \(sourceCode)
             """
         }
@@ -35,10 +37,14 @@ struct BasicPromptGenerator: PromptGenerator {
         return content
     }
     
+    // MARK: - System Content
     func generateSystemContent() -> String {
         return """
-        You are a UI/UX expert for mobile apps. Your task is to identify \(Constants.numberOfPredictedUsabilityIssues) usability issues with the information you get for an app view.
-        Enumerate the problems identified; add an empty paragraph after each enumeration; no preceding or following text."
+        You are a UI/UX expert for mobile apps.
+        Your task is to identify usability issues with the information you get for an app view. 
+        An example of a usability issue could be: "Lack of visual feedback on user interactions".
+        Respond using app domain language, you are MUSST NOT use technical terminology or mention code details.
+        Enumerate the problems identified; add an empty paragraph after each enumeration; no preceding or following text.
         """
     }
 }
