@@ -132,13 +132,13 @@
 		585402C22B02366300306C10 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
-				58BE11402B311000008475D7 /* Sinebow.metal */,
+				5809E32C2B03AB3300DB0C78 /* Constants.swift */,
 				585402B92B02187E00306C10 /* LocalConfiguration.swift */,
 				58BE5F512B31E394004E7B67 /* Text+Textstyles.swift */,
-				5809E32C2B03AB3300DB0C78 /* Constants.swift */,
-				586590CF2AFD2E2D0037D1FE /* Assets.xcassets */,
-				586590D42AFD2E2D0037D1FE /* UXLLM.entitlements */,
 				585402D12B0238EC00306C10 /* Localizable.strings */,
+				586590CF2AFD2E2D0037D1FE /* Assets.xcassets */,
+				58BE11402B311000008475D7 /* Sinebow.metal */,
+				586590D42AFD2E2D0037D1FE /* UXLLM.entitlements */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -146,8 +146,11 @@
 		585402C32B02367300306C10 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				58D709E42B3451E0004CCF4C /* SwitUI */,
+				58BE5F552B31F11D004E7B67 /* TitledContainerView.swift */,
+				58BE5F532B31E89B004E7B67 /* GlossyRoundedRectangleBackground.swift */,
 				58D709C52B343255004CCF4C /* TransparentWindow.swift */,
+				58D709E52B346182004CCF4C /* Text */,
+				585402D32B02392500306C10 /* Buttons */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -227,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				58BE112D2B309E72008475D7 /* OpenAILLM.swift */,
-				585402C02B021C1100306C10 /* OpenAPIResponse.swift */,
 				585402BB2B021B4400306C10 /* App Error.swift */,
 			);
 			path = Models;
@@ -296,6 +298,7 @@
 				58D709D82B344F1D004CCF4C /* LLMCallerProtocol.swift */,
 				58BE11302B30A0F8008475D7 /* MockedLLMCaller.swift */,
 				585402B72B0217F600306C10 /* OpenAILLMCaller.swift */,
+				585402C02B021C1100306C10 /* OpenAPIResponse.swift */,
 			);
 			path = LLMCaller;
 			sourceTree = "<group>";
@@ -308,17 +311,6 @@
 				58B4CE1D2B04C8CD004AB6F2 /* TinfyImageCompressorNetworkService.swift */,
 			);
 			path = ImageCompressor;
-			sourceTree = "<group>";
-		};
-		58D709E42B3451E0004CCF4C /* SwitUI */ = {
-			isa = PBXGroup;
-			children = (
-				58BE5F552B31F11D004E7B67 /* TitledContainerView.swift */,
-				58BE5F532B31E89B004E7B67 /* GlossyRoundedRectangleBackground.swift */,
-				58D709E52B346182004CCF4C /* Text */,
-				585402D32B02392500306C10 /* Buttons */,
-			);
-			path = SwitUI;
 			sourceTree = "<group>";
 		};
 		58D709E52B346182004CCF4C /* Text */ = {

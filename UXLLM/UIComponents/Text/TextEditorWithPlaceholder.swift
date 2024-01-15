@@ -33,4 +33,6 @@ struct TextEditorWithPlaceholder: View {
 // MARK: - Preview
 #Preview {
     TextEditorWithPlaceholder(placeholder: "Placeholder", text: .constant("Test"))
+        .padding(30)
+        .background(InputContainerBackgroundView())
 }

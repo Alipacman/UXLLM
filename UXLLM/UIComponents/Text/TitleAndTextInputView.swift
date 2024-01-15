@@ -39,4 +39,6 @@ struct TitleAndTextInputView: View {
                           placeholder: "A fitness tracking app...",
                           text: .constant("A fitness tracker app"),
                           onSave: { _ in })
+    .padding(30)
+    .background(InputContainerBackgroundView())
 }

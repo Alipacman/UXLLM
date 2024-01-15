@@ -50,5 +50,7 @@ struct TitledContainerView<Content: View>: View {
 #Preview {
     TitledContainerView(title: "Test", accessoryQuestionMark: true) {
         Text("Hello World!")
-    }.background(InputContainerBackgroundView())
+    }
+    .padding(30)
+    .background(InputContainerBackgroundView())
 }
