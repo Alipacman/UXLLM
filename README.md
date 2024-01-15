@@ -11,6 +11,9 @@ The inputted image can be a screenshot from the running app, Xcode's live previe
 This three inputs are packaged into a prompt and send to an LLM.
 Finally, the output is a list of ten predicted usability issues with their rationale for the analyzed view.
 
+## Thesis
+This tool was developed as part of my master's thesis. Below, you can find my thesis, which contains numerous additional details, such as an evaluation of the tool, as well as further explanations on prompt engineering, etc.
+
 ## Usage
 Open the Xcode project, put in a ```openAIKey``` & ```tinyPNGkey``` into the ```LocalConfiguration``` file and run the app.
 Basic settings can be adjusted in the ```Constants``` file.
@@ -24,16 +27,22 @@ OpenAI's API accepts a list of messages as input for the LLM. UX-LLM utilizes tw
 System content:
 
 ```
-You are a UI/UX expert for mobile apps. Your task is to identify 10 usability issues with the information you get for an app view.
-Enumerate the problems identified; add an empty paragraph after each enumeration; no preceding or following text."
+You are a UI/UX expert for mobile apps.
+Your task is to identify usability issues with the information you get for an app view. 
+Respond using app domain language, you are MUSST NOT use technical terminology or mention code details.
+An example of a usability issue could be: "Lack of visual feedback on user interactions."
+Enumerate the problems identified; add an empty paragraph after each enumeration; no preceding or following text.
 ```
 
 User content:
 ```
 I have an iOS app about: [insert app overview text]
 The users's task in this app view is about: [insert user task text].
-The provided image is the visual representation of the app view.
-The following is the SwiftUI source code for this view:
+A screenshot of the app view is provided.
+Below is the incomplete SwiftUI code of the app view.
+The code includes the view's code for the user interface and a view model for logic handling. 
+Optionally, it may include additional components such as subviews, models, or preview code.
+
 [insert source code]
 ```
 
