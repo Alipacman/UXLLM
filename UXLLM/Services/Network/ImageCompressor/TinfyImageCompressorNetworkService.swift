@@ -32,7 +32,7 @@ class TinfyImageCompressorNetworkService: ImageCompressor {
             throw AppError.httpResponse(httpResponseErrorCode)
         }
         
-        if Constants.printNetworkData { print("Shrink Response:\n", shrinkResponse) }
+        print("Shrink Response:\n", shrinkResponse)
         
         guard let resizeUrl = URL(string: location) else { throw AppError.failedExtractingResizeURL }
         
@@ -46,10 +46,8 @@ class TinfyImageCompressorNetworkService: ImageCompressor {
         resizeRequest.httpBody = try? JSONSerialization.data(withJSONObject: resizeBody)
         
         let (resizeData, resizeResponse) = try await URLSession.shared.data(for: resizeRequest)
-        if Constants.printNetworkData {
-            print("Resize Response:\n", resizeResponse)
-            resizeData.printSizeKB()
-        }
+        print("Resize Response:\n", resizeResponse)
+        resizeData.printSizeKB()
         return resizeData
     }
     
@@ -65,5 +63,13 @@ class TinfyImageCompressorNetworkService: ImageCompressor {
         let auth = "api:\(LocalConfiguration.tinyPNGkey)"
         let authData = auth.data(using: String.Encoding.utf8)?.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
         return "Basic " + authData!
+    }
+}
+
+extension Data {
+    func printSizeKB() {
+        let sizeInBytes = Double(self.count)
+        let sizeInKilobytes = sizeInBytes / 1_024
+        print("Datasize: " + String(format: "%.1f KB", sizeInKilobytes))
     }
 }

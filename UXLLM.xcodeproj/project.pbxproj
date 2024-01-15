@@ -26,7 +26,6 @@
 		58B3DA452B0244350025A0CD /* ImageDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA442B0244350025A0CD /* ImageDropView.swift */; };
 		58B3DA472B0254030025A0CD /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3DA462B0254030025A0CD /* String+.swift */; };
 		58B4CE1E2B04C8CD004AB6F2 /* TinfyImageCompressorNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4CE1D2B04C8CD004AB6F2 /* TinfyImageCompressorNetworkService.swift */; };
-		58B4CE202B04D819004AB6F2 /* Data+Printing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B4CE1F2B04D819004AB6F2 /* Data+Printing.swift */; };
 		58BE112C2B304C1E008475D7 /* ContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE112B2B304C1E008475D7 /* ContentView+ViewModel.swift */; };
 		58BE112E2B309E72008475D7 /* OpenAILLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE112D2B309E72008475D7 /* OpenAILLM.swift */; };
 		58BE11312B30A0F8008475D7 /* MockedLLMCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE11302B30A0F8008475D7 /* MockedLLMCaller.swift */; };
@@ -78,7 +77,6 @@
 		58B3DA442B0244350025A0CD /* ImageDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDropView.swift; sourceTree = "<group>"; };
 		58B3DA462B0254030025A0CD /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		58B4CE1D2B04C8CD004AB6F2 /* TinfyImageCompressorNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinfyImageCompressorNetworkService.swift; sourceTree = "<group>"; };
-		58B4CE1F2B04D819004AB6F2 /* Data+Printing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Printing.swift"; sourceTree = "<group>"; };
 		58BE112B2B304C1E008475D7 /* ContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+ViewModel.swift"; sourceTree = "<group>"; };
 		58BE112D2B309E72008475D7 /* OpenAILLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAILLM.swift; sourceTree = "<group>"; };
 		58BE11302B30A0F8008475D7 /* MockedLLMCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedLLMCaller.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				585402CF2B0237F300306C10 /* View+StackAlignment.swift */,
-				58B4CE1F2B04D819004AB6F2 /* Data+Printing.swift */,
 				58BE11382B30AB31008475D7 /* NSImage+.swift */,
 				58B3DA462B0254030025A0CD /* String+.swift */,
 				58D709D42B344E22004CCF4C /* String+Localized.swift */,
@@ -440,7 +437,6 @@
 				58BE11412B311000008475D7 /* Sinebow.metal in Sources */,
 				58BE5F562B31F11D004E7B67 /* TitledContainerView.swift in Sources */,
 				58BE5F522B31E394004E7B67 /* Text+Textstyles.swift in Sources */,
-				58B4CE202B04D819004AB6F2 /* Data+Printing.swift in Sources */,
 				585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */,
 				58D709C62B343255004CCF4C /* TransparentWindow.swift in Sources */,
 				58D709DB2B344F34004CCF4C /* ImageCompressorProtocol.swift in Sources */,
