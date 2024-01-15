@@ -15,6 +15,7 @@ struct ImageDropView: View {
     @Binding var nsImage: NSImage?
     
     private let width: CGFloat = 180
+    private let rectangleCornerRadius: CGFloat = 25.0
     
     // MARK: - Body
     var body: some View {
@@ -22,10 +23,7 @@ struct ImageDropView: View {
             .frame(width: width,
                    height: width * Constants.imageRatio)
             .background(
-                RoundedRectangle(cornerRadius: 25.0)
-                    .strokeBorder(Color.white,
-                                  style: StrokeStyle(lineWidth: nsImage == nil ? 4 : 0,
-                                                     dash: [10]))
+                strokedBackgroundRectangleIfNeeded
             )
             .overlay {
                 darkOverlayIfTargeted
@@ -33,7 +31,7 @@ struct ImageDropView: View {
             .overlay {
                 deleteButtonIfNeeded
             }
-            .clipShape(RoundedRectangle(cornerRadius: 25.0))
+            .clipShape(RoundedRectangle(cornerRadius: rectangleCornerRadius))
             .onDrop(of: [.image],
                     isTargeted: $viewModel.isTargeted,
                     perform: { providers in
@@ -51,7 +49,7 @@ struct ImageDropView: View {
             Image(nsImage: nsImage)
                 .resizable()
                 .scaledToFit()
-                .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                .clipShape(RoundedRectangle(cornerRadius: rectangleCornerRadius))
         } else {
             if viewModel.isLoading {
                 ProgressView()
@@ -65,6 +63,13 @@ struct ImageDropView: View {
                     .opacity(viewModel.isTargeted ? 0.0 : 1.0)
             }
         }
+    }
+    
+    private var strokedBackgroundRectangleIfNeeded: some View {
+        RoundedRectangle(cornerRadius: rectangleCornerRadius)
+            .strokeBorder(Color.white,
+                          style: StrokeStyle(lineWidth: nsImage == nil ? 4 : 0,
+                                             dash: [10]))
     }
     
     @ViewBuilder
@@ -110,6 +115,7 @@ struct ImageDropView: View {
 // MARK: - Preview
 #Preview {
     let viewModel = ImageDropView.ViewModel(imageCompressor: MockedImageCompressor())
-    return ImageDropView(viewModel: viewModel, nsImage: .constant(.init()))
+    return ImageDropView(viewModel: viewModel, nsImage: .constant(nil))
+        .padding(30)
         .background(InputContainerBackgroundView())
 }
