@@ -24,4 +24,6 @@ struct ErrorView: View {
 // MARK: - Preview
 #Preview {
     ErrorView(error: "Failed Fetching")
+        .padding(30)
+        .background(OutputContainerBackgroundView(adjustContrastForText: true))
 }

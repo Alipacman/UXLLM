@@ -29,4 +29,6 @@ struct StartLLMButtonView: View {
 // MARK: - Preview
 #Preview {
     StartLLMButtonView(isLoading: false) { }
+        .padding(30)
+        .background(InputContainerBackgroundView())
 }

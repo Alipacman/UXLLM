@@ -57,4 +57,6 @@ struct PersistingInputTextFieldsView: View {
     PersistingInputTextFieldsView(appOverview: .constant("App Overview"),
                         userTask: .constant("User Task"),
                         sourceCode: .constant("Souce Code"))
+    .padding(30)
+    .background(InputContainerBackgroundView())
 }
