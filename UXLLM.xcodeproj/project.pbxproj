@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5809E32D2B03AB3300DB0C78 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809E32C2B03AB3300DB0C78 /* Constants.swift */; };
+		585192BE2B556C3C0061B54F /* ContentViewViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585192BD2B556C3C0061B54F /* ContentViewViewModelFactory.swift */; };
 		585402B82B0217F600306C10 /* OpenAILLMCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B72B0217F600306C10 /* OpenAILLMCaller.swift */; };
 		585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B92B02187E00306C10 /* LocalConfiguration.swift */; };
 		585402BC2B021B4400306C10 /* App Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402BB2B021B4400306C10 /* App Error.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		5809E32C2B03AB3300DB0C78 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		585192BD2B556C3C0061B54F /* ContentViewViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewViewModelFactory.swift; sourceTree = "<group>"; };
 		585402B72B0217F600306C10 /* OpenAILLMCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAILLMCaller.swift; sourceTree = "<group>"; };
 		585402B92B02187E00306C10 /* LocalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfiguration.swift; sourceTree = "<group>"; };
 		585402BB2B021B4400306C10 /* App Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Error.swift"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		585402BE2B021BEC00306C10 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				585192BD2B556C3C0061B54F /* ContentViewViewModelFactory.swift */,
 				58D709DF2B345067004CCF4C /* Network */,
 				58D709DC2B344F3D004CCF4C /* PromptGenerator */,
 			);
@@ -424,6 +427,7 @@
 				58D709C82B3435F4004CCF4C /* InputContainerBackgroundView.swift in Sources */,
 				58BE5F542B31E89B004E7B67 /* GlossyRoundedRectangleBackground.swift in Sources */,
 				58D709D22B344D1A004CCF4C /* InputContainerView+ViewModel.swift in Sources */,
+				585192BE2B556C3C0061B54F /* ContentViewViewModelFactory.swift in Sources */,
 				58BE112C2B304C1E008475D7 /* ContentView+ViewModel.swift in Sources */,
 				585402D52B02392E00306C10 /* BasicRoundButtonStyle.swift in Sources */,
 				58D709CA2B3442A8004CCF4C /* PersistingInputTextFieldsView.swift in Sources */,

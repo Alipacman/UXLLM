@@ -17,27 +17,8 @@ struct UXLLMApp: App {
     // MARK: - Body
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: Self.generateConfiguredContentViewModel())
+            ContentView(viewModel: ContentViewViewModelFactory.generateConfiguredContentViewViewModel())
                 .background(TransparentWindow())
         }
-    }
-    
-    // MARK: - Helper
-    private static func generateConfiguredContentViewModel() -> ContentView.ViewModel {
-        Constants.useMockedServices ? contentViewViewModelWithMockedServices() : contentViewViewModel()
-    }
-    
-    private static func contentViewViewModel() -> ContentView.ViewModel {
-        .init(llmCaller: OpenAILLMCaller(),
-              promptGenerator: BasicPromptGenerator(),
-              imageCompressor: TinfyImageCompressorNetworkService()
-        )
-    }
-    
-    private static func contentViewViewModelWithMockedServices() -> ContentView.ViewModel {
-        .init(llmCaller: MockedLLMCaller(),
-              promptGenerator: BasicPromptGenerator(),
-              imageCompressor: MockedImageCompressor()
-        )
     }
 }
