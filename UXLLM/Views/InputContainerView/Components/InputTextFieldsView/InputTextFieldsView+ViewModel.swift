@@ -24,13 +24,15 @@ extension PersistingInputTextFieldsView {
             }
         }
         
+        private let userDefaults = UserDefaults.standard
+        
         // MARK: - Interface
         func persist(input: TextualPersistableInput, value: String) {
-            UserDefaults.standard.setValue(value, forKey: input.userDefaultsKey)
+            userDefaults.setValue(value, forKey: input.userDefaultsKey)
         }
         
         func load(input: TextualPersistableInput) -> String {
-            UserDefaults.standard.string(forKey: input.userDefaultsKey) ?? ""
+            userDefaults.string(forKey: input.userDefaultsKey) ?? ""
         }
     }
 }
