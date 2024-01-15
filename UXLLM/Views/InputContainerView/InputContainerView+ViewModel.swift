@@ -17,7 +17,7 @@ extension InputContainerView {
             var userTask: String = ""
             var sourceCode: String = ""
             var nsImage: NSImage? = nil
-            var llmModel: OpenAILLM = Constants.defaultOpenAILLM
+            let llmModel: OpenAILLM = Constants.defaultOpenAILLM
         }
     
         @Published var inputConfiguration: InputConfiguration = .init()
