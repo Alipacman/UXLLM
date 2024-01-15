@@ -27,6 +27,12 @@ struct UsabilityIssuePresentationView: View {
                     .uxLLMBodyTextStyle()
             }
         }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            // Yet a hidden feature
+            NSPasteboard.general.clearContents()
+            NSPasteboard.general.setString(usabilityIssuesText, forType: .string)
+        }
     }
 }
 
