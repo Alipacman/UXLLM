@@ -29,7 +29,10 @@ struct BasicPromptGenerator: PromptGenerator {
             !sourceCode.trimFrontAndBackWhitespaces().isEmpty {
             content += """
             
-            Below is the incomplete SwiftUI code of the app view. The code includes the view's code for the user interface, the view model for logic handling, and potentially additional components such as model or preview code.
+            Below is the incomplete SwiftUI code of the app view.
+            The code includes the view's code for the user interface and a view model for logic handling. 
+            Optionally, it may include additional components such as subviews, models, or preview code.
+            
             \(sourceCode)
             """
         }
@@ -42,7 +45,7 @@ struct BasicPromptGenerator: PromptGenerator {
         return """
         You are a UI/UX expert for mobile apps.
         Your task is to identify usability issues with the information you get for an app view. 
-        An example of a usability issue could be: "Lack of visual feedback on user interactions".
+        An example of a usability issue could be: "Lack of visual feedback on user interactions."
         Respond using app domain language, you are MUSST NOT use technical terminology or mention code details.
         Enumerate the problems identified; add an empty paragraph after each enumeration; no preceding or following text.
         """
