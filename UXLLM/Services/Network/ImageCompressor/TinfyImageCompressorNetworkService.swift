@@ -13,56 +13,72 @@ class TinfyImageCompressorNetworkService: ImageCompressor {
     
     // MARK: - Properties
     private let tinfyShrinkURL = URL(string: "https://api.tinify.com/shrink")!
-
+    private let tinyPNGkey: String
+    
+    // MARK: - Init
+    init(tinyPNGkey: String) {
+        self.tinyPNGkey = tinyPNGkey
+    }
+    
     // MARK: - Interface
     func resizeAndShrink(imageData: Data, size: CGSize) async throws -> Data {
+        let jpegData = try convertToJPEGData(imageData)
+        let shrinkResponse = try await shrinkImage(jpegData)
+        return try await resizeImage(location: shrinkResponse.location, size: size)
+    }
+    
+    // MARK: - Helper Methods
+    private func convertToJPEGData(_ imageData: Data) throws -> Data {
         guard let jpegData = NSImage(data: imageData)?.jpegData() else {
             throw AppError.failedConvertingImageData
         }
-        
+        return jpegData
+    }
+
+    private func shrinkImage(_ jpegData: Data) async throws -> (location: URL, response: URLResponse) {
         var shrinkRequest = URLRequest(url: tinfyShrinkURL)
         shrinkRequest.httpMethod = "POST"
         shrinkRequest.allHTTPHeaderFields = header()
         shrinkRequest.httpBody = jpegData
         
-        let (_, shrinkResponse) = try await URLSession.shared.data(for: shrinkRequest)
-        guard let httpResponse = shrinkResponse as? HTTPURLResponse, httpResponse.statusCode == 201,
-              let location = httpResponse.value(forHTTPHeaderField: "Location") else {
-            let httpResponseErrorCode = (shrinkResponse as? HTTPURLResponse)?.statusCode ?? -1
+        let (_, response) = try await URLSession.shared.data(for: shrinkRequest)
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201,
+              let locationString = httpResponse.value(forHTTPHeaderField: "Location"),
+              let location = URL(string: locationString) else {
+            let httpResponseErrorCode = (response as? HTTPURLResponse)?.statusCode ?? -1
             throw AppError.httpResponse(httpResponseErrorCode)
         }
         
-        print("Shrink Response:\n", shrinkResponse)
-        
-        guard let resizeUrl = URL(string: location) else { throw AppError.failedExtractingResizeURL }
-        
-        var resizeRequest = URLRequest(url: resizeUrl)
+        print("Shrink Response:\n", response)
+        return (location, response)
+    }
+
+    private func resizeImage(location: URL, size: CGSize) async throws -> Data {
+        var resizeRequest = URLRequest(url: location)
         resizeRequest.httpMethod = "POST"
         resizeRequest.allHTTPHeaderFields = header()
         
-        let resizeBody = ["resize": ["method": "fit",
+        let resizeBody = ["resize": ["method": "fit", 
                                      "width": size.width,
                                      "height": size.height]]
-        resizeRequest.httpBody = try? JSONSerialization.data(withJSONObject: resizeBody)
+        resizeRequest.httpBody = try JSONSerialization.data(withJSONObject: resizeBody)
         
-        let (resizeData, resizeResponse) = try await URLSession.shared.data(for: resizeRequest)
-        print("Resize Response:\n", resizeResponse)
-        resizeData.printSizeKB()
-        return resizeData
+        let (data, response) = try await URLSession.shared.data(for: resizeRequest)
+        print("Resize Response:\n", response)
+        data.printSizeKB()
+        return data
     }
     
-    // MARK: - Helper
-    private func header() ->  [String: String] {
+    private func header() -> [String: String] {
         ["Content-Type": "application/json",
          "Authorization": generateAuthHeaderValue(),
-         "Accept": "application/json",
-        ]
+         "Accept": "application/json"]
     }
-    
+
     private func generateAuthHeaderValue() -> String {
-        let auth = "api:\(LocalConfiguration.tinyPNGkey)"
-        let authData = auth.data(using: String.Encoding.utf8)?.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
-        return "Basic " + authData!
+        let auth = "api:\(tinyPNGkey)"
+        let authData = auth.data(using: .utf8)?.base64EncodedString(options: .lineLength64Characters)
+        return "Basic \(authData!)"
     }
 }
 
