@@ -21,7 +21,6 @@ extension ContentView {
         internal let llmCaller: LLMCaller
         internal let promptGenerator: PromptGenerator
         
-        
         // MARK: - Init
         init(llmCaller: LLMCaller,
              promptGenerator: PromptGenerator,
@@ -35,7 +34,7 @@ extension ContentView {
         func startGeneratingUsabilityIssues() {
             Task {
                 do {
-                    changePresentationState(loadingActive: true)
+                    await changePresentationState(loadingActive: true)
                     let inputConfiguration = inputContainerViewModel.inputConfiguration
                     let base64EncodedImage = inputConfiguration.nsImage?.jpegData()?.base64EncodedString()
                     let promptConfiguration = inputConfiguration.generatePromptConfiguration()
@@ -43,9 +42,9 @@ extension ContentView {
                                                                         base64EncodedImage: base64EncodedImage,
                                                                         systemContent: promptGenerator.generateSystemContent(),
                                                                         userContent: promptGenerator.generateUserContent(with: promptConfiguration)))
-                    changePresentationState(loadingActive: false, llmOutput: response)
+                    await changePresentationState(loadingActive: false, llmOutput: response)
                 } catch {
-                    changePresentationState(loadingActive: false,
+                    await changePresentationState(loadingActive: false,
                                             errorText: (error as? AppError)?.description ?? error.localizedDescription)
 
                 }
@@ -53,16 +52,15 @@ extension ContentView {
         }
         
         // MARK: - Helper
+        @MainActor
         private func changePresentationState(loadingActive: Bool,
                                              llmOutput: String? = nil,
                                              errorText: String? = nil) {
-            DispatchQueue.main.async {
-                self.llmOutput = llmOutput
-                self.errorText = errorText
-                
-                withAnimation(Animation.easeInOut(duration: 0.6)) {
-                    self.isLoading = loadingActive
-                }
+            self.llmOutput = llmOutput
+            self.errorText = errorText
+            
+            withAnimation(Animation.easeInOut(duration: 0.6)) {
+                self.isLoading = loadingActive
             }
         }
     }
