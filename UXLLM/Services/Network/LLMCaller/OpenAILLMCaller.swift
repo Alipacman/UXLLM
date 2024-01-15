@@ -12,6 +12,12 @@ class OpenAILLMCaller: LLMCaller {
     
     // MARK: - Properties
     private let openAIURL = URL(string: "https://api.openai.com/v1/chat/completions")!
+    private let openAIKey: String
+    
+    // MARK: - Init
+    init(openAIKey: String) {
+        self.openAIKey = openAIKey
+    }
     
     // MARK: - Interface
     func call(with configuration: LLMCallerConfiguration) async throws -> String {
@@ -86,7 +92,7 @@ class OpenAILLMCaller: LLMCaller {
     
     private func header() -> [String: String]? {
         ["Content-Type": "application/json",
-         "Authorization": "Bearer \(LocalConfiguration.openAIKey)"]
+         "Authorization": "Bearer \(openAIKey)"]
     }
 }
 

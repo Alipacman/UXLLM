@@ -16,7 +16,7 @@ struct ContentViewViewModelFactory {
     
     // MARK: - Helper
     private static func contentViewViewModelWithServices() -> ContentView.ViewModel {
-        .init(llmCaller: OpenAILLMCaller(),
+        .init(llmCaller: OpenAILLMCaller(openAIKey: LocalConfiguration.openAIKey),
               promptGenerator: BasicPromptGenerator(),
               imageCompressor: TinfyImageCompressorNetworkService()
         )
