@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import LLMCaller
 
 struct UsabilityIssuePresentationView: View {
     
@@ -39,7 +38,7 @@ struct UsabilityIssuePresentationView: View {
 
 // MARK: - Preview
 #Preview {
-    UsabilityIssuePresentationView(usabilityIssuesText: MockedLLMCaller.mockedUsabilityIssues)
+    UsabilityIssuePresentationView(usabilityIssuesText: MockedLLMPreviewHelper.getMockedUsabilityIssues())
         .padding()
         .background(
             OutputContainerBackgroundView(adjustContrastForText: true)

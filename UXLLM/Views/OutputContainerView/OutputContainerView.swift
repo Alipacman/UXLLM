@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import LLMCaller
 
 struct OutputContainerView: View {
     
@@ -53,7 +52,7 @@ struct OutputContainerView: View {
 // MARK: - Preview
 #Preview {
     OutputContainerView(isLoading: true,
-                        usabilityIssuesText: MockedLLMCaller.mockedUsabilityIssues,
+                        usabilityIssuesText: MockedLLMPreviewHelper.getMockedUsabilityIssues(),
                         error: nil)
     .frame(width: 800, height: 500)
 }

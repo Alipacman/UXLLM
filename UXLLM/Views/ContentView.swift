@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import LLMCaller
 
 struct ContentView: View {
     
@@ -35,7 +34,7 @@ struct ContentView: View {
 
 // MARK: - Preview
 #Preview {
-    ContentView(viewModel: .init(llmCaller: MockedLLMCaller(),
+    ContentView(viewModel: .init(llmCaller: MockedLLMPreviewHelper.generateMockedLLM(),
                                  promptGenerator: BasicPromptGenerator(),
                                  imageCompressor: MockedImageCompressor()))
 }
