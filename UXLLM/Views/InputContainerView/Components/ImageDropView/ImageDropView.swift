@@ -97,13 +97,13 @@ struct ImageDropView: View {
                 viewModel.clearImage()
             } label: {
                 Image(systemName: "x.circle.fill")
+                    .foregroundColor(.black)
                     .font(.system(size: 24))
             }
             .buttonStyle(PlainButtonStyle())
             .background(
                 Circle()
                     .fill(.white)
-                    .blur(radius: 3.0)
             )
             .padding(8)
             .topAlignWithVStack()
