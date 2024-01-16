@@ -10,9 +10,10 @@ import Foundation
 
 import Foundation
 
-struct MockedLLMCaller: LLMCaller {
+public struct MockedLLMCaller: LLMCaller {
     
-    static let mockedUsabilityIssues = 
+    // MARK: - Properties
+    public static let mockedUsabilityIssues =
 """
 1. The font size is excessively small, which makes the text difficult to read and can strain the eyes of the viewer.
 
@@ -35,7 +36,13 @@ struct MockedLLMCaller: LLMCaller {
 10. The touch target sizes on mobile devices are poorly designed and too small, making buttons difficult to tap accurately and leading to a frustrating user experience.
 """
     
-    func call(with configuration: LLMCallerConfiguration) async throws -> String {
+    // MARK: - Init
+    public init() {
+        
+    }
+    
+    // MARK: - Interface
+    public func call(with configuration: LLMCallerConfiguration) async throws -> String {
         try await Task.sleep(until: .now + .seconds(4), clock: .continuous)
         return Self.mockedUsabilityIssues
     }

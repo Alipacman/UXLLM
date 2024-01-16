@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import LLMCaller
 
 extension ContentView {
     class ViewModel: ObservableObject {

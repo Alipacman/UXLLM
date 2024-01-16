@@ -8,19 +8,19 @@
 
 import Foundation
 
-class OpenAILLMCaller: LLMCaller {
+public class OpenAILLMCaller: LLMCaller {
     
     // MARK: - Properties
     private let openAIURL = URL(string: "https://api.openai.com/v1/chat/completions")!
     private let openAIKey: String
     
     // MARK: - Init
-    init(openAIKey: String) {
+    public init(openAIKey: String) {
         self.openAIKey = openAIKey
     }
     
     // MARK: - Interface
-    func call(with configuration: LLMCallerConfiguration) async throws -> String {
+    public func call(with configuration: LLMCallerConfiguration) async throws -> String {
         let messages = prepareMessages(configuration: configuration)
         let parameters = prepareParameters(messages: messages, configuration: configuration)
         let urlRequest = try createURLRequest(with: parameters)
@@ -70,7 +70,7 @@ class OpenAILLMCaller: LLMCaller {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let decodedResponse = try decoder.decode(OpenAPIResponse.self, from: data)
-        // Can be engeneered to return proper model in the future
+        // Can be engineered to return proper generic interface model in the future
         return decodedResponse.prettyResponse
     }
     
