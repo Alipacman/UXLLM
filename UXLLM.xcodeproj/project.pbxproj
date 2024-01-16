@@ -114,13 +114,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		585192C42B557C3F0061B54F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		585402BE2B021BEC00306C10 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +134,7 @@
 				58BE5F512B31E394004E7B67 /* Text+Textstyles.swift */,
 				585402D12B0238EC00306C10 /* Localizable.strings */,
 				586590CF2AFD2E2D0037D1FE /* Assets.xcassets */,
+				586590D22AFD2E2D0037D1FE /* Preview Assets.xcassets */,
 				58BE11402B311000008475D7 /* Sinebow.metal */,
 				586590D42AFD2E2D0037D1FE /* UXLLM.entitlements */,
 			);
@@ -194,7 +188,6 @@
 			children = (
 				586590CA2AFD2E2C0037D1FE /* UXLLM */,
 				586590C92AFD2E2C0037D1FE /* Products */,
-				585192C42B557C3F0061B54F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,17 +210,8 @@
 				585402C32B02367300306C10 /* UIComponents */,
 				585402CE2B0237E700306C10 /* Extensions */,
 				585402C22B02366300306C10 /* Ressources */,
-				586590D12AFD2E2D0037D1FE /* Preview Content */,
 			);
 			path = UXLLM;
-			sourceTree = "<group>";
-		};
-		586590D12AFD2E2D0037D1FE /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				586590D22AFD2E2D0037D1FE /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		5879F1362B2897BE00961544 /* Models */ = {
@@ -584,7 +568,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"UXLLM/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"UXLLM/Ressources/Preview Assets.xcassets\"";
 				DEVELOPMENT_TEAM = 7RKKG423GF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -611,7 +595,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"UXLLM/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"UXLLM/Ressources/Preview Assets.xcassets\"";
 				DEVELOPMENT_TEAM = 7RKKG423GF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
