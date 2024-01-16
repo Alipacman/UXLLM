@@ -23,7 +23,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.titlebarAppearsTransparent = true
         window.isOpaque = false
 
-        // Hacky way to change titlebar
         let backgroundColor = NSColor(Color("BackgroundGradient1")).cgColor
         window.standardWindowButton(.closeButton)?.superview?.wantsLayer = true
         window.standardWindowButton(.closeButton)?.superview?.layer?.backgroundColor = backgroundColor
