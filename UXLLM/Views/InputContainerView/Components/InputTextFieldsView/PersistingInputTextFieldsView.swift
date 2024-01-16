@@ -24,14 +24,14 @@ struct PersistingInputTextFieldsView: View {
                                   text: $appOverview) { newValue in
                 viewModel.persist(input: .appOverview, value: newValue)
             }
-                                  .frame(height: 120)
+                                  .frame(height: 130)
             
             TitleAndTextInputView(title: "User Task Input Title".localized(),
                                   placeholder: "User Task Input Placeholder".localized(),
                                   text: $userTask) { newValue in
                 viewModel.persist(input: .userTask, value: newValue)
             }
-                                  .frame(height: 120)
+                                  .frame(height: 130)
             
             TitleAndTextInputView(title: "Source Code Input Title".localized(),
                                   placeholder: "Source Code Input Placeholder".localized(),
