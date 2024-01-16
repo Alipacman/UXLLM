@@ -42,6 +42,7 @@ public class OpenAILLMCaller: LLMCaller {
         [
             "model": configuration.modelId,
             "messages": messages,
+            "max_tokens": 3000
         ]
     }
     
