@@ -11,7 +11,7 @@
 		585192BE2B556C3C0061B54F /* ContentViewViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585192BD2B556C3C0061B54F /* ContentViewViewModelFactory.swift */; };
 		585192C62B557C3F0061B54F /* LLMCaller in Frameworks */ = {isa = PBXBuildFile; productRef = 585192C52B557C3F0061B54F /* LLMCaller */; };
 		585402BA2B02187E00306C10 /* LocalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402B92B02187E00306C10 /* LocalConfiguration.swift */; };
-		585402BC2B021B4400306C10 /* App Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402BB2B021B4400306C10 /* App Error.swift */; };
+		585402BC2B021B4400306C10 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402BB2B021B4400306C10 /* AppError.swift */; };
 		585402CD2B02375400306C10 /* TitleAndTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402CC2B02375400306C10 /* TitleAndTextInputView.swift */; };
 		585402D02B0237F300306C10 /* View+StackAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585402CF2B0237F300306C10 /* View+StackAlignment.swift */; };
 		585402D22B0238EC00306C10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 585402D12B0238EC00306C10 /* Localizable.strings */; };
@@ -36,7 +36,7 @@
 		58BE5F522B31E394004E7B67 /* Text+Textstyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE5F512B31E394004E7B67 /* Text+Textstyles.swift */; };
 		58BE5F542B31E89B004E7B67 /* GlossyRoundedRectangleBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE5F532B31E89B004E7B67 /* GlossyRoundedRectangleBackground.swift */; };
 		58BE5F562B31F11D004E7B67 /* TitledContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE5F552B31F11D004E7B67 /* TitledContainerView.swift */; };
-		58D1E0AE2B56AFFB006EA552 /* MockedLLMPreviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1E0AD2B56AFFB006EA552 /* MockedLLMPreviewHelper.swift */; };
+		58D1E0AE2B56AFFB006EA552 /* MockedUsabilityIssuesLLMHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1E0AD2B56AFFB006EA552 /* MockedUsabilityIssuesLLMHelper.swift */; };
 		58D709C62B343255004CCF4C /* TransparentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709C52B343255004CCF4C /* TransparentWindow.swift */; };
 		58D709C82B3435F4004CCF4C /* InputContainerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709C72B3435F4004CCF4C /* InputContainerBackgroundView.swift */; };
 		58D709CA2B3442A8004CCF4C /* PersistingInputTextFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709C92B3442A8004CCF4C /* PersistingInputTextFieldsView.swift */; };
@@ -58,7 +58,7 @@
 		585192BD2B556C3C0061B54F /* ContentViewViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewViewModelFactory.swift; sourceTree = "<group>"; };
 		585192C32B557ACF0061B54F /* LLMCaller */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LLMCaller; sourceTree = "<group>"; };
 		585402B92B02187E00306C10 /* LocalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfiguration.swift; sourceTree = "<group>"; };
-		585402BB2B021B4400306C10 /* App Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Error.swift"; sourceTree = "<group>"; };
+		585402BB2B021B4400306C10 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		585402CC2B02375400306C10 /* TitleAndTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndTextInputView.swift; sourceTree = "<group>"; };
 		585402CF2B0237F300306C10 /* View+StackAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+StackAlignment.swift"; sourceTree = "<group>"; };
 		585402D12B0238EC00306C10 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		58BE5F512B31E394004E7B67 /* Text+Textstyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Textstyles.swift"; sourceTree = "<group>"; };
 		58BE5F532B31E89B004E7B67 /* GlossyRoundedRectangleBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossyRoundedRectangleBackground.swift; sourceTree = "<group>"; };
 		58BE5F552B31F11D004E7B67 /* TitledContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledContainerView.swift; sourceTree = "<group>"; };
-		58D1E0AD2B56AFFB006EA552 /* MockedLLMPreviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedLLMPreviewHelper.swift; sourceTree = "<group>"; };
+		58D1E0AD2B56AFFB006EA552 /* MockedUsabilityIssuesLLMHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedUsabilityIssuesLLMHelper.swift; sourceTree = "<group>"; };
 		58D709C52B343255004CCF4C /* TransparentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentWindow.swift; sourceTree = "<group>"; };
 		58D709C72B3435F4004CCF4C /* InputContainerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerBackgroundView.swift; sourceTree = "<group>"; };
 		58D709C92B3442A8004CCF4C /* PersistingInputTextFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistingInputTextFieldsView.swift; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				58BE112D2B309E72008475D7 /* OpenAILLM.swift */,
-				585402BB2B021B4400306C10 /* App Error.swift */,
+				585402BB2B021B4400306C10 /* AppError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 		58D1E0AC2B56AFEC006EA552 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				58D1E0AD2B56AFFB006EA552 /* MockedLLMPreviewHelper.swift */,
+				58D1E0AD2B56AFFB006EA552 /* MockedUsabilityIssuesLLMHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -401,7 +401,7 @@
 				585192BE2B556C3C0061B54F /* ContentViewViewModelFactory.swift in Sources */,
 				58BE112C2B304C1E008475D7 /* ContentView+ViewModel.swift in Sources */,
 				585402D52B02392E00306C10 /* BasicRoundButtonStyle.swift in Sources */,
-				58D1E0AE2B56AFFB006EA552 /* MockedLLMPreviewHelper.swift in Sources */,
+				58D1E0AE2B56AFFB006EA552 /* MockedUsabilityIssuesLLMHelper.swift in Sources */,
 				58D709CA2B3442A8004CCF4C /* PersistingInputTextFieldsView.swift in Sources */,
 				585402D72B023C2500306C10 /* UsabilityIssuePresentationView.swift in Sources */,
 				586590CE2AFD2E2C0037D1FE /* ContentView.swift in Sources */,
@@ -411,7 +411,7 @@
 				58D709D02B344A2F004CCF4C /* InputContainerView.swift in Sources */,
 				5809E32D2B03AB3300DB0C78 /* Constants.swift in Sources */,
 				58BE11372B30AB02008475D7 /* MockedImageCompressor.swift in Sources */,
-				585402BC2B021B4400306C10 /* App Error.swift in Sources */,
+				585402BC2B021B4400306C10 /* AppError.swift in Sources */,
 				58D709D52B344E22004CCF4C /* String+Localized.swift in Sources */,
 				58D709EB2B3464C6004CCF4C /* ErrorView.swift in Sources */,
 				58BE11412B311000008475D7 /* Sinebow.metal in Sources */,

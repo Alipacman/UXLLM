@@ -38,7 +38,7 @@ struct UsabilityIssuePresentationView: View {
 
 // MARK: - Preview
 #Preview {
-    UsabilityIssuePresentationView(usabilityIssuesText: MockedLLMPreviewHelper.getMockedUsabilityIssues())
+    UsabilityIssuePresentationView(usabilityIssuesText: MockedUsabilityIssuesLLMHelper.mockedUsabilityIssues)
         .padding()
         .background(
             OutputContainerBackgroundView(adjustContrastForText: true)

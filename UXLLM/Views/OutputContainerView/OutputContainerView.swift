@@ -52,7 +52,7 @@ struct OutputContainerView: View {
 // MARK: - Preview
 #Preview {
     OutputContainerView(isLoading: true,
-                        usabilityIssuesText: MockedLLMPreviewHelper.getMockedUsabilityIssues(),
+                        usabilityIssuesText: MockedUsabilityIssuesLLMHelper.mockedUsabilityIssues,
                         error: nil)
     .frame(width: 800, height: 500)
 }

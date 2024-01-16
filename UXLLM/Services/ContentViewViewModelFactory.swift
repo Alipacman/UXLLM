@@ -24,7 +24,7 @@ struct ContentViewViewModelFactory {
     }
     
     private static func contentViewViewModelWithMockedServices() -> ContentView.ViewModel {
-        .init(llmCaller: MockedLLMCaller(),
+        .init(llmCaller: MockedUsabilityIssuesLLMHelper.generateMockedLLM(),
               promptGenerator: BasicPromptGenerator(),
               imageCompressor: MockedImageCompressor()
         )
