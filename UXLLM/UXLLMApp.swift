@@ -19,6 +19,7 @@ struct UXLLMApp: App {
         WindowGroup {
             ContentView(viewModel: ContentViewViewModelFactory.generateConfiguredContentViewViewModel())
                 .background(TransparentWindow())
+                .preferredColorScheme(.dark)
         }
     }
 }
