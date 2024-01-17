@@ -52,6 +52,12 @@ extension ContentView {
             }
         }
         
+        static func previewViewModel() -> ContentView.ViewModel{
+            .init(llmCaller: MockedUsabilityIssuesLLMHelper.generateMockedLLM(),
+                  promptGenerator: BasicPromptGenerator(),
+                  imageCompressor: MockedImageCompressor())
+        }
+        
         // MARK: - Helper
         @MainActor
         private func changePresentationState(loadingActive: Bool,

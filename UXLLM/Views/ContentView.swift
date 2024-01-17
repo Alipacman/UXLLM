@@ -34,8 +34,6 @@ struct ContentView: View {
 
 // MARK: - Preview
 #Preview {
-    ContentView(viewModel: .init(llmCaller: MockedUsabilityIssuesLLMHelper.generateMockedLLM(),
-                                 promptGenerator: BasicPromptGenerator(),
-                                 imageCompressor: MockedImageCompressor()))
-    .frame(height: 1100)
+    ContentView(viewModel: ContentView.ViewModel.previewViewModel())
+        .frame(height: 1100)
 }
