@@ -40,14 +40,14 @@ extension ContentView {
                     let base64EncodedImage = inputConfiguration.nsImage?.jpegData()?.base64EncodedString()
                     let promptConfiguration = inputConfiguration.generatePromptConfiguration()
                     let llmResponse = try await llmCaller.call(with: .init(modelId: inputConfiguration.llmModel.id,
-                                                                        base64EncodedImage: base64EncodedImage,
-                                                                        systemContent: promptGenerator.generateSystemContent(),
-                                                                        userContent: promptGenerator.generateUserContent(with: promptConfiguration)))
+                                                                           base64EncodedImage: base64EncodedImage,
+                                                                           systemContent: promptGenerator.generateSystemContent(),
+                                                                           userContent: promptGenerator.generateUserContent(with: promptConfiguration)))
                     await changePresentationState(loadingActive: false, llmOutput: llmResponse.text)
                 } catch {
                     await changePresentationState(loadingActive: false,
-                                            errorText: (error as? AppError)?.description ?? error.localizedDescription)
-
+                                                  errorText: (error as? LocalizedError)?.errorDescription ?? error.localizedDescription)
+                    
                 }
             }
         }

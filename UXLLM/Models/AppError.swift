@@ -10,11 +10,10 @@ import Foundation
 
 enum AppError: Error, LocalizedError {
     case httpResponse(Int)
-
     case failedConvertingImageData
     case failedExtractingResizeURL
-    
-    var description: String? {
+
+    var errorDescription: String? {
         switch self {
         case .httpResponse(let code): return "App Error HTTP".localized(with: [String(code)])
         case .failedConvertingImageData: return "App Error Failed Converting ImageData".localized()
