@@ -27,7 +27,7 @@ class TinfyImageCompressorNetworkService: ImageCompressor {
         return try await resizeImage(location: shrinkResponse.location, size: size)
     }
     
-    // MARK: - Helper Methods
+    // MARK: - Helpers
     private func convertToJPEGData(_ imageData: Data) throws -> Data {
         guard let jpegData = NSImage(data: imageData)?.jpegData() else {
             throw AppError.failedConvertingImageData

@@ -29,7 +29,7 @@ public class OpenAILLMCaller: LLMCaller {
         return try processResponse(data, response)
     }
     
-    // MARK: - Helper Methods
+    // MARK: - Helpers
     private func prepareMessages(configuration: LLMCallerConfiguration) -> [[String: Any]] {
         var messages: [[String : Any]] = [["role": "system", "content": configuration.systemContent]]
         let imageContentIfAvailable = generateImageContentIfNeeded(configuration: configuration)
