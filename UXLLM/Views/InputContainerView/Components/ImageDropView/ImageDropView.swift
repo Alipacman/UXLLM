@@ -99,7 +99,6 @@ struct ImageDropView: View {
             BlackWhiteXDeleteButton {
                 viewModel.clearImage()
             }
-            .padding(8)
             .topAlignWithVStack()
             .rightAlignWithHStack()
             .offset(x: BlackWhiteXDeleteButton.dimension / 2,

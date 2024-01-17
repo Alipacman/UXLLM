@@ -11,7 +11,7 @@ import SwiftUI
 struct BlackWhiteXDeleteButton: View {
     
     // MARK: Properties
-    static let dimension: CGFloat = 32.0
+    static let dimension: CGFloat = 28.0
     
     let action: () -> Void
 
