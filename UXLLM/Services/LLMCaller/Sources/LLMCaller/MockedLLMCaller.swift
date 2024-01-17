@@ -20,8 +20,8 @@ public struct MockedLLMCaller: LLMCaller {
     }
     
     // MARK: - Interface
-    public func call(with configuration: LLMCallerConfiguration) async throws -> String {
+    public func call(with configuration: LLMCallerConfiguration) async throws -> LLMResponse {
         try await Task.sleep(until: .now + .seconds(4), clock: .continuous)
-        return mockedResultText
+        return LLMResponse(text: mockedResultText, tokens: 300)
     }
 }

@@ -26,5 +26,5 @@ public struct LLMCallerConfiguration {
 }
 
 public protocol LLMCaller {
-    func call(with configuration: LLMCallerConfiguration) async throws -> String
+    func call(with configuration: LLMCallerConfiguration) async throws -> LLMResponse
 }

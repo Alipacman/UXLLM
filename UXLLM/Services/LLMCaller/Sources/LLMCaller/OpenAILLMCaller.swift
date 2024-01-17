@@ -20,7 +20,7 @@ public class OpenAILLMCaller: LLMCaller {
     }
     
     // MARK: - Interface
-    public func call(with configuration: LLMCallerConfiguration) async throws -> String {
+    public func call(with configuration: LLMCallerConfiguration) async throws -> LLMResponse {
         let messages = prepareMessages(configuration: configuration)
         let parameters = prepareParameters(messages: messages, configuration: configuration)
         let urlRequest = try createURLRequest(with: parameters)
@@ -61,7 +61,7 @@ public class OpenAILLMCaller: LLMCaller {
         return (data, response)
     }
     
-    private func processResponse(_ data: Data, _ response: URLResponse) throws -> String {
+    private func processResponse(_ data: Data, _ response: URLResponse) throws -> LLMResponse {
         guard let httpResponse = response as? HTTPURLResponse,
               httpResponse.statusCode == 200 else {
             let httpResponseErrorCode = (response as? HTTPURLResponse)?.statusCode ?? -1
@@ -71,8 +71,8 @@ public class OpenAILLMCaller: LLMCaller {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let decodedResponse = try decoder.decode(OpenAPIResponse.self, from: data)
-        // Can be engineered to return proper generic interface model in the future
-        return decodedResponse.prettyResponse
+        return LLMResponse(text: decodedResponse.prettyResponse,
+                           tokens: decodedResponse.usage.totalTokens)
     }
     
     private func generateImageContentIfNeeded(configuration: LLMCallerConfiguration) -> [String: Any]? {
@@ -94,6 +94,13 @@ public class OpenAILLMCaller: LLMCaller {
     private func header() -> [String: String]? {
         ["Content-Type": "application/json",
          "Authorization": "Bearer \(openAIKey)"]
+    }
+}
+
+// MARK: - Extensions
+private extension OpenAPIResponse {
+    var prettyResponse: String {
+        choices.first?.message.content ?? "Failed Parse"
     }
 }
 

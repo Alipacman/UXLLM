@@ -35,8 +35,4 @@ struct OpenAPIResponse: Codable {
     let model: String
     let usage: Usage
     let choices: [Choice]
-    
-    var prettyResponse: String {
-        choices.first?.message.content ?? "Failed Parse"
-    }
 }
