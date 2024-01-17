@@ -17,7 +17,7 @@ struct ImageDropView: View {
     private let width: CGFloat = 180
     private let rectangleCornerRadius: CGFloat = 25.0
     
-    // MARK: - Body
+    // MARK: - Body Content
     var body: some View {
         content
             .frame(width: width,
@@ -28,10 +28,12 @@ struct ImageDropView: View {
             .overlay {
                 darkOverlayIfTargeted
             }
+            .clipShape(
+                RoundedRectangle(cornerRadius: rectangleCornerRadius)
+            )
             .overlay {
                 deleteButtonIfNeeded
             }
-            .clipShape(RoundedRectangle(cornerRadius: rectangleCornerRadius))
             .onDrop(of: [.image],
                     isTargeted: $viewModel.isTargeted,
                     perform: { providers in
@@ -46,25 +48,37 @@ struct ImageDropView: View {
     @ViewBuilder
     private var content: some View {
         if let nsImage {
-            Image(nsImage: nsImage)
-                .resizable()
-                .scaledToFit()
-                .clipShape(RoundedRectangle(cornerRadius: rectangleCornerRadius))
+            generateImageContent(image: nsImage)
+        } else if viewModel.isLoading {
+            loadingContent
         } else {
-            if viewModel.isLoading {
-                ProgressView()
-                    .colorInvert() // MacOS white color workaround
-                    .brightness(1)
-                
-            } else {
-                Image(systemName: "photo.badge.plus")
-                    .font(.system(size: 40))
-                    .foregroundColor(Color("TintColor"))
-                    .opacity(viewModel.isTargeted ? 0.0 : 1.0)
-            }
+            idleContent
         }
     }
     
+    private func generateImageContent(image: NSImage) -> some View {
+        Image(nsImage: image)
+            .resizable()
+            .scaledToFit()
+            .clipShape(RoundedRectangle(cornerRadius: rectangleCornerRadius))
+    }
+    
+    @ViewBuilder
+    private var loadingContent: some View {
+        ProgressView()
+            .colorInvert() // MacOS white color workaround
+            .brightness(1)
+    }
+    
+    @ViewBuilder
+    private var idleContent: some View {
+        Image(systemName: "photo.badge.plus")
+            .font(.system(size: 40))
+            .foregroundColor(Color("TintColor"))
+            .opacity(viewModel.isTargeted ? 0.0 : 1.0)
+    }
+    
+    // MARK: - Body Helpers
     private var strokedBackgroundRectangleIfNeeded: some View {
         RoundedRectangle(cornerRadius: rectangleCornerRadius)
             .strokeBorder(Color.white,
@@ -75,39 +89,21 @@ struct ImageDropView: View {
     @ViewBuilder
     private var darkOverlayIfTargeted: some View {
         if viewModel.isTargeted {
-            ZStack {
-                Color.black.opacity(0.6)
-                
-                VStack(spacing: 8) {
-                    Image(systemName: "plus.circle.fill")
-                        .font(.system(size: 40))
-                    Text("Image Drop View Targeted Text".localized())
-                        .uxLLMTitleTextStyle()
-                }
-                .foregroundColor(.white)
-                .multilineTextAlignment(.center)
-            }
+            ImageDropDarkOverlayView()
         }
     }
     
     @ViewBuilder
     private var deleteButtonIfNeeded: some View {
         if nsImage != nil {
-            Button {
+            BlackWhiteXDeleteButton {
                 viewModel.clearImage()
-            } label: {
-                Image(systemName: "x.circle.fill")
-                    .foregroundColor(.black)
-                    .font(.system(size: 24))
             }
-            .buttonStyle(PlainButtonStyle())
-            .background(
-                Circle()
-                    .fill(.white)
-            )
             .padding(8)
             .topAlignWithVStack()
             .rightAlignWithHStack()
+            .offset(x: BlackWhiteXDeleteButton.dimension / 2,
+                    y: -BlackWhiteXDeleteButton.dimension / 2)
         }
     }
 }
@@ -115,7 +111,7 @@ struct ImageDropView: View {
 // MARK: - Preview
 #Preview {
     ImageDropView(viewModel: ImageDropView.ViewModel.previewViewModel(),
-                  nsImage: .constant(nil))
+                  nsImage: .constant(.init()))
     .padding(30)
     .background(InputContainerBackgroundView())
 }

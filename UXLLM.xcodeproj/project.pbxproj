@@ -51,6 +51,8 @@
 		58D709ED2B34664C004CCF4C /* StartLLMButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709EC2B34664C004CCF4C /* StartLLMButtonView.swift */; };
 		58D709EF2B3477C3004CCF4C /* OutputContainerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709EE2B3477C3004CCF4C /* OutputContainerBackgroundView.swift */; };
 		58D709F12B349617004CCF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D709F02B349617004CCF4C /* AppDelegate.swift */; };
+		58FD511E2B582B0400A7B2DB /* ImageDropDarkOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD511D2B582B0400A7B2DB /* ImageDropDarkOverlayView.swift */; };
+		58FD51212B582B8600A7B2DB /* BlackWhiteXDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD51202B582B8600A7B2DB /* BlackWhiteXDeleteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,8 @@
 		58D709EC2B34664C004CCF4C /* StartLLMButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartLLMButtonView.swift; sourceTree = "<group>"; };
 		58D709EE2B3477C3004CCF4C /* OutputContainerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputContainerBackgroundView.swift; sourceTree = "<group>"; };
 		58D709F02B349617004CCF4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		58FD511D2B582B0400A7B2DB /* ImageDropDarkOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDropDarkOverlayView.swift; sourceTree = "<group>"; };
+		58FD51202B582B8600A7B2DB /* BlackWhiteXDeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackWhiteXDeleteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 		585402D32B02392500306C10 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				58FD51202B582B8600A7B2DB /* BlackWhiteXDeleteButton.swift */,
 				585402D42B02392E00306C10 /* BasicRoundButtonStyle.swift */,
 			);
 			path = Buttons;
@@ -228,6 +233,7 @@
 			children = (
 				58B3DA442B0244350025A0CD /* ImageDropView.swift */,
 				58BE11342B30A7A7008475D7 /* ImageDropView+ViewModel.swift */,
+				58FD511D2B582B0400A7B2DB /* ImageDropDarkOverlayView.swift */,
 			);
 			path = ImageDropView;
 			sourceTree = "<group>";
@@ -401,6 +407,7 @@
 				585192BE2B556C3C0061B54F /* ContentViewViewModelFactory.swift in Sources */,
 				58BE112C2B304C1E008475D7 /* ContentView+ViewModel.swift in Sources */,
 				585402D52B02392E00306C10 /* BasicRoundButtonStyle.swift in Sources */,
+				58FD51212B582B8600A7B2DB /* BlackWhiteXDeleteButton.swift in Sources */,
 				58D1E0AE2B56AFFB006EA552 /* MockedUsabilityIssuesLLMHelper.swift in Sources */,
 				58D709CA2B3442A8004CCF4C /* PersistingInputTextFieldsView.swift in Sources */,
 				585402D72B023C2500306C10 /* UsabilityIssuePresentationView.swift in Sources */,
@@ -423,6 +430,7 @@
 				585402D02B0237F300306C10 /* View+StackAlignment.swift in Sources */,
 				58D709F12B349617004CCF4C /* AppDelegate.swift in Sources */,
 				58BE11352B30A7A7008475D7 /* ImageDropView+ViewModel.swift in Sources */,
+				58FD511E2B582B0400A7B2DB /* ImageDropDarkOverlayView.swift in Sources */,
 				58BE112E2B309E72008475D7 /* OpenAILLM.swift in Sources */,
 				586590CC2AFD2E2C0037D1FE /* UXLLMApp.swift in Sources */,
 				58B3DA472B0254030025A0CD /* String+.swift in Sources */,
