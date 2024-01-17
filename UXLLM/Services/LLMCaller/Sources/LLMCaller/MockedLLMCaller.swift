@@ -8,10 +8,9 @@
 
 import Foundation
 
-import Foundation
-
 public struct MockedLLMCaller: LLMCaller {
     
+    // MARK: - Properties
     public var mockedResultText: String
     
     // MARK: - Init
