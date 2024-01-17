@@ -114,8 +114,8 @@ struct ImageDropView: View {
 
 // MARK: - Preview
 #Preview {
-    let viewModel = ImageDropView.ViewModel(imageCompressor: MockedImageCompressor())
-    return ImageDropView(viewModel: viewModel, nsImage: .constant(nil))
-        .padding(30)
-        .background(InputContainerBackgroundView())
+    ImageDropView(viewModel: ImageDropView.ViewModel.previewViewModel(),
+                  nsImage: .constant(nil))
+    .padding(30)
+    .background(InputContainerBackgroundView())
 }

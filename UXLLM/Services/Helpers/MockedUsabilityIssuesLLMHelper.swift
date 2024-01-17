@@ -8,7 +8,7 @@
 
 import LLMCaller
 
-// For testing purposes like view previews it would not be clean to have View's communicate to outer services like LLMCaller
+// For testing purposes like view previews, as it would not be clean to have View's communicate to outer services like LLMCaller
 struct MockedUsabilityIssuesLLMHelper {
     
     static let mockedUsabilityIssues =

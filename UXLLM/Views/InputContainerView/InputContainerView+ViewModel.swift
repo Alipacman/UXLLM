@@ -29,5 +29,10 @@ extension InputContainerView {
             self.inputConfiguration = inputConfiguration
             self.imageCompressor = imageCompressor
         }
+        
+        // MARK: - Preview
+        static internal func previewViewModel() -> ViewModel {
+            .init(imageCompressor: MockedImageCompressor())
+        }
     }
 }

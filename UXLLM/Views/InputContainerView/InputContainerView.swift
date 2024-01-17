@@ -59,5 +59,5 @@ struct InputContainerView: View {
 
 // MARK: - Preview
 #Preview {
-    InputContainerView(viewModel: .init(imageCompressor: MockedImageCompressor()))
+    InputContainerView(viewModel: InputContainerView.ViewModel.previewViewModel())
 }

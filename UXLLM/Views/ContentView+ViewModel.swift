@@ -52,12 +52,6 @@ extension ContentView {
             }
         }
         
-        static func previewViewModel() -> ContentView.ViewModel{
-            .init(llmCaller: MockedUsabilityIssuesLLMHelper.generateMockedLLM(),
-                  promptGenerator: BasicPromptGenerator(),
-                  imageCompressor: MockedImageCompressor())
-        }
-        
         // MARK: - Helper
         @MainActor
         private func changePresentationState(loadingActive: Bool,
@@ -69,6 +63,13 @@ extension ContentView {
             withAnimation(Animation.easeInOut(duration: 0.6)) {
                 self.isLoading = loadingActive
             }
+        }
+        
+        // MARK: - Preview
+        static internal func previewViewModel() -> ViewModel {
+            .init(llmCaller: MockedUsabilityIssuesLLMHelper.generateMockedLLM(),
+                  promptGenerator: BasicPromptGenerator(),
+                  imageCompressor: MockedImageCompressor())
         }
     }
 }
