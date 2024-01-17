@@ -18,7 +18,7 @@ struct TextEditorWithPlaceholder: View {
     var body: some View {
         TextEditor(text: $text)
             .scrollContentBackground(.hidden)
-            .scrollIndicators(.hidden)
+            .scrollIndicators(.never)
             .overlay (
                 Text(placeholder)
                     .multilineTextAlignment(.leading)
