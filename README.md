@@ -59,15 +59,3 @@ It may also include additional components like subviews, models, or preview code
 Below is a **simplified** UML Class diagram of UX-LLM. The diagram **particularly** abstracts the complexity of the SwiftUI MVVM architecture by condensing the GUI layer and modeling combinations of views and their ```ViewModel```s as one. The primary focus is on the service layer of UX-LLM, which operates using the Bridge pattern[^5]. The three services ```PromptGenerator```, ```LLMCaller```, and ```ImageCompressor``` are abstracted from their actual implementation, allowing the system to vary independently from the concrete services it uses. This approach enables UX-LLM to easily adapt to different LLMs or services without significant changes to the system's core architecture. Additionally, the use of the Bridge pattern has simplified GUI testing by enabling the substitution of Mock objects for actual services.
 
 ![UML Class Diagram](ReadMeResources/ClassDiagram.png)
-
-## License
- 
-The MIT License (MIT)
-
-Copyright (c) 2023 MaibornWolff GmbH All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
