@@ -26,6 +26,6 @@ struct ExampleView: View {
 "Usability Issues Presentation Title" = "Usability Issues:";
 
 // MARK: - Errors
-"App Error HTTP" = "API Error with HTTP status code: %@)";
-"App Error Failed Converting ImageData" = "Failed Converting ImageData";
-"App Error Failed Image Resize URL" = "Failed extracting resize URL";
+"App Error HTTP" = "API Error with HTTP status code: %@";
+"App Error Failed Converting ImageData" = "Error in Converting Image Data";
+"App Error Failed Image Resize URL" = "Error in Extracting Image Resize URL";
