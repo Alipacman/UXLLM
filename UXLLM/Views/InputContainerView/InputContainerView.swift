@@ -14,7 +14,7 @@ struct InputContainerView: View {
     @ObservedObject var viewModel: ViewModel
     
     private let sectionWidth: CGFloat = 450
-    private let sectionHeigth: CGFloat = 600
+    private let sectionHeight: CGFloat = 600
     
     // MARK: - Body
     var body: some View {
@@ -44,7 +44,7 @@ struct InputContainerView: View {
             .padding(24)
             .glossyRoundedRectangleBackground(mode: .light)
         }
-        .frame(width: sectionWidth, height: sectionHeigth)
+        .frame(width: sectionWidth, height: sectionHeight)
     }
     
     private var textFieldSection: some View {
@@ -53,7 +53,7 @@ struct InputContainerView: View {
                                       sourceCode: $viewModel.inputConfiguration.sourceCode)
         .padding(24)
         .glossyRoundedRectangleBackground(mode: .light)
-        .frame(width: sectionWidth, height: sectionHeigth)
+        .frame(width: sectionWidth, height: sectionHeight)
     }
 }
 

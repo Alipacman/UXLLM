@@ -13,11 +13,11 @@ class TinfyImageCompressorNetworkService: ImageCompressor {
     
     // MARK: - Properties
     private let tinfyShrinkURL = URL(string: "https://api.tinify.com/shrink")!
-    private let tinyPNGkey: String
+    private let tinyPNGKey: String
     
     // MARK: - Init
-    init(tinyPNGkey: String) {
-        self.tinyPNGkey = tinyPNGkey
+    init(tinyPNGKey: String) {
+        self.tinyPNGKey = tinyPNGKey
     }
     
     // MARK: - Interface
@@ -76,7 +76,7 @@ class TinfyImageCompressorNetworkService: ImageCompressor {
     }
 
     private func generateAuthHeaderValue() -> String {
-        let auth = "api:\(tinyPNGkey)"
+        let auth = "api:\(tinyPNGKey)"
         let authData = auth.data(using: .utf8)?.base64EncodedString(options: .lineLength64Characters)
         return "Basic \(authData!)"
     }
@@ -86,6 +86,6 @@ private extension Data {
     func printSizeKB() {
         let sizeInBytes = Double(self.count)
         let sizeInKilobytes = sizeInBytes / 1_024
-        print("Datasize: " + String(format: "%.1f KB", sizeInKilobytes))
+        print("Data size: " + String(format: "%.1f KB", sizeInKilobytes))
     }
 }

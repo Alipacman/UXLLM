@@ -20,7 +20,7 @@ struct ContentViewViewModelFactory {
     private static func contentViewViewModelWithServices() -> ContentView.ViewModel {
         .init(llmCaller: OpenAILLMCaller(openAIKey: LocalConfiguration.openAIKey),
               promptGenerator: BasicPromptGenerator(),
-              imageCompressor: TinfyImageCompressorNetworkService(tinyPNGkey: LocalConfiguration.tinyPNGkey)
+              imageCompressor: TinfyImageCompressorNetworkService(tinyPNGKey: LocalConfiguration.tinyPNGKey)
         )
     }
     

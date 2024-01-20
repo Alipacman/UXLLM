@@ -17,7 +17,7 @@ This tool was developed as part of my master's thesis. Below, you can find my th
 -To be added-
 
 ## Usage
-Open the Xcode project, put in a ```openAIKey``` & ```tinyPNGkey``` into the ```LocalConfiguration``` file and run the app. Instructions on where to obtain these keys are provided in the ```LocalConfiguration```.
+Open the Xcode project, put in a ```openAIKey``` & ```tinyPNGKey``` into the ```LocalConfiguration``` file and run the app. Instructions on where to obtain these keys are provided in the ```LocalConfiguration```.
 Basic settings can be adjusted in the ```Constants``` file.
 
 ## Implementation

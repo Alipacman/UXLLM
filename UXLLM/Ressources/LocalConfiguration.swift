@@ -10,6 +10,6 @@ import Foundation
 
 // Could be engineered into a build configuration file
 struct LocalConfiguration {
-    static let tinyPNGkey = "" // Get your key from here: https://tinypng.com/developers
+    static let tinyPNGKey = "" // Get your key from here: https://tinypng.com/developers
     static let openAIKey = "" // Get your key from here: https://platform.openai.com/
 }

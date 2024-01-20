@@ -15,7 +15,7 @@ struct SinebowAnimationView: View {
     
     let shaderSineWidth: CGFloat
     let shaderSineHeight: CGFloat
-    let timeMultier: CGFloat
+    let timeMultiplier: CGFloat
     
     // MARK: - Body
     var body: some View {
@@ -29,7 +29,7 @@ struct SinebowAnimationView: View {
                             ShaderLibrary.sinebow(
                                 .float2(.init(width: shaderSineWidth,
                                               height: shaderSineHeight)),
-                                .float(elapsedTime * timeMultier)
+                                .float(elapsedTime * timeMultiplier)
                             )
                         )
                 }
@@ -41,5 +41,5 @@ struct SinebowAnimationView: View {
 #Preview {
     SinebowAnimationView(shaderSineWidth: 500,
                          shaderSineHeight: 400,
-                         timeMultier: 2.0)
+                         timeMultiplier: 2.0)
 }

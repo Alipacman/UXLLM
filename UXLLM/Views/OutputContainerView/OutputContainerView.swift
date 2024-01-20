@@ -25,7 +25,7 @@ struct OutputContainerView: View {
             if isLoading {
                 SinebowAnimationView(shaderSineWidth: 280,
                                      shaderSineHeight: 100,
-                                     timeMultier: 1.5)
+                                     timeMultiplier: 1.5)
                 .frame(height: 220)
                 .padding(.top, 80)
             } else if let usabilityIssuesText {
@@ -42,7 +42,7 @@ struct OutputContainerView: View {
         }
         .padding(.bottom, 10)
         .frame(width: 700)
-        .frame(minHeight: 10) // Neccessary for non buggy scale effect animation
+        .frame(minHeight: 10) // Necessary for non buggy scale effect animation
         .background(OutputContainerBackgroundView(adjustContrastForText: !isLoading))
         .scaleEffect(y: shouldShow ? 1 : 0, anchor: .top)
         .animation(.easeInOut(duration: 0.6) , value: shouldShow)
