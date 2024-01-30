@@ -9,6 +9,8 @@
 import SwiftUI
 
 extension ImageDropView {
+    
+    @MainActor
     class ViewModel : ObservableObject {
         
         // MARK: - Properties
@@ -26,44 +28,44 @@ extension ImageDropView {
         // MARK: - Interface
         func onDrop(providers: [NSItemProvider]) -> Bool {
             guard let provider = providers.first else { return false }
-            _ = provider.loadDataRepresentation(for: .image) { [weak self] data, error in
+            _ = provider.loadDataRepresentation(for: .image) { data, error in
                 if error == nil, let data {
-                    self?.received(imageData: data)
+                    Task {
+                        await self.received(imageData: data)
+                    }
                 }
             }
             return true
         }
-        
         
         func clearImage() {
             compressedImage = nil
         }
         
         // MARK: - Helper
-        private func received(imageData: Data) {
-            setState(loadingActive: true)
-            Task {
-                do {
-                    let compressedImageData = try await imageCompressor.resizeAndShrink(imageData: imageData,
-                                                                                        size: Constants.imageCompressionSize)
-                    setState(loadingActive: false, image: NSImage(data: compressedImageData))
-                } catch {
-                    print("Failed image compression with error: \(error.localizedDescription)")
-                    setState(loadingActive: false)
-                }
+        nonisolated
+        private func received(imageData: Data) async {
+            await setState(loadingActive: true)
+            do {
+                let compressedImageData = try await imageCompressor.resizeAndShrink(imageData: imageData,
+                                                                                    size: Constants.imageCompressionSize)
+                await setState(loadingActive: false, imageData: compressedImageData)
+            } catch {
+                print("Failed image compression with error: \(error.localizedDescription)")
+                await setState(loadingActive: false)
             }
         }
-        
-        private func setState(loadingActive: Bool, image: NSImage? = nil) {
-            DispatchQueue.main.async {
-                self.isLoading = loadingActive
-                self.compressedImage = image
-            }
+
+        private func setState(loadingActive: Bool, imageData: Data? = nil) {
+            isLoading = loadingActive
+            compressedImage = imageData.flatMap({ NSImage(data: $0) })
         }
-        
-        // MARK: - Preview
-        static internal func previewViewModel() -> ViewModel {
-            .init(imageCompressor: MockedImageCompressor())
-        }
+    }
+}
+
+// MARK: - Preview
+extension ImageDropView.ViewModel {
+    static internal func previewViewModel() -> ImageDropView.ViewModel {
+        .init(imageCompressor: MockedImageCompressor())
     }
 }
