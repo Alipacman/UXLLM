@@ -65,7 +65,7 @@ extension ImageDropView {
 
 // MARK: - Preview
 extension ImageDropView.ViewModel {
-    static internal func previewViewModel() -> ImageDropView.ViewModel {
-        .init(imageCompressor: MockedImageCompressor())
+    static internal func previewViewModelImageImageCompressorComponent() -> ImageCompressor {
+        MockedImageCompressor()
     }
 }

@@ -38,7 +38,7 @@ struct InputContainerView: View {
             TitledContainerView(title: "Intro Text".localized()) { }
             Spacer()
             TitledContainerView(title: "Image Drop Title".localized(), accessoryQuestionMark: true) {
-                ImageDropView(viewModel: .init(imageCompressor: viewModel.imageCompressor),
+                ImageDropView(imageCompressor: viewModel.imageCompressor,
                               nsImage: $viewModel.inputConfiguration.nsImage)
             }
             .padding(24)

@@ -16,7 +16,7 @@ struct ContentView: View {
     // MARK: - Init
     init(previewMode: Bool = false) {
         let viewModel = previewMode ? ViewModel.generatePreviewViewModel() : ViewModel.generateViewModel()
-        _viewModel = StateObject(wrappedValue: viewModel)
+        self._viewModel = StateObject(wrappedValue: viewModel)
     }
     
     // MARK: - Body

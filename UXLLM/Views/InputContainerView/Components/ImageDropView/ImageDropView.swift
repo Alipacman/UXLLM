@@ -11,11 +11,17 @@ import SwiftUI
 struct ImageDropView: View {
     
     // MARK: - Properties
-    @StateObject var viewModel: ViewModel
+    @StateObject private var viewModel: ViewModel
     @Binding var nsImage: NSImage?
     
     private let width: CGFloat = 180
     private let rectangleCornerRadius: CGFloat = 25.0
+    
+    // MARK: - Init 
+    init(imageCompressor: ImageCompressor, nsImage: Binding<NSImage?>) {
+        self._viewModel = StateObject(wrappedValue: ViewModel(imageCompressor: imageCompressor))
+        self._nsImage = nsImage
+    }
     
     // MARK: - Body Content
     var body: some View {
@@ -109,7 +115,7 @@ struct ImageDropView: View {
 
 // MARK: - Preview
 #Preview {
-    ImageDropView(viewModel: ImageDropView.ViewModel.previewViewModel(),
+    ImageDropView(imageCompressor: ImageDropView.ViewModel.previewViewModelImageImageCompressorComponent(),
                   nsImage: .constant(.init()))
     .padding(30)
     .background(InputContainerBackgroundView())
