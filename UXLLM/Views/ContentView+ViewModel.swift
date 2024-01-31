@@ -64,17 +64,19 @@ extension ContentView {
                 self.isLoading = loadingActive
             }
         }
-        
-        // MARK: - Initialize State Object View Model 
-        static func generateViewModel() -> ViewModel {
-            ContentViewViewModelFactory.generateConfiguredContentViewViewModel()
-        }
-        
-        static func generatePreviewViewModel() -> ViewModel {
-            .init(llmCaller: MockedUsabilityIssuesLLMHelper.generateMockedLLM(),
-                  promptGenerator: BasicPromptGenerator(),
-                  imageCompressor: MockedImageCompressor())
-        }
+    }
+}
+
+// MARK: - Initialize State Object View Model 
+extension ContentView.ViewModel {
+    static func generateViewModel() -> ContentView.ViewModel {
+        ContentViewViewModelFactory.generateConfiguredContentViewViewModel()
+    }
+    
+    static func generatePreviewViewModel() -> ContentView.ViewModel {
+        .init(llmCaller: MockedUsabilityIssuesLLMHelper.generateMockedLLM(),
+              promptGenerator: BasicPromptGenerator(),
+              imageCompressor: MockedImageCompressor())
     }
 }
 
