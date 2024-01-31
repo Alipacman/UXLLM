@@ -35,6 +35,6 @@ struct MockedUsabilityIssuesLLMHelper {
 """
     
     static func generateMockedLLM() -> LLMCaller {
-        MockedLLMCaller(mockedResultText: Self.mockedUsabilityIssues)
+        MockedLLMCallerService(mockedResultText: Self.mockedUsabilityIssues)
     }
 }

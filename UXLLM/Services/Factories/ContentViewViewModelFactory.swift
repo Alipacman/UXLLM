@@ -18,16 +18,16 @@ struct ContentViewViewModelFactory {
     
     // MARK: - Helper
     private static func contentViewViewModelWithServices() -> ContentView.ViewModel {
-        .init(llmCaller: OpenAILLMCaller(openAIKey: LocalConfiguration.openAIKey),
-              promptGenerator: BasicPromptGenerator(),
+        .init(llmCaller: OpenAILLMCallerService(openAIKey: LocalConfiguration.openAIKey),
+              promptGenerator: BasicPromptGeneratorService(),
               imageCompressor: TinfyImageCompressorNetworkService(tinyPNGKey: LocalConfiguration.tinyPNGKey)
         )
     }
     
     private static func contentViewViewModelWithMockedServices() -> ContentView.ViewModel {
         .init(llmCaller: MockedUsabilityIssuesLLMHelper.generateMockedLLM(),
-              promptGenerator: BasicPromptGenerator(),
-              imageCompressor: MockedImageCompressor()
+              promptGenerator: BasicPromptGeneratorService(),
+              imageCompressor: MockedImageCompressorService()
         )
     }
 }

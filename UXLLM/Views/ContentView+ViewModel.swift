@@ -75,8 +75,8 @@ extension ContentView.ViewModel {
     
     static func generatePreviewViewModel() -> ContentView.ViewModel {
         .init(llmCaller: MockedUsabilityIssuesLLMHelper.generateMockedLLM(),
-              promptGenerator: BasicPromptGenerator(),
-              imageCompressor: MockedImageCompressor())
+              promptGenerator: BasicPromptGeneratorService(),
+              imageCompressor: MockedImageCompressorService())
     }
 }
 

@@ -66,6 +66,6 @@ extension ImageDropView {
 // MARK: - Preview
 extension ImageDropView.ViewModel {
     static func previewViewModelImageImageCompressorComponent() -> ImageCompressor {
-        MockedImageCompressor()
+        MockedImageCompressorService()
     }
 }

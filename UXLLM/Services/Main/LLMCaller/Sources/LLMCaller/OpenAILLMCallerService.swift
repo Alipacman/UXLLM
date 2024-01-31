@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class OpenAILLMCaller: LLMCaller {
+public class OpenAILLMCallerService: LLMCaller {
     
     // MARK: - Properties
     private let openAIURL = URL(string: "https://api.openai.com/v1/chat/completions")!
@@ -65,7 +65,7 @@ public class OpenAILLMCaller: LLMCaller {
         guard let httpResponse = response as? HTTPURLResponse,
               httpResponse.statusCode == 200 else {
             let httpResponseErrorCode = (response as? HTTPURLResponse)?.statusCode ?? -1
-            throw NSError(domain: "OpenAILLMCaller", code: httpResponseErrorCode)
+            throw NSError(domain: "OpenAILLMCallerService", code: httpResponseErrorCode)
         }
         
         let decoder = JSONDecoder()

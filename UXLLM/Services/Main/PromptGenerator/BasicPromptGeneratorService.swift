@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BasicPromptGenerator: PromptGenerator {
+struct BasicPromptGeneratorService: PromptGenerator {
     
     // MARK: - User Content
     func generateUserContent(with configuration: PromptConfiguration) -> String {

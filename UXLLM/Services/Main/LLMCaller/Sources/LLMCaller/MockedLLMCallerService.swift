@@ -1,5 +1,5 @@
 //
-//  MockedLLMCaller.swift
+//  MockedLLMCallerService.swift
 //  UXLLM under the MIT License (MIT)
 //  Copyright (c) 2023 MaibornWolff GmbH All rights reserved.
 //
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct MockedLLMCaller: LLMCaller {
+public struct MockedLLMCallerService: LLMCaller {
     
     // MARK: - Properties
     public var mockedResultText: String
