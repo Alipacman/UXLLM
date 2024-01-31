@@ -17,7 +17,7 @@ struct UXLLMApp: App {
     // MARK: - Body
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: ContentViewViewModelFactory.generateConfiguredContentViewViewModel())
+            ContentView()
                 .background(TransparentWindow())
         }
     }

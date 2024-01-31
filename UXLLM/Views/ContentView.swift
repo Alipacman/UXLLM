@@ -11,7 +11,13 @@ import SwiftUI
 struct ContentView: View {
     
     // MARK: - Properties
-    @StateObject var viewModel: ViewModel
+    @StateObject private var viewModel: ViewModel
+    
+    // MARK: - Init
+    init(previewMode: Bool = false) {
+        let viewModel = previewMode ? ViewModel.generatePreviewViewModel() : ViewModel.generateViewModel()
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     // MARK: - Body
     var body: some View {
@@ -34,6 +40,6 @@ struct ContentView: View {
 
 // MARK: - Preview
 #Preview {
-    ContentView(viewModel: ContentView.ViewModel.previewViewModel())
+    ContentView(previewMode: true)
         .frame(height: 1100)
 }

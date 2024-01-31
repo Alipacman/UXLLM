@@ -65,8 +65,12 @@ extension ContentView {
             }
         }
         
-        // MARK: - Preview
-        static internal func previewViewModel() -> ViewModel {
+        // MARK: - Initialize State Object View Model 
+        static internal func generateViewModel() -> ViewModel {
+            ContentViewViewModelFactory.generateConfiguredContentViewViewModel()
+        }
+        
+        static internal func generatePreviewViewModel() -> ViewModel {
             .init(llmCaller: MockedUsabilityIssuesLLMHelper.generateMockedLLM(),
                   promptGenerator: BasicPromptGenerator(),
                   imageCompressor: MockedImageCompressor())
