@@ -37,7 +37,7 @@ struct TitledContainerView<Content: View>: View {
                 if accessoryQuestionMark {
                     Image(systemName: "questionmark.circle")
                         .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color("TintColor"))
+                        .foregroundColor(Color(.tint))
                 }
             }
             

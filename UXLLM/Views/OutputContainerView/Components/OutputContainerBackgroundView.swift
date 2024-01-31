@@ -17,7 +17,7 @@ struct OutputContainerBackgroundView: View {
     var body: some View {
         Rectangle()
             .fill(
-                adjustContrastForText ? Color("OutputBackgroundColor") : .black
+                adjustContrastForText ? Color(.outputBackground) : .black
             )
             .clipShape(
                 .rect(

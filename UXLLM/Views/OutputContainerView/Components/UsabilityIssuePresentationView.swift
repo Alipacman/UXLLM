@@ -23,7 +23,7 @@ struct UsabilityIssuePresentationView: View {
             
             ScrollView(showsIndicators: false) {
                 Text(usabilityIssuesText)
-                    .foregroundStyle(Color("TintColor"))
+                    .foregroundStyle(Color(.tint))
                     .uxLLMBodyTextStyle()
             }
         }

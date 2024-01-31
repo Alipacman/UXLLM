@@ -22,16 +22,16 @@ struct BasicRoundButtonStyle: ButtonStyle {
     // MARK: - Body
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .foregroundColor(Color("TintColor"))
+            .foregroundColor(Color(.tint))
             .uxLLMButtonTitleTextStyle()
             .lineLimit(1)
             .frame(width: Self.dimension,
                    height: Self.dimension)
             .background(
-                Color("BasicRoundButtonColor")
+                Color(.basicRoundButton)
             )
             .overlay(
-                Circle().stroke(Color("BasicRoundButtonColorStroke"), lineWidth: 8)
+                Circle().stroke(Color(.basicRoundButtonColorStroke), lineWidth: 8)
             )
             .clipShape(
                 Circle()

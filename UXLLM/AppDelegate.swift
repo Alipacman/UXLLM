@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.titlebarAppearsTransparent = true
         window.isOpaque = false
 
-        let backgroundColor = NSColor(Color("BackgroundGradient1")).cgColor
+        let backgroundColor = NSColor(Color(.backgroundGradient1)).cgColor
         window.standardWindowButton(.closeButton)?.superview?.wantsLayer = true
         window.standardWindowButton(.closeButton)?.superview?.layer?.backgroundColor = backgroundColor
     }

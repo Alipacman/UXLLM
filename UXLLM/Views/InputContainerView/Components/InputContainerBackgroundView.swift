@@ -14,8 +14,8 @@ struct InputContainerBackgroundView: View {
     var body: some View {
         Rectangle()
             .fill(
-                LinearGradient(colors: [Color("BackgroundGradient1"),
-                                        Color("BackgroundGradient2")],
+                LinearGradient(colors: [Color(.backgroundGradient1),
+                                        Color(.backgroundGradient2)],
                                startPoint: .top,
                                endPoint: .bottom)
             )

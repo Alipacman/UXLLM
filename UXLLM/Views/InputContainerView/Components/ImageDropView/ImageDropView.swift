@@ -74,7 +74,7 @@ struct ImageDropView: View {
     private var idleContent: some View {
         Image(systemName: "photo.badge.plus")
             .font(.system(size: 40))
-            .foregroundColor(Color("TintColor"))
+            .foregroundColor(Color(.tint))
             .opacity(viewModel.isTargeted ? 0.0 : 1.0)
     }
     

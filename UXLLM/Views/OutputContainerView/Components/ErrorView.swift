@@ -16,7 +16,7 @@ struct ErrorView: View {
     // MARK: - Body
     var body: some View {
         Text(error)
-            .foregroundStyle(Color("TintColor"))
+            .foregroundStyle(Color(.tint))
             .uxLLMBodyTextStyle()
     }
 }
