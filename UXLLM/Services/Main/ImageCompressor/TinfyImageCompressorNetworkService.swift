@@ -84,8 +84,11 @@ class TinfyImageCompressorNetworkService: ImageCompressor {
 
 private extension Data {
     func printSizeKB() {
-        let sizeInBytes = Double(self.count)
-        let sizeInKilobytes = sizeInBytes / 1_024
-        print("Data size: " + String(format: "%.1f KB", sizeInKilobytes))
+        let byteCountFormatter = ByteCountFormatter()
+        byteCountFormatter.allowedUnits = [.useKB]
+        byteCountFormatter.countStyle = .file
+        let sizeInBytes = Int64(self.count)
+        let formattedSize = byteCountFormatter.string(fromByteCount: sizeInBytes)
+        print("Data size: \(formattedSize)")
     }
 }
