@@ -13,14 +13,14 @@ extension ContentView {
     class ViewModel: ObservableObject {
         
         // MARK: - Properties
-        @Published internal var llmOutput: String? = nil
-        @Published internal var errorText: String? = nil
-        @Published internal var isLoading: Bool = false
+        @Published var llmOutput: String? = nil
+        @Published var errorText: String? = nil
+        @Published var isLoading: Bool = false
         
-        internal let inputContainerViewModel: InputContainerView.ViewModel
+        let inputContainerViewModel: InputContainerView.ViewModel
         
-        internal let llmCaller: LLMCaller
-        internal let promptGenerator: PromptGenerator
+        let llmCaller: LLMCaller
+        let promptGenerator: PromptGenerator
         
         // MARK: - Init
         init(llmCaller: LLMCaller,
@@ -66,11 +66,11 @@ extension ContentView {
         }
         
         // MARK: - Initialize State Object View Model 
-        static internal func generateViewModel() -> ViewModel {
+        static func generateViewModel() -> ViewModel {
             ContentViewViewModelFactory.generateConfiguredContentViewViewModel()
         }
         
-        static internal func generatePreviewViewModel() -> ViewModel {
+        static func generatePreviewViewModel() -> ViewModel {
             .init(llmCaller: MockedUsabilityIssuesLLMHelper.generateMockedLLM(),
                   promptGenerator: BasicPromptGenerator(),
                   imageCompressor: MockedImageCompressor())

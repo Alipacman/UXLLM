@@ -12,7 +12,7 @@ extension PersistingInputTextFieldsView {
     class ViewModel: ObservableObject {
         
         // MARK: - Properties
-        internal enum TextualPersistableInput {
+        enum TextualPersistableInput {
             case appOverview, userTask, sourceCode
             
             var userDefaultsKey: String {

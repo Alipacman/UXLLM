@@ -18,7 +18,7 @@ extension ImageDropView {
         @Published var isTargeted: Bool = false
         @Published var compressedImage: NSImage?
         
-        internal let imageCompressor: ImageCompressor
+        let imageCompressor: ImageCompressor
         
         // MARK: - Init
         init(imageCompressor: ImageCompressor) {
@@ -65,7 +65,7 @@ extension ImageDropView {
 
 // MARK: - Preview
 extension ImageDropView.ViewModel {
-    static internal func previewViewModelImageImageCompressorComponent() -> ImageCompressor {
+    static func previewViewModelImageImageCompressorComponent() -> ImageCompressor {
         MockedImageCompressor()
     }
 }

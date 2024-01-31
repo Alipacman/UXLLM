@@ -12,7 +12,7 @@ extension InputContainerView {
     class ViewModel: ObservableObject {
         
         // MARK: - Properties
-        internal struct InputConfiguration {
+        struct InputConfiguration {
             var appOverview: String = ""
             var userTask: String = ""
             var sourceCode: String = ""
@@ -21,7 +21,7 @@ extension InputContainerView {
         }
     
         @Published var inputConfiguration: InputConfiguration = .init()
-        internal let imageCompressor: ImageCompressor
+        let imageCompressor: ImageCompressor
             
         // MARK: - Init
         init(inputConfiguration: InputConfiguration = .init(),
@@ -31,7 +31,7 @@ extension InputContainerView {
         }
         
         // MARK: - Preview
-        static internal func previewViewModel() -> ViewModel {
+        static func previewViewModel() -> ViewModel {
             .init(imageCompressor: MockedImageCompressor())
         }
     }
