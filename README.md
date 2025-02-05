@@ -14,7 +14,7 @@ Finally, the output is a list of ten predicted usability issues with their ratio
 ## Thesis
 This tool was developed as part of my master's thesis. Below, you can find my thesis, which contains numerous additional details, such as an evaluation of the tool, as well as further explanations on prompt engineering, etc.
 
--To be added-
+https://arxiv.org/abs/2411.00634
 
 ## Usage
 Open the Xcode project, put in a ```openAIKey``` & ```tinyPNGKey``` into the ```LocalConfiguration``` file and run the app. Instructions on where to obtain these keys are provided in the ```LocalConfiguration```.
